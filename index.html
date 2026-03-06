@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Rakuma Fashion Design System</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles/tokens.css">
+<link rel="stylesheet" href="styles/main.css">
+<style>
+  .hero-gradient{background:linear-gradient(135deg,#831843 0%,#db2777 50%,#f472b6 100%)}
+  .hero-text{background:linear-gradient(135deg,#db2777,#9d174d);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+  .swatch-rose{background:#db2777}.swatch-pink{background:#ec4899}.swatch-fuchsia{background:#d946ef}
+  .swatch-black{background:#171717}.swatch-slate{background:#475569}.swatch-cream{background:#fdf8f0}
+  .swatch-beige{background:#e8dcc8}.swatch-taupe{background:#b5a49a}
+</style>
+</head>
+<body>
+<div class="docs-layout">
+<aside class="docs-sidebar">
+  <div class="docs-sidebar-logo">Rakuma DS</div>
+  <div class="docs-sidebar-tagline">Fashion Design System v1.0</div>
+  <nav>
+    <div class="docs-nav-section">
+      <div class="docs-nav-label">Getting Started</div>
+      <a href="#overview" class="docs-nav-link active">Overview</a>
+      <a href="#tokens" class="docs-nav-link">Design Tokens</a>
+    </div>
+    <div class="docs-nav-section">
+      <div class="docs-nav-label">Foundation</div>
+      <a href="#colors" class="docs-nav-link">Colors</a>
+      <a href="#typography" class="docs-nav-link">Typography</a>
+      <a href="#spacing" class="docs-nav-link">Spacing</a>
+      <a href="#shadows" class="docs-nav-link">Shadows</a>
+    </div>
+    <div class="docs-nav-section">
+      <div class="docs-nav-label">Components</div>
+      <a href="#buttons" class="docs-nav-link">Buttons</a>
+      <a href="#badges" class="docs-nav-link">Badges</a>
+      <a href="#tags" class="docs-nav-link">Tags &amp; Chips</a>
+      <a href="#cards" class="docs-nav-link">Cards</a>
+      <a href="#product-card" class="docs-nav-link">Product Card</a>
+      <a href="#forms" class="docs-nav-link">Forms</a>
+      <a href="#avatar" class="docs-nav-link">Avatar</a>
+      <a href="#alerts" class="docs-nav-link">Alerts</a>
+      <a href="#modals" class="docs-nav-link">Modals</a>
+      <a href="#tabs" class="docs-nav-link">Tabs</a>
+      <a href="#progress" class="docs-nav-link">Progress</a>
+      <a href="#navigation" class="docs-nav-link">Navigation</a>
+      <a href="#rating" class="docs-nav-link">Rating</a>
+      <a href="#selectors" class="docs-nav-link">Size &amp; Color Selectors</a>
+      <a href="#skeleton" class="docs-nav-link">Skeleton</a>
+      <a href="#toast" class="docs-nav-link">Toast</a>
+    </div>
+    <div class="docs-nav-section">
+      <div class="docs-nav-label">Patterns</div>
+      <a href="#product-listing" class="docs-nav-link">Product Listing</a>
+      <a href="#checkout" class="docs-nav-link">Checkout Summary</a>
+    </div>
+  </nav>
+</aside>
+<main class="docs-content">
+
+<!-- OVERVIEW -->
+<section id="overview" class="component-section">
+  <div class="section-header">
+    <h1 class="section-title">Rakuma<br><span class="hero-text">Fashion Design System</span></h1>
+    <p class="section-desc">A comprehensive component library built for Rakuma — Japan&apos;s premier C2C fashion marketplace. Crafted with precision, scalability, and brand identity at its core.</p>
+    <div class="preview-row" style="margin-top:var(--space-6)">
+      <span class="badge badge-brand">v1.0.0</span>
+      <span class="badge badge-neutral">Static HTML</span>
+      <span class="badge badge-success">Production Ready</span>
+    </div>
+  </div>
+  <div class="grid grid-3" style="gap:var(--space-4)">
+    <div class="card card-flat" style="padding:var(--space-6)">
+      <div style="font-size:2rem;margin-bottom:var(--space-3)">🎨</div>
+      <div class="text-h4" style="margin-bottom:var(--space-2)">Design Tokens</div>
+      <p style="color:var(--color-text-secondary);font-size:var(--font-size-sm)">150+ CSS custom properties for colors, typography, spacing, shadows and more.</p>
+    </div>
+    <div class="card card-flat" style="padding:var(--space-6)">
+      <div style="font-size:2rem;margin-bottom:var(--space-3)">🧩</div>
+      <div class="text-h4" style="margin-bottom:var(--space-2)">18 Components</div>
+      <p style="color:var(--color-text-secondary);font-size:var(--font-size-sm)">Buttons, cards, forms, modals and fashion-specific components like product cards.</p>
+    </div>
+    <div class="card card-flat" style="padding:var(--space-6)">
+      <div style="font-size:2rem;margin-bottom:var(--space-3)">📱</div>
+      <div class="text-h4" style="margin-bottom:var(--space-2)">Responsive</div>
+      <p style="color:var(--color-text-secondary);font-size:var(--font-size-sm)">Every component adapts seamlessly from mobile to widescreen desktop layouts.</p>
+    </div>
+  </div>
+</section>
+
+<!-- COLORS -->
+<section id="colors" class="component-section">
+  <h2 class="component-title">Colors</h2>
+  <p class="component-desc">The Rakuma palette is anchored by a vibrant pink-rose brand color, paired with a clean neutral scale and semantic status colors.</p>
+
+  <div class="subsection-title">Brand — Pink Rose</div>
+  <div style="display:grid;grid-template-columns:repeat(10,1fr);gap:var(--space-2);margin-bottom:var(--space-6)">
+    <div><div style="height:3rem;background:var(--color-brand-50);border-radius:var(--radius-lg);margin-bottom:var(--space-1)"></div><div style="font-size:.65rem;color:var(--color-text-tertiary)">50</div></div>
+    <div><div style="height:3rem;background:var(--color-brand-100);border-radius:var(--radius-lg);margin-bottom:var(--space-1)"></div><div style="font-size:.65rem;color:var(--color-text-tertiary)">100</div></div>
+    <div><div style="height:3rem;background:var(--color-brand-200);border-radius:var(--radius-lg);margin-bottom:var(--space-1)"></div><div style="font-size:.65rem;color:var(--color-text-tertiary)">200</div></div>
+    <div><div style="height:3rem;background:var(--color-brand-300);border-radius:var(--radius-lg);margin-bottom:var(--space-1)"></div><div style="font-size:.65rem;color:var(--color-text-tertiary)">300</div></div>
+    <div><div style="height:3rem;background:var(--color-brand-400);border-radius:var(--radius-lg);margin-bottom:var(--space-1)"></div><div style="font-size:.65rem;color:var(--color-text-tertiary)">400</div></div>
+    <div><div style="height:3rem;background:var(--color-brand-500);border-radius:var(--radius-lg);margin-bottom:var(--space-1)"></div><div style="font-size:.65rem;color:var(--color-text-tertiary)">500</div></div>
+    <div><div style="height:3rem;background:var(--color-brand-600);border-radius:var(--radius-lg);margin-bottom:var(--space-1);box-shadow:0 0 0 3px rgba(219,39,119,.25)"></div><div style="font-size:.65rem;color:var(--color-primary);font-weight:600">600 ✦</div></div>
+    <div><div style="height:3rem;background:var(--color-brand-700);border-radius:var(--radius-lg);margin-bottom:var(--space-1)"></div><div style="font-size:.65rem;color:var(--color-text-tertiary)">700</div></div>
+    <div><div style="height:3rem;background:var(--color-brand-800);border-radius:var(--radius-lg);margin-bottom:var(--space-1)"></div><div style="font-size:.65rem;color:var(--color-text-tertiary)">800</div></div>
+    <div><div style="height:3rem;background:var(--color-brand-900);border-radius:var(--radius-lg);margin-bottom:var(--space-1)"></div><div style="font-size:.65rem;color:var(--color-text-tertiary)">900</div></div>
+  </div>
+
+  <div class="subsection-title">Neutral</div>
+  <div style="display:grid;grid-template-columns:repeat(10,1fr);gap:var(--space-2);margin-bottom:var(--space-6)">
+    <div><div style="height:3rem;background:var(--color-neutral-50);border-radius:var(--radius-lg);border:1px solid var(--color-border-default);margin-bottom:var(--space-1)"></div><div style="font-size:.65rem;color:var(--color-text-tertiary)">50</div></div>
+    <div><div style="height:3rem;background:var(--color-neutral-100);border-radius:var(--radius-lg);margin-bottom:var(--space-1)"></div><div style="font-size:.65rem;color:var(--color-text-tertiary)">100</div></div>
+    <div><div style="height:3rem;background:var(--color-neutral-200);border-radius:var(--radius-lg);margin-bottom:var(--space-1)"></div><div style="font-size:.65rem;color:var(--color-text-tertiary)">200</div></div>
+    <div><div style="height:3rem;background:var(--color-neutral-300);border-radius:var(--radius-lg);margin-bottom:var(--space-1)"></div><div style="font-size:.65rem;color:var(--color-text-tertiary)">300</div></div>
+    <div><div style="height:3rem;background:var(--color-neutral-400);border-radius:var(--radius-lg);margin-bottom:var(--space-1)"></div><div style="font-size:.65rem;color:var(--color-text-tertiary)">400</div></div>
+    <div><div style="height:3rem;background:var(--color-neutral-500);border-radius:var(--radius-lg);margin-bottom:var(--space-1)"></div><div style="font-size:.65rem;color:var(--color-text-tertiary)">500</div></div>
+    <div><div style="height:3rem;background:var(--color-neutral-600);border-radius:var(--radius-lg);margin-bottom:var(--space-1)"></div><div style="font-size:.65rem;color:var(--color-text-tertiary)">600</div></div>
+    <div><div style="height:3rem;background:var(--color-neutral-700);border-radius:var(--radius-lg);margin-bottom:var(--space-1)"></div><div style="font-size:.65rem;color:var(--color-text-tertiary)">700</div></div>
+    <div><div style="height:3rem;background:var(--color-neutral-800);border-radius:var(--radius-lg);margin-bottom:var(--space-1)"></div><div style="font-size:.65rem;color:var(--color-text-tertiary)">800</div></div>
+    <div><div style="height:3rem;background:var(--color-neutral-900);border-radius:var(--radius-lg);margin-bottom:var(--space-1)"></div><div style="font-size:.65rem;color:var(--color-text-tertiary)">900</div></div>
+  </div>
+
+  <div class="subsection-title">Status Colors</div>
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:var(--space-4)">
+    <div style="padding:var(--space-4);background:var(--color-success-50);border-radius:var(--radius-xl);border:1px solid #bbf7d0">
+      <div style="width:2rem;height:2rem;background:var(--color-success-500);border-radius:var(--radius-md);margin-bottom:var(--space-2)"></div>
+      <div style="font-weight:600;font-size:var(--font-size-sm);color:var(--color-success-700)">Success</div>
+      <div style="font-size:var(--font-size-xs);color:var(--color-success-700);opacity:.7">#22c55e</div>
+    </div>
+    <div style="padding:var(--space-4);background:var(--color-warning-50);border-radius:var(--radius-xl);border:1px solid #fde68a">
+      <div style="width:2rem;height:2rem;background:var(--color-warning-500);border-radius:var(--radius-md);margin-bottom:var(--space-2)"></div>
+      <div style="font-weight:600;font-size:var(--font-size-sm);color:var(--color-warning-700)">Warning</div>
+      <div style="font-size:var(--font-size-xs);color:var(--color-warning-700);opacity:.7">#f59e0b</div>
+    </div>
+    <div style="padding:var(--space-4);background:var(--color-error-50);border-radius:var(--radius-xl);border:1px solid #fecaca">
+      <div style="width:2rem;height:2rem;background:var(--color-error-500);border-radius:var(--radius-md);margin-bottom:var(--space-2)"></div>
+      <div style="font-weight:600;font-size:var(--font-size-sm);color:var(--color-error-700)">Error</div>
+      <div style="font-size:var(--font-size-xs);color:var(--color-error-700);opacity:.7">#ef4444</div>
+    </div>
+    <div style="padding:var(--space-4);background:var(--color-info-50);border-radius:var(--radius-xl);border:1px solid #bfdbfe">
+      <div style="width:2rem;height:2rem;background:var(--color-info-500);border-radius:var(--radius-md);margin-bottom:var(--space-2)"></div>
+      <div style="font-weight:600;font-size:var(--font-size-sm);color:var(--color-info-700)">Info</div>
+      <div style="font-size:var(--font-size-xs);color:var(--color-info-700);opacity:.7">#3b82f6</div>
+    </div>
+  </div>
+</section>
+
+<!-- TYPOGRAPHY -->
+<section id="typography" class="component-section">
+  <h2 class="component-title">Typography</h2>
+  <p class="component-desc">Two typeface families: <strong>Playfair Display</strong> for editorial display headings and <strong>Inter</strong> for UI body text — evoking luxury with clarity.</p>
+  <div class="preview-box preview-box-white">
+    <div style="font-family:var(--font-family-display);font-size:3.75rem;font-weight:900;line-height:1.1;color:var(--color-text-primary);margin-bottom:var(--space-2)">Display Heading</div>
+    <div style="font-family:var(--font-family-display);font-size:2.25rem;font-weight:700;line-height:1.2;color:var(--color-text-primary);margin-bottom:var(--space-2)">H1 — Heading Level 1</div>
+    <div style="font-family:var(--font-family-display);font-size:1.875rem;font-weight:600;line-height:1.3;color:var(--color-text-primary);margin-bottom:var(--space-2)">H2 — Heading Level 2</div>
+    <div style="font-size:1.5rem;font-weight:600;line-height:1.375;color:var(--color-text-primary);margin-bottom:var(--space-2)">H3 — Heading Level 3</div>
+    <div style="font-size:1.25rem;font-weight:500;line-height:1.5;color:var(--color-text-primary);margin-bottom:var(--space-2)">H4 — Heading Level 4</div>
+    <div style="font-size:1.125rem;line-height:1.625;color:var(--color-text-secondary);margin-bottom:var(--space-2)">Body Large — The quick brown fox jumps over the lazy dog. Fashion starts with great typography.</div>
+    <div style="font-size:1rem;line-height:1.5;color:var(--color-text-secondary);margin-bottom:var(--space-2)">Body — Clean, readable body text at 16px with comfortable line height for long-form reading on all devices.</div>
+    <div style="font-size:0.875rem;line-height:1.5;color:var(--color-text-secondary);margin-bottom:var(--space-2)">Body Small — Supporting text, descriptions, and secondary content. Used for metadata and product details.</div>
+    <div style="font-size:0.75rem;line-height:1.5;color:var(--color-text-tertiary);margin-bottom:var(--space-2)">Caption — Timestamps, labels, and fine print</div>
+    <div style="font-size:0.75rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--color-text-tertiary)">OVERLINE — CATEGORY LABELS</div>
+  </div>
+</section>
+
+<!-- BUTTONS -->
+<section id="buttons" class="component-section">
+  <h2 class="component-title">Buttons</h2>
+  <p class="component-desc">Buttons communicate actions. Use primary for the main call to action, secondary for supporting actions, and ghost for tertiary options.</p>
+  <div class="preview-box">
+    <div class="subsection-title">Variants</div>
+    <div class="preview-row">
+      <button class="btn btn-primary">Primary</button>
+      <button class="btn btn-secondary">Secondary</button>
+      <button class="btn btn-ghost">Ghost</button>
+      <button class="btn btn-neutral">Neutral</button>
+      <button class="btn btn-danger">Danger</button>
+    </div>
+    <div class="subsection-title">Sizes</div>
+    <div class="preview-row" style="align-items:flex-end">
+      <button class="btn btn-primary btn-sm">Small</button>
+      <button class="btn btn-primary">Medium</button>
+      <button class="btn btn-primary btn-lg">Large</button>
+      <button class="btn btn-primary btn-xl">X-Large</button>
+    </div>
+    <div class="subsection-title">States</div>
+    <div class="preview-row">
+      <button class="btn btn-primary">Default</button>
+      <button class="btn btn-primary" disabled>Disabled</button>
+      <button class="btn btn-primary btn-full" style="max-width:220px">Full Width</button>
+    </div>
+    <div class="subsection-title">With Icons</div>
+    <div class="preview-row">
+      <button class="btn btn-primary"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4.5 12.75l6 6 9-13.5"/></svg>Confirm Order</button>
+      <button class="btn btn-secondary"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"/></svg>Wishlist</button>
+      <button class="btn btn-ghost"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7.217 10.907a2.25 2.25 0 100 2.186m0-2.186c.18.324.283.696.283 1.093s-.103.77-.283 1.093m0-2.186l9.566-5.314m-9.566 7.5l9.566 5.314m0 0a2.25 2.25 0 103.935 2.186 2.25 2.25 0 00-3.935-2.186zm0-12.814a2.25 2.25 0 103.933-2.185 2.25 2.25 0 00-3.933 2.185z"/></svg>Share</button>
+    </div>
+    <div class="subsection-title">Icon-Only</div>
+    <div class="preview-row">
+      <button class="btn btn-primary btn-icon btn-sm" title="Add to cart"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"/></svg></button>
+      <button class="btn btn-primary btn-icon" title="Add to cart"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"/></svg></button>
+      <button class="btn btn-secondary btn-icon"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"/></svg></button>
+      <button class="btn btn-ghost btn-icon"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM12.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM18.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"/></svg></button>
+    </div>
+  </div>
+</section>
+
+<!-- BADGES -->
+<section id="badges" class="component-section">
+  <h2 class="component-title">Badges</h2>
+  <p class="component-desc">Compact labels for status, categories, and counts. Used extensively on product cards for sale tags, new arrivals, and condition labels.</p>
+  <div class="preview-box">
+    <div class="subsection-title">Color Variants</div>
+    <div class="preview-row">
+      <span class="badge badge-brand">Brand New</span>
+      <span class="badge badge-neutral">Used</span>
+      <span class="badge badge-success">In Stock</span>
+      <span class="badge badge-warning">Low Stock</span>
+      <span class="badge badge-error">SALE</span>
+      <span class="badge badge-info">New Arrival</span>
+      <span class="badge badge-solid">HOT</span>
+    </div>
+    <div class="subsection-title">With Dot Indicator</div>
+    <div class="preview-row">
+      <span class="badge badge-success"><span class="badge-dot" style="background:var(--color-success-500)"></span>Available</span>
+      <span class="badge badge-error"><span class="badge-dot" style="background:var(--color-error-500)"></span>Sold Out</span>
+      <span class="badge badge-warning"><span class="badge-dot" style="background:var(--color-warning-500)"></span>Reserved</span>
+    </div>
+    <div class="subsection-title">Fashion Labels</div>
+    <div class="preview-row">
+      <span class="badge badge-brand badge-lg">LIMITED EDITION</span>
+      <span class="badge badge-neutral badge-lg">AUTHENTIC</span>
+      <span class="badge badge-error badge-lg">-30% OFF</span>
+      <span class="badge badge-success badge-lg">FREE SHIPPING</span>
+    </div>
+  </div>
+</section>
+
+<!-- TAGS -->
+<section id="tags" class="component-section">
+  <h2 class="component-title">Tags &amp; Chips</h2>
+  <p class="component-desc">Interactive filter chips for categories, sizes, brands, and attributes. Tap to toggle, supports active state and close button.</p>
+  <div class="preview-box">
+    <div class="subsection-title">Category Tags</div>
+    <div class="preview-row wrap">
+      <span class="tag active">All</span>
+      <span class="tag">Tops</span>
+      <span class="tag">Bottoms</span>
+      <span class="tag">Dresses</span>
+      <span class="tag">Outerwear</span>
+      <span class="tag">Shoes</span>
+      <span class="tag">Accessories</span>
+      <span class="tag">Bags</span>
+    </div>
+    <div class="subsection-title">Filter Chips with Remove</div>
+    <div class="preview-row wrap">
+      <span class="tag active">Brand: Zara<span class="tag-close">&#x2715;</span></span>
+      <span class="tag active">Size: M<span class="tag-close">&#x2715;</span></span>
+      <span class="tag active">Color: Black<span class="tag-close">&#x2715;</span></span>
+      <span class="tag active">Under ¥5,000<span class="tag-close">&#x2715;</span></span>
+    </div>
+  </div>
+</section>
+
+<!-- CARDS -->
+<section id="cards" class="component-section">
+  <h2 class="component-title">Cards</h2>
+  <p class="component-desc">Flexible containers for grouping related content. Used for seller profiles, reviews, announcements, and informational content.</p>
+  <div class="preview-box preview-box-white">
+    <div class="grid grid-3">
+      <div class="card">
+        <div class="card-header"><strong style="font-size:var(--font-size-sm)">Seller Info</strong></div>
+        <div class="card-body">
+          <div class="flex items-center gap-3" style="margin-bottom:var(--space-4)">
+            <div class="avatar avatar-md">YK</div>
+            <div>
+              <div style="font-weight:600;font-size:var(--font-size-sm)">Yuki_Style</div>
+              <div style="font-size:var(--font-size-xs);color:var(--color-text-tertiary)">⭐ 4.9 · 312 sales</div>
+            </div>
+          </div>
+          <p style="font-size:var(--font-size-xs);color:var(--color-text-secondary)">Tokyo-based fashion curator. Authentic luxury items, all verified.</p>
+        </div>
+        <div class="card-footer">
+          <button class="btn btn-secondary btn-sm btn-full">View Profile</button>
+        </div>
+      </div>
+      <div class="card card-flat">
+        <div class="card-body">
+          <span class="badge badge-brand" style="margin-bottom:var(--space-3)">Featured</span>
+          <div class="text-h4" style="margin-bottom:var(--space-2)">Summer Sale</div>
+          <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary);margin-bottom:var(--space-4)">Up to 50% off selected vintage and preloved fashion items.</p>
+          <button class="btn btn-primary btn-sm">Shop Now</button>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <div style="font-size:1.5rem;margin-bottom:var(--space-3)">📦</div>
+          <div style="font-weight:600;margin-bottom:var(--space-2)">Track Shipment</div>
+          <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary);margin-bottom:var(--space-4)">Your order #RK-2048 is on its way!</p>
+          <div class="progress"><div class="progress-bar" style="width:65%"></div></div>
+          <div style="display:flex;justify-content:space-between;font-size:var(--font-size-xs);color:var(--color-text-tertiary);margin-top:var(--space-2)"><span>Shipped</span><span>In Transit</span><span>Delivered</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCT CARD -->
+<section id="product-card" class="component-section">
+  <h2 class="component-title">Product Card</h2>
+  <p class="component-desc">The core commerce unit. Optimized for C2C fashion listings with image hover, wishlist actions, badge overlays, and price display including discount states.</p>
+  <div class="preview-box">
+    <div class="grid grid-4" style="gap:var(--space-5)">
+
+      <div class="product-card">
+        <div class="product-card-image" style="background:linear-gradient(145deg,#fce7f3,#fbcfe8)">
+          <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:5rem">👗</div>
+          <div class="product-card-badges">
+            <span class="badge badge-error">-25%</span>
+            <span class="badge badge-brand">LIKE NEW</span>
+          </div>
+          <div class="product-card-actions">
+            <button class="product-card-action-btn" title="Wishlist"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"/></svg></button>
+          </div>
+        </div>
+        <div class="product-card-body">
+          <div class="product-card-brand">Zara</div>
+          <div class="product-card-name">Floral Wrap Midi Dress</div>
+          <div class="product-card-price">
+            <span class="price-current">¥3,500</span>
+            <span class="price-original">¥4,700</span>
+            <span class="price-discount">-25%</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-card-image" style="background:linear-gradient(145deg,#171717,#404040)">
+          <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:5rem">👜</div>
+          <div class="product-card-badges">
+            <span class="badge badge-neutral">AUTHENTIC</span>
+          </div>
+          <div class="product-card-actions">
+            <button class="product-card-action-btn" title="Wishlist"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"/></svg></button>
+            <button class="product-card-action-btn" title="Quick view"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z"/><path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg></button>
+          </div>
+        </div>
+        <div class="product-card-body">
+          <div class="product-card-brand">Coach</div>
+          <div class="product-card-name">Tabby Shoulder Bag 26</div>
+          <div class="product-card-price">
+            <span class="price-current">¥38,000</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-card-image" style="background:linear-gradient(145deg,#fffbeb,#fde68a)">
+          <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:5rem">👟</div>
+          <div class="product-card-badges">
+            <span class="badge badge-success">NEW</span>
+          </div>
+          <div class="product-card-actions">
+            <button class="product-card-action-btn" title="Wishlist"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"/></svg></button>
+          </div>
+        </div>
+        <div class="product-card-body">
+          <div class="product-card-brand">Nike</div>
+          <div class="product-card-name">Air Force 1 Low White</div>
+          <div class="product-card-price">
+            <span class="price-current">¥12,800</span>
+            <span class="price-original">¥15,500</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-card-image" style="background:linear-gradient(145deg,#eff6ff,#bfdbfe)">
+          <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:5rem">🧥</div>
+          <div class="product-card-badges">
+            <span class="badge badge-error">LAST 1</span>
+          </div>
+          <div class="product-card-actions">
+            <button class="product-card-action-btn" title="Wishlist"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"/></svg></button>
+          </div>
+        </div>
+        <div class="product-card-body">
+          <div class="product-card-brand">Uniqlo</div>
+          <div class="product-card-name">Wool Blend Overcoat Camel</div>
+          <div class="product-card-price">
+            <span class="price-current">¥8,900</span>
+            <span class="price-original">¥19,900</span>
+            <span class="price-discount">-55%</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FORMS -->
+<section id="forms" class="component-section">
+  <h2 class="component-title">Forms</h2>
+  <p class="component-desc">Form controls for listing items, registration, search, and checkout flows. All inputs support focus, error, success, and disabled states.</p>
+  <div class="preview-box preview-box-white">
+    <div class="grid grid-2" style="gap:var(--space-8)">
+      <div>
+        <div class="subsection-title" style="margin-top:0">Text Inputs</div>
+        <div class="form-group" style="margin-bottom:var(--space-4)">
+          <label class="form-label form-label-required">Item Name</label>
+          <input type="text" class="form-input" placeholder="e.g. Zara Floral Midi Dress">
+          <div class="form-hint">Be descriptive — include brand, color, and style</div>
+        </div>
+        <div class="form-group" style="margin-bottom:var(--space-4)">
+          <label class="form-label">Description</label>
+          <textarea class="form-input" rows="3" placeholder="Describe condition, measurements, and any flaws..."></textarea>
+        </div>
+        <div class="form-group" style="margin-bottom:var(--space-4)">
+          <label class="form-label form-label-required">Price (¥)</label>
+          <div class="input-group">
+            <span class="input-addon input-addon-left" style="font-size:var(--font-size-sm);font-weight:600">¥</span>
+            <input type="number" class="form-input" placeholder="0" style="padding-left:2rem">
+          </div>
+        </div>
+        <div class="form-group" style="margin-bottom:0">
+          <label class="form-label">Error State</label>
+          <input type="email" class="form-input error" value="invalid@email" placeholder="Email">
+          <div class="form-error">Please enter a valid email address</div>
+        </div>
+      </div>
+      <div>
+        <div class="subsection-title" style="margin-top:0">Select &amp; Search</div>
+        <div class="form-group" style="margin-bottom:var(--space-4)">
+          <label class="form-label">Category</label>
+          <select class="form-input form-select">
+            <option value="">Choose a category</option>
+            <option>Tops &amp; Shirts</option>
+            <option>Dresses</option>
+            <option>Bottoms</option>
+            <option>Outerwear</option>
+            <option>Shoes</option>
+            <option>Bags</option>
+            <option>Accessories</option>
+          </select>
+        </div>
+        <div class="form-group" style="margin-bottom:var(--space-4)">
+          <label class="form-label">Search</label>
+          <div class="input-group">
+            <span class="input-addon input-addon-left"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></span>
+            <input type="search" class="form-input" placeholder="Search items, brands, users..." style="padding-left:2.5rem">
+          </div>
+        </div>
+        <div class="form-group" style="margin-bottom:var(--space-4)">
+          <label class="form-label">Condition</label>
+          <select class="form-input form-select">
+            <option>Brand New (with tags)</option>
+            <option selected>Like New</option>
+            <option>Good</option>
+            <option>Acceptable</option>
+          </select>
+        </div>
+        <div class="form-group" style="margin-bottom:0">
+          <label class="form-label">Disabled Input</label>
+          <input type="text" class="form-input" value="Not editable" disabled>
+          <div class="form-hint">This field cannot be changed</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AVATAR -->
+<section id="avatar" class="component-section">
+  <h2 class="component-title">Avatar</h2>
+  <p class="component-desc">Represents users and sellers. Supports images, initials fallback, six sizes, and grouped avatar stacks for social proof.</p>
+  <div class="preview-box">
+    <div class="subsection-title">Sizes</div>
+    <div class="preview-row" style="align-items:flex-end">
+      <div class="avatar avatar-xs">YK</div>
+      <div class="avatar avatar-sm">MN</div>
+      <div class="avatar avatar-md">RK</div>
+      <div class="avatar avatar-lg">AS</div>
+      <div class="avatar avatar-xl">TH</div>
+      <div class="avatar avatar-2xl">FK</div>
+    </div>
+    <div class="subsection-title">With Image</div>
+    <div class="preview-row">
+      <div class="avatar avatar-lg" style="background:linear-gradient(135deg,#db2777,#9d174d);color:#fff;font-size:1rem;font-weight:700">YK</div>
+      <div class="avatar avatar-lg" style="background:linear-gradient(135deg,#f59e0b,#d97706);color:#fff;font-size:1rem;font-weight:700">MN</div>
+      <div class="avatar avatar-lg" style="background:linear-gradient(135deg,#3b82f6,#1d4ed8);color:#fff;font-size:1rem;font-weight:700">RK</div>
+      <div class="avatar avatar-lg" style="background:linear-gradient(135deg,#22c55e,#15803d);color:#fff;font-size:1rem;font-weight:700">AS</div>
+      <div class="avatar avatar-lg" style="background:linear-gradient(135deg,#a855f7,#7c3aed);color:#fff;font-size:1rem;font-weight:700">TH</div>
+    </div>
+    <div class="subsection-title">Avatar Group</div>
+    <div class="preview-row">
+      <div class="avatar-group">
+        <div class="avatar avatar-md" style="background:linear-gradient(135deg,#db2777,#9d174d);color:#fff;font-weight:700">YK</div>
+        <div class="avatar avatar-md" style="background:linear-gradient(135deg,#f59e0b,#d97706);color:#fff;font-weight:700">MN</div>
+        <div class="avatar avatar-md" style="background:linear-gradient(135deg,#3b82f6,#1d4ed8);color:#fff;font-weight:700">RK</div>
+        <div class="avatar avatar-md" style="background:linear-gradient(135deg,#22c55e,#15803d);color:#fff;font-weight:700">AS</div>
+        <div class="avatar avatar-md" style="background:var(--color-neutral-200);color:var(--color-text-secondary);font-size:var(--font-size-xs);font-weight:600">+12</div>
+      </div>
+      <span style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">15 people are watching this</span>
+    </div>
+  </div>
+</section>
+
+<!-- ALERTS -->
+<section id="alerts" class="component-section">
+  <h2 class="component-title">Alerts</h2>
+  <p class="component-desc">Contextual feedback messages for user actions, system status, and important notifications. Each variant carries clear semantic meaning.</p>
+  <div class="preview-box preview-box-white">
+    <div class="alert alert-success" style="margin-bottom:var(--space-3)">
+      <svg class="alert-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+      <div class="alert-content"><div class="alert-title">Payment Confirmed</div>Your payment of ¥3,500 has been processed. Tracking details will be emailed shortly.</div>
+    </div>
+    <div class="alert alert-warning" style="margin-bottom:var(--space-3)">
+      <svg class="alert-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"/></svg>
+      <div class="alert-content"><div class="alert-title">Item Selling Fast</div>Only 1 left in stock. 8 other shoppers have this in their wishlist right now.</div>
+    </div>
+    <div class="alert alert-error" style="margin-bottom:var(--space-3)">
+      <svg class="alert-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z"/></svg>
+      <div class="alert-content"><div class="alert-title">Upload Failed</div>Image file exceeds 10MB limit. Please compress and retry.</div>
+    </div>
+    <div class="alert alert-info" style="margin-bottom:var(--space-3)">
+      <svg class="alert-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"/></svg>
+      <div class="alert-content"><div class="alert-title">Identity Verification</div>Complete ID verification to unlock selling limits above ¥50,000 per month.</div>
+    </div>
+    <div class="alert alert-brand">
+      <svg class="alert-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z"/></svg>
+      <div class="alert-content"><div class="alert-title">Rakuma Premium</div>Upgrade to Premium for boosted listings, lower fees, and priority customer support.</div>
+    </div>
+  </div>
+</section>
+
+<!-- TABS -->
+<section id="tabs" class="component-section">
+  <h2 class="component-title">Tabs</h2>
+  <p class="component-desc">Horizontal navigation for switching views on product pages, seller profiles, and settings panels.</p>
+  <div class="preview-box preview-box-white">
+    <div class="tabs">
+      <div class="tab active">Item Details</div>
+      <div class="tab">Size Guide</div>
+      <div class="tab">Seller Info</div>
+      <div class="tab">Reviews (24)</div>
+      <div class="tab">Related Items</div>
+    </div>
+    <div style="padding:var(--space-6) 0">
+      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary);line-height:var(--line-height-relaxed)">ZARA Floral Wrap Midi Dress in rose pink. Worn once to a wedding, excellent condition. Original price ¥9,900. Soft viscose fabric, adjustable tie waist. Fits true to size.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRESS -->
+<section id="progress" class="component-section">
+  <h2 class="component-title">Progress</h2>
+  <p class="component-desc">Visual progress indicators for shipping status, profile completion, upload progress, and goal tracking.</p>
+  <div class="preview-box">
+    <div style="display:flex;flex-direction:column;gap:var(--space-5);max-width:480px">
+      <div>
+        <div style="display:flex;justify-content:space-between;font-size:var(--font-size-xs);margin-bottom:var(--space-2);color:var(--color-text-secondary)"><span>Profile Complete</span><span style="font-weight:600;color:var(--color-success-700)">80%</span></div>
+        <div class="progress"><div class="progress-bar" style="width:80%;background:var(--color-success-500)"></div></div>
+      </div>
+      <div>
+        <div style="display:flex;justify-content:space-between;font-size:var(--font-size-xs);margin-bottom:var(--space-2);color:var(--color-text-secondary)"><span>Uploading Photos</span><span style="font-weight:600">45%</span></div>
+        <div class="progress"><div class="progress-bar" style="width:45%"></div></div>
+      </div>
+      <div>
+        <div style="display:flex;justify-content:space-between;font-size:var(--font-size-xs);margin-bottom:var(--space-2);color:var(--color-text-secondary)"><span>Monthly Sales Goal</span><span style="font-weight:600;color:var(--color-warning-700)">¥32,000 / ¥50,000</span></div>
+        <div class="progress progress-lg"><div class="progress-bar" style="width:64%;background:var(--color-warning-500)"></div></div>
+      </div>
+      <div>
+        <div style="display:flex;justify-content:space-between;font-size:var(--font-size-xs);margin-bottom:var(--space-2);color:var(--color-text-secondary)"><span>Storage Used</span><span style="font-weight:600;color:var(--color-error-700)">92%</span></div>
+        <div class="progress progress-sm"><div class="progress-bar" style="width:92%;background:var(--color-error-500)"></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NAVIGATION -->
+<section id="navigation" class="component-section">
+  <h2 class="component-title">Navigation</h2>
+  <p class="component-desc">Sticky header navigation with brand identity, nav links, and action buttons. Breadcrumbs for deep page hierarchy.</p>
+  <div class="preview-box preview-box-white" style="padding:0;overflow:hidden">
+    <nav class="navbar" style="position:relative">
+      <div class="navbar-brand">Rakuma</div>
+      <div class="navbar-nav">
+        <a class="nav-link active" href="#">Home</a>
+        <a class="nav-link" href="#">Browse</a>
+        <a class="nav-link" href="#">Sell</a>
+        <a class="nav-link" href="#">Messages</a>
+      </div>
+      <div class="navbar-actions">
+        <button class="btn btn-ghost btn-icon btn-sm"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></button>
+        <button class="btn btn-ghost btn-icon btn-sm"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"/></svg></button>
+        <button class="btn btn-primary btn-sm">List Item</button>
+        <div class="avatar avatar-sm" style="background:linear-gradient(135deg,#db2777,#9d174d);color:#fff;cursor:pointer">YK</div>
+      </div>
+    </nav>
+    <div style="padding:var(--space-5) var(--space-8)">
+      <div class="breadcrumb">
+        <span class="breadcrumb-item"><a href="#">Home</a></span>
+        <span class="breadcrumb-sep">&#8250;</span>
+        <span class="breadcrumb-item"><a href="#">Dresses</a></span>
+        <span class="breadcrumb-sep">&#8250;</span>
+        <span class="breadcrumb-item"><a href="#">Midi Dresses</a></span>
+        <span class="breadcrumb-sep">&#8250;</span>
+        <span class="breadcrumb-item active">Floral Wrap Midi Dress</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RATING -->
+<section id="rating" class="component-section">
+  <h2 class="component-title">Rating</h2>
+  <p class="component-desc">Star rating system for seller reviews and product quality scores.</p>
+  <div class="preview-box">
+    <div class="preview-row">
+      <div class="rating"><span class="star filled">&#9733;</span><span class="star filled">&#9733;</span><span class="star filled">&#9733;</span><span class="star filled">&#9733;</span><span class="star filled">&#9733;</span></div>
+      <span style="font-size:var(--font-size-sm);font-weight:600">5.0</span>
+      <span style="font-size:var(--font-size-sm);color:var(--color-text-tertiary)">(312 reviews)</span>
+    </div>
+    <div class="preview-row">
+      <div class="rating"><span class="star filled">&#9733;</span><span class="star filled">&#9733;</span><span class="star filled">&#9733;</span><span class="star filled">&#9733;</span><span class="star">&#9733;</span></div>
+      <span style="font-size:var(--font-size-sm);font-weight:600">4.0</span>
+    </div>
+    <div class="preview-row">
+      <div class="rating"><span class="star filled">&#9733;</span><span class="star filled">&#9733;</span><span class="star filled">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span></div>
+      <span style="font-size:var(--font-size-sm);font-weight:600">3.0</span>
+    </div>
+  </div>
+</section>
+
+<!-- SELECTORS -->
+<section id="selectors" class="component-section">
+  <h2 class="component-title">Size &amp; Color Selectors</h2>
+  <p class="component-desc">Fashion-specific interactive selectors for size picking and color/material options on product detail pages.</p>
+  <div class="preview-box preview-box-white">
+    <div class="grid grid-2" style="gap:var(--space-10)">
+      <div>
+        <div class="subsection-title" style="margin-top:0">Size Selector</div>
+        <div class="form-group" style="margin-bottom:var(--space-4)">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:var(--space-3)">
+            <span style="font-size:var(--font-size-sm);font-weight:var(--font-weight-medium)">Select Size</span>
+            <a href="#" style="font-size:var(--font-size-xs);color:var(--color-primary)">Size Guide</a>
+          </div>
+          <div class="size-grid">
+            <div class="size-btn disabled">XS</div>
+            <div class="size-btn">S</div>
+            <div class="size-btn active">M</div>
+            <div class="size-btn">L</div>
+            <div class="size-btn">XL</div>
+            <div class="size-btn disabled">XXL</div>
+          </div>
+          <div style="margin-top:var(--space-3);font-size:var(--font-size-xs);color:var(--color-text-tertiary)">Strikethrough = sold out &nbsp;·&nbsp; Highlighted = selected</div>
+        </div>
+        <div>
+          <div style="font-size:var(--font-size-sm);font-weight:var(--font-weight-medium);margin-bottom:var(--space-3)">Shoe Size</div>
+          <div class="size-grid">
+            <div class="size-btn">22</div>
+            <div class="size-btn">22.5</div>
+            <div class="size-btn disabled">23</div>
+            <div class="size-btn active">23.5</div>
+            <div class="size-btn">24</div>
+            <div class="size-btn">24.5</div>
+            <div class="size-btn">25</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="subsection-title" style="margin-top:0">Color Selector</div>
+        <div style="margin-bottom:var(--space-5)">
+          <div style="font-size:var(--font-size-sm);font-weight:var(--font-weight-medium);margin-bottom:var(--space-3)">Color: <span style="color:var(--color-text-secondary)">Rose Pink</span></div>
+          <div class="color-swatches">
+            <div class="swatch active swatch-rose" title="Rose Pink" style="background:#db2777"></div>
+            <div class="swatch swatch-pink" title="Hot Pink" style="background:#ec4899"></div>
+            <div class="swatch" title="Black" style="background:#171717"></div>
+            <div class="swatch" title="Ivory" style="background:#fdf8f0;border:1px solid var(--color-border-default)"></div>
+            <div class="swatch" title="Navy" style="background:#1e3a5f"></div>
+            <div class="swatch" title="Sage Green" style="background:#7a9e7e"></div>
+            <div class="swatch" title="Camel" style="background:#c19a6b"></div>
+            <div class="swatch" title="Dusty Rose" style="background:#d4a5a5"></div>
+          </div>
+        </div>
+        <div>
+          <div style="font-size:var(--font-size-sm);font-weight:var(--font-weight-medium);margin-bottom:var(--space-3)">Material</div>
+          <div class="size-grid" style="flex-wrap:wrap">
+            <div class="size-btn active" style="min-width:auto;padding:.4rem .75rem">Viscose</div>
+            <div class="size-btn" style="min-width:auto;padding:.4rem .75rem">Cotton</div>
+            <div class="size-btn" style="min-width:auto;padding:.4rem .75rem">Silk</div>
+            <div class="size-btn" style="min-width:auto;padding:.4rem .75rem">Linen</div>
+            <div class="size-btn" style="min-width:auto;padding:.4rem .75rem">Polyester</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKELETON -->
+<section id="skeleton" class="component-section">
+  <h2 class="component-title">Skeleton Loader</h2>
+  <p class="component-desc">Shimmer placeholders that display while content is loading — reduces perceived wait time and prevents layout shift.</p>
+  <div class="preview-box">
+    <div class="grid grid-4">
+      <div>
+        <div class="skeleton" style="aspect-ratio:3/4;border-radius:var(--radius-2xl);margin-bottom:var(--space-3)"></div>
+        <div class="skeleton skeleton-text" style="width:60%;margin-bottom:var(--space-2)"></div>
+        <div class="skeleton skeleton-text" style="width:80%;margin-bottom:var(--space-2)"></div>
+        <div class="skeleton skeleton-text" style="width:40%"></div>
+      </div>
+      <div>
+        <div class="skeleton" style="aspect-ratio:3/4;border-radius:var(--radius-2xl);margin-bottom:var(--space-3)"></div>
+        <div class="skeleton skeleton-text" style="width:70%;margin-bottom:var(--space-2)"></div>
+        <div class="skeleton skeleton-text" style="width:90%;margin-bottom:var(--space-2)"></div>
+        <div class="skeleton skeleton-text" style="width:50%"></div>
+      </div>
+      <div>
+        <div style="display:flex;gap:var(--space-3);align-items:center;margin-bottom:var(--space-4)">
+          <div class="skeleton skeleton-circle" style="width:2.5rem;height:2.5rem;flex-shrink:0"></div>
+          <div style="flex:1">
+            <div class="skeleton skeleton-text" style="width:60%;margin-bottom:var(--space-2)"></div>
+            <div class="skeleton skeleton-text" style="width:40%"></div>
+          </div>
+        </div>
+        <div class="skeleton" style="width:100%;height:8rem;border-radius:var(--radius-xl);margin-bottom:var(--space-3)"></div>
+        <div class="skeleton skeleton-text" style="width:100%;margin-bottom:var(--space-2)"></div>
+        <div class="skeleton skeleton-text" style="width:80%;margin-bottom:var(--space-2)"></div>
+        <div class="skeleton skeleton-text" style="width:60%"></div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:var(--space-3)">
+        <div style="display:flex;gap:var(--space-3);align-items:center">
+          <div class="skeleton skeleton-circle" style="width:2rem;height:2rem;flex-shrink:0"></div>
+          <div style="flex:1"><div class="skeleton skeleton-text" style="width:70%"></div></div>
+        </div>
+        <div style="display:flex;gap:var(--space-3);align-items:center">
+          <div class="skeleton skeleton-circle" style="width:2rem;height:2rem;flex-shrink:0"></div>
+          <div style="flex:1"><div class="skeleton skeleton-text" style="width:50%"></div></div>
+        </div>
+        <div style="display:flex;gap:var(--space-3);align-items:center">
+          <div class="skeleton skeleton-circle" style="width:2rem;height:2rem;flex-shrink:0"></div>
+          <div style="flex:1"><div class="skeleton skeleton-text" style="width:80%"></div></div>
+        </div>
+        <div class="skeleton" style="width:100%;height:.5rem;border-radius:var(--radius-full);margin-top:var(--space-2)"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MODAL -->
+<section id="modals" class="component-section">
+  <h2 class="component-title">Modals</h2>
+  <p class="component-desc">Dialog overlays for confirmations, item quick-views, image galleries, and critical user decisions.</p>
+  <div class="preview-box preview-box-white">
+    <div style="position:relative;background:var(--color-bg-overlay);border-radius:var(--radius-2xl);padding:var(--space-8);display:flex;align-items:center;justify-content:center;min-height:320px">
+      <div class="modal" style="position:relative;animation:none;max-width:400px">
+        <div class="modal-header">
+          <div class="modal-title">Confirm Purchase</div>
+          <button class="modal-close" aria-label="Close">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12"/></svg>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div style="display:flex;gap:var(--space-4);margin-bottom:var(--space-5)">
+            <div style="width:5rem;height:5rem;background:linear-gradient(135deg,#fce7f3,#fbcfe8);border-radius:var(--radius-xl);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:2rem">👗</div>
+            <div>
+              <div style="font-size:var(--font-size-xs);color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:.06em">Zara</div>
+              <div style="font-weight:600;margin-bottom:var(--space-1)">Floral Wrap Midi Dress</div>
+              <div style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Size M &nbsp;·&nbsp; Like New</div>
+            </div>
+          </div>
+          <div style="background:var(--color-bg-subtle);border-radius:var(--radius-xl);padding:var(--space-4)">
+            <div style="display:flex;justify-content:space-between;font-size:var(--font-size-sm);margin-bottom:var(--space-2)"><span style="color:var(--color-text-secondary)">Item price</span><span>¥3,500</span></div>
+            <div style="display:flex;justify-content:space-between;font-size:var(--font-size-sm);margin-bottom:var(--space-2)"><span style="color:var(--color-text-secondary)">Shipping</span><span style="color:var(--color-success-700)">Free</span></div>
+            <div style="border-top:1px solid var(--color-border-default);margin-top:var(--space-3);padding-top:var(--space-3);display:flex;justify-content:space-between;font-weight:700"><span>Total</span><span>¥3,500</span></div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-ghost btn-sm">Cancel</button>
+          <button class="btn btn-primary btn-sm">Confirm &amp; Pay</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOAST -->
+<section id="toast" class="component-section">
+  <h2 class="component-title">Toast Notifications</h2>
+  <p class="component-desc">Ephemeral feedback messages that appear at the bottom-right. Auto-dismiss after a few seconds with slide-in animation.</p>
+  <div class="preview-box preview-box-white">
+    <div style="display:flex;flex-direction:column;gap:var(--space-3);max-width:360px">
+      <div class="toast" style="animation:none">
+        <svg class="toast-icon" style="color:var(--color-success-500);flex-shrink:0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        <div class="toast-body"><div class="toast-title">Item Listed!</div><div class="toast-message">Your Zara Dress is now live on Rakuma.</div></div>
+        <button class="toast-close"><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12"/></svg></button>
+      </div>
+      <div class="toast" style="animation:none">
+        <svg class="toast-icon" style="color:var(--color-primary);flex-shrink:0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"/></svg>
+        <div class="toast-body"><div class="toast-title">Added to Wishlist</div><div class="toast-message">Coach Tabby Bag saved to your favourites.</div></div>
+        <button class="toast-close"><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12"/></svg></button>
+      </div>
+      <div class="toast" style="animation:none">
+        <svg class="toast-icon" style="color:var(--color-warning-500);flex-shrink:0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"/></svg>
+        <div class="toast-body"><div class="toast-title">Offer Received</div><div class="toast-message">Someone offered ¥2,800 on your Air Force 1s.</div></div>
+        <button class="toast-close"><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12"/></svg></button>
+      </div>
+      <div class="toast" style="animation:none">
+        <svg class="toast-icon" style="color:var(--color-error-500);flex-shrink:0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z"/></svg>
+        <div class="toast-body"><div class="toast-title">Payment Failed</div><div class="toast-message">Card declined. Please check your details.</div></div>
+        <button class="toast-close"><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12"/></svg></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCT LISTING PATTERN -->
+<section id="product-listing" class="component-section">
+  <h2 class="component-title">Product Listing Page Pattern</h2>
+  <p class="component-desc">A composed pattern combining filters, tags, grid layout, and product cards — representing a full category browse page.</p>
+  <div class="preview-box" style="padding:var(--space-6)">
+    <!-- search + filters row -->
+    <div style="display:flex;gap:var(--space-3);margin-bottom:var(--space-5);flex-wrap:wrap;align-items:center">
+      <div class="input-group" style="flex:1;min-width:200px">
+        <span class="input-addon input-addon-left"><svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></span>
+        <input type="search" class="form-input" placeholder="Search dresses, brands..." style="padding-left:2.25rem">
+      </div>
+      <select class="form-input form-select" style="width:auto;min-width:140px">
+        <option>Sort: Recommended</option>
+        <option>Price: Low to High</option>
+        <option>Price: High to Low</option>
+        <option>Newest First</option>
+      </select>
+      <button class="btn btn-secondary btn-sm"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75"/></svg>Filters</button>
+    </div>
+    <!-- active filters -->
+    <div style="display:flex;gap:var(--space-2);flex-wrap:wrap;margin-bottom:var(--space-5)">
+      <span class="tag active">Dresses<span class="tag-close">&#x2715;</span></span>
+      <span class="tag active">Size M<span class="tag-close">&#x2715;</span></span>
+      <span class="tag active">Under ¥10,000<span class="tag-close">&#x2715;</span></span>
+      <span class="tag active">Like New<span class="tag-close">&#x2715;</span></span>
+      <button class="btn btn-ghost btn-sm" style="font-size:var(--font-size-xs)">Clear All</button>
+    </div>
+    <!-- results count -->
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:var(--space-5)">
+      <span style="font-size:var(--font-size-sm);color:var(--color-text-secondary)"><strong style="color:var(--color-text-primary)">248</strong> items found</span>
+      <div style="display:flex;gap:var(--space-2)">
+        <button class="btn btn-ghost btn-icon btn-sm" style="color:var(--color-primary)"><svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M3 3h7v7H3zM14 3h7v7h-7zM3 14h7v7H3zM14 14h7v7h-7z"/></svg></button>
+        <button class="btn btn-ghost btn-icon btn-sm"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5"/></svg></button>
+      </div>
+    </div>
+    <!-- product grid -->
+    <div class="grid grid-4" style="gap:var(--space-4)">
+      <div class="product-card"><div class="product-card-image" style="background:linear-gradient(145deg,#fce7f3,#fbcfe8)"><div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:4rem">👗</div><div class="product-card-badges"><span class="badge badge-error">-25%</span></div><div class="product-card-actions"><button class="product-card-action-btn"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"/></svg></button></div></div><div class="product-card-body"><div class="product-card-brand">Zara</div><div class="product-card-name">Floral Wrap Dress</div><div class="product-card-price"><span class="price-current">¥3,500</span><span class="price-original">¥4,700</span></div></div></div>
+      <div class="product-card"><div class="product-card-image" style="background:linear-gradient(145deg,#f5f3ff,#ddd6fe)"><div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:4rem">💜</div><div class="product-card-badges"><span class="badge badge-brand">NEW</span></div><div class="product-card-actions"><button class="product-card-action-btn"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"/></svg></button></div></div><div class="product-card-body"><div class="product-card-brand">H&amp;M</div><div class="product-card-name">Velvet Slip Dress</div><div class="product-card-price"><span class="price-current">¥2,200</span></div></div></div>
+      <div class="product-card"><div class="product-card-image" style="background:linear-gradient(145deg,#fff7ed,#fed7aa)"><div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:4rem">🧡</div><div class="product-card-actions"><button class="product-card-action-btn"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"/></svg></button></div></div><div class="product-card-body"><div class="product-card-brand">GU</div><div class="product-card-name">Linen Smock Dress</div><div class="product-card-price"><span class="price-current">¥1,800</span><span class="price-original">¥2,990</span></div></div></div>
+      <div class="product-card"><div class="product-card-image" style="background:linear-gradient(145deg,#f0fdf4,#bbf7d0)"><div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:4rem">💚</div><div class="product-card-badges"><span class="badge badge-success">LIKE NEW</span></div><div class="product-card-actions"><button class="product-card-action-btn"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"/></svg></button></div></div><div class="product-card-body"><div class="product-card-brand">Mango</div><div class="product-card-name">Emerald Satin Dress</div><div class="product-card-price"><span class="price-current">¥5,900</span><span class="price-original">¥9,999</span><span class="price-discount">-41%</span></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CHECKOUT PATTERN -->
+<section id="checkout" class="component-section">
+  <h2 class="component-title">Checkout Summary Pattern</h2>
+  <p class="component-desc">A composed purchase flow pattern using cards, forms, alerts, and buttons — as seen on the Rakuma order confirmation screen.</p>
+  <div class="preview-box preview-box-white">
+    <div class="grid grid-2" style="gap:var(--space-8)">
+      <!-- left: order items -->
+      <div>
+        <div style="font-size:var(--font-size-lg);font-weight:var(--font-weight-semibold);margin-bottom:var(--space-5)">Order Summary</div>
+        <!-- item 1 -->
+        <div style="display:flex;gap:var(--space-4);padding:var(--space-4) 0;border-bottom:1px solid var(--color-border-default)">
+          <div style="width:5rem;height:5rem;background:linear-gradient(135deg,#fce7f3,#fbcfe8);border-radius:var(--radius-xl);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:2rem">👗</div>
+          <div style="flex:1">
+            <div style="font-size:var(--font-size-xs);color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:.06em">Zara</div>
+            <div style="font-weight:600;font-size:var(--font-size-sm);margin-bottom:var(--space-1)">Floral Wrap Midi Dress</div>
+            <div style="font-size:var(--font-size-xs);color:var(--color-text-secondary)">Size M &nbsp;·&nbsp; Rose Pink &nbsp;·&nbsp; Like New</div>
+          </div>
+          <div style="font-weight:700;font-size:var(--font-size-md);white-space:nowrap">¥3,500</div>
+        </div>
+        <!-- item 2 -->
+        <div style="display:flex;gap:var(--space-4);padding:var(--space-4) 0;border-bottom:1px solid var(--color-border-default)">
+          <div style="width:5rem;height:5rem;background:linear-gradient(135deg,#171717,#404040);border-radius:var(--radius-xl);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:2rem">👟</div>
+          <div style="flex:1">
+            <div style="font-size:var(--font-size-xs);color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:.06em">Nike</div>
+            <div style="font-weight:600;font-size:var(--font-size-sm);margin-bottom:var(--space-1)">Air Force 1 Low White</div>
+            <div style="font-size:var(--font-size-xs);color:var(--color-text-secondary)">Size 24 &nbsp;·&nbsp; White &nbsp;·&nbsp; Good</div>
+          </div>
+          <div style="font-weight:700;font-size:var(--font-size-md);white-space:nowrap">¥12,800</div>
+        </div>
+        <!-- totals -->
+        <div style="padding:var(--space-5) 0">
+          <div style="display:flex;justify-content:space-between;font-size:var(--font-size-sm);color:var(--color-text-secondary);margin-bottom:var(--space-3)"><span>Subtotal (2 items)</span><span style="color:var(--color-text-primary)">¥16,300</span></div>
+          <div style="display:flex;justify-content:space-between;font-size:var(--font-size-sm);color:var(--color-text-secondary);margin-bottom:var(--space-3)"><span>Shipping</span><span style="color:var(--color-success-700);font-weight:500">Free</span></div>
+          <div style="display:flex;justify-content:space-between;font-size:var(--font-size-sm);color:var(--color-text-secondary);margin-bottom:var(--space-3)"><span>Rakuma Fee (3.5%)</span><span>¥570</span></div>
+          <div style="display:flex;justify-content:space-between;font-size:var(--font-size-sm);color:var(--color-error-700);margin-bottom:var(--space-4)"><span>Coupon: SUMMER10</span><span>-¥1,630</span></div>
+          <div style="border-top:2px solid var(--color-border-default);padding-top:var(--space-4);display:flex;justify-content:space-between;font-size:var(--font-size-xl);font-weight:var(--font-weight-bold)"><span>Total</span><span>¥15,240</span></div>
+        </div>
+        <div class="alert alert-success" style="margin-bottom:var(--space-4)">
+          <svg class="alert-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          <div class="alert-content">Coupon <strong>SUMMER10</strong> applied — you saved ¥1,630!</div>
+        </div>
+      </div>
+      <!-- right: payment -->
+      <div>
+        <div style="font-size:var(--font-size-lg);font-weight:var(--font-weight-semibold);margin-bottom:var(--space-5)">Payment Details</div>
+        <div class="form-group" style="margin-bottom:var(--space-4)">
+          <label class="form-label form-label-required">Card Number</label>
+          <div class="input-group">
+            <span class="input-addon input-addon-left"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg></span>
+            <input type="text" class="form-input" placeholder="1234 5678 9012 3456" style="padding-left:2.5rem">
+          </div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-4);margin-bottom:var(--space-4)">
+          <div class="form-group">
+            <label class="form-label form-label-required">Expiry</label>
+            <input type="text" class="form-input" placeholder="MM / YY">
+          </div>
+          <div class="form-group">
+            <label class="form-label form-label-required">CVV</label>
+            <input type="text" class="form-input" placeholder="•••">
+          </div>
+        </div>
+        <div class="form-group" style="margin-bottom:var(--space-5)">
+          <label class="form-label">Name on Card</label>
+          <input type="text" class="form-input" placeholder="YUKI KOBAYASHI">
+        </div>
+        <div style="background:var(--color-bg-subtle);border-radius:var(--radius-xl);padding:var(--space-4);margin-bottom:var(--space-5);display:flex;align-items:center;gap:var(--space-3)">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color:var(--color-success-500);flex-shrink:0"><path d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg>
+          <span style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">256-bit SSL encrypted. Your payment is secure.</span>
+        </div>
+        <button class="btn btn-primary btn-full btn-lg" style="margin-bottom:var(--space-3)">Pay ¥15,240</button>
+        <button class="btn btn-ghost btn-full btn-sm" style="color:var(--color-text-secondary)">← Back to cart</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+</div>
+
+<script>
+// Sidebar active link on scroll
+const sections = document.querySelectorAll("section[id]");
+const links = document.querySelectorAll(".docs-nav-link");
+const obs = new IntersectionObserver(function(entries) {
+  entries.forEach(function(e) {
+    if (e.isIntersecting) {
+      links.forEach(function(l) { l.classList.remove("active"); });
+      const id = e.target.id;
+      const active = document.querySelector(".docs-nav-link[href="#" + id + ""]");
+      if (active) active.classList.add("active");
+    }
+  });
+}, { rootMargin: "-30% 0px -60% 0px" });
+sections.forEach(function(s) { obs.observe(s); });
+
+// Smooth scroll
+links.forEach(function(link) {
+  link.addEventListener("click", function(e) {
+    e.preventDefault();
+    const target = document.querySelector(link.getAttribute("href"));
+    if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+});
+
+// Size selector toggle
+document.querySelectorAll(".size-btn:not(.disabled)").forEach(function(btn) {
+  btn.addEventListener("click", function() {
+    btn.parentElement.querySelectorAll(".size-btn").forEach(function(s) { s.classList.remove("active"); });
+    btn.classList.add("active");
+  });
+});
+
+// Color swatch toggle
+document.querySelectorAll(".swatch").forEach(function(swatch) {
+  swatch.addEventListener("click", function() {
+    swatch.parentElement.querySelectorAll(".swatch").forEach(function(s) { s.classList.remove("active"); });
+    swatch.classList.add("active");
+  });
+});
+
+// Tab toggle
+document.querySelectorAll(".tab").forEach(function(tab) {
+  tab.addEventListener("click", function() {
+    tab.parentElement.querySelectorAll(".tab").forEach(function(s) { s.classList.remove("active"); });
+    tab.classList.add("active");
+  });
+});
+
+// Tag toggle
+document.querySelectorAll(".tag").forEach(function(tag) {
+  if (!tag.querySelector(".tag-close")) {
+    tag.addEventListener("click", function() { tag.classList.toggle("active"); });
+  }
+});
+
+// Toast close
+document.querySelectorAll(".toast-close").forEach(function(btn) {
+  btn.addEventListener("click", function() {
+    const toast = btn.closest(".toast");
+    toast.style.transition = "all .3s";
+    toast.style.opacity = 0;
+    toast.style.transform = "translateX(100%)";
+    setTimeout(function() { toast.remove(); }, 300);
+  });
+});
+</script>
+</body>
+</html>
