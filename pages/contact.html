@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Contact Us — Rakuma</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles/tokens.css">
+<link rel="stylesheet" href="../styles/main.css">
+<style>.contact-card{background:#fff;border:1px solid var(--color-border-default);border-radius:var(--radius-2xl);padding:var(--space-6);display:flex;gap:var(--space-4);align-items:flex-start;cursor:pointer;transition:all var(--duration-normal);text-decoration:none;color:var(--color-text-primary)}.contact-card:hover{border-color:var(--color-primary);box-shadow:var(--shadow-lg);transform:translateY(-2px)}</style>
+</head>
+<body style="background:var(--color-bg-subtle);min-height:100vh">
+<nav class="navbar">
+  <a href="../index.html" class="navbar-brand" style="text-decoration:none">Rakuma</a>
+  <div class="navbar-nav"><a class="nav-link" href="home.html">Marketplace</a><a class="nav-link" href="faq.html">Help Center</a><a class="nav-link active" href="#">Contact</a></div>
+  <div class="navbar-actions">
+    <a href="login.html" class="btn btn-ghost btn-sm">Log In</a>
+    <div class="avatar avatar-sm" style="background:linear-gradient(135deg,#db2777,#9d174d);color:#fff">YK</div>
+  </div>
+</nav>
+
+<div class="container" style="padding-top:var(--space-16);padding-bottom:var(--space-20);max-width:960px">
+  <div style="text-align:center;margin-bottom:var(--space-12)">
+    <h1 style="font-family:var(--font-family-display);font-size:var(--font-size-4xl);font-weight:700;margin-bottom:var(--space-3)">How can we help?</h1>
+    <p style="color:var(--color-text-secondary);font-size:var(--font-size-lg)">Choose the best way to reach us for your situation.</p>
+  </div>
+
+  <!-- Contact options -->
+  <div class="grid grid-3" style="gap:var(--space-4);margin-bottom:var(--space-12)">
+    <a href="messages.html" class="contact-card">
+      <div style="width:3.5rem;height:3.5rem;background:var(--color-primary-subtle);border-radius:var(--radius-xl);display:flex;align-items:center;justify-content:center;font-size:1.5rem;flex-shrink:0">&#x1F4AC;</div>
+      <div>
+        <div style="font-weight:700;margin-bottom:var(--space-1)">Live Chat</div>
+        <div style="font-size:var(--font-size-sm);color:var(--color-text-secondary);margin-bottom:var(--space-2)">Chat with our support team. Fastest response for urgent issues.</div>
+        <span class="badge badge-success">&#x1F7E2; Online now</span>
+      </div>
+    </a>
+    <a href="mailto:support@rakuma.jp" class="contact-card">
+      <div style="width:3.5rem;height:3.5rem;background:var(--color-info-50);border-radius:var(--radius-xl);display:flex;align-items:center;justify-content:center;font-size:1.5rem;flex-shrink:0">&#x2709;&#xFE0F;</div>
+      <div>
+        <div style="font-weight:700;margin-bottom:var(--space-1)">Email Support</div>
+        <div style="font-size:var(--font-size-sm);color:var(--color-text-secondary);margin-bottom:var(--space-2)">support@rakuma.jp — we respond within 24 hours on business days.</div>
+        <span class="badge badge-info">24h response</span>
+      </div>
+    </a>
+    <a href="faq.html" class="contact-card">
+      <div style="width:3.5rem;height:3.5rem;background:var(--color-warning-50);border-radius:var(--radius-xl);display:flex;align-items:center;justify-content:center;font-size:1.5rem;flex-shrink:0">&#x2753;</div>
+      <div>
+        <div style="font-weight:700;margin-bottom:var(--space-1)">Help Center</div>
+        <div style="font-size:var(--font-size-sm);color:var(--color-text-secondary);margin-bottom:var(--space-2)">Find answers instantly in our comprehensive FAQ and guides.</div>
+        <span class="badge badge-neutral">200+ articles</span>
+      </div>
+    </a>
+  </div>
+
+  <!-- Contact form -->
+  <div class="grid grid-2" style="gap:var(--space-12);align-items:start">
+    <div>
+      <h2 style="font-weight:700;font-size:var(--font-size-2xl);margin-bottom:var(--space-5)">Send a Message</h2>
+      <div class="form-group" style="margin-bottom:var(--space-4)">
+        <label class="form-label form-label-required">Topic</label>
+        <select class="form-input form-select">
+          <option value="">Choose a topic</option>
+          <option>Order / Shipping issue</option>
+          <option>Payment problem</option>
+          <option>Seller dispute</option>
+          <option>Account access</option>
+          <option>Listing removal</option>
+          <option>Feature request</option>
+          <option>Press / Media inquiry</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="grid grid-2" style="gap:var(--space-4);margin-bottom:var(--space-4)">
+        <div class="form-group">
+          <label class="form-label form-label-required">Name</label>
+          <input type="text" class="form-input" placeholder="Yuki Kobayashi">
+        </div>
+        <div class="form-group">
+          <label class="form-label form-label-required">Email</label>
+          <input type="email" class="form-input" placeholder="yuki@email.com">
+        </div>
+      </div>
+      <div class="form-group" style="margin-bottom:var(--space-4)">
+        <label class="form-label">Order Number (if applicable)</label>
+        <input type="text" class="form-input" placeholder="RK-00000">
+      </div>
+      <div class="form-group" style="margin-bottom:var(--space-5)">
+        <label class="form-label form-label-required">Message</label>
+        <textarea class="form-input" rows="5" placeholder="Describe your issue in detail..."></textarea>
+      </div>
+      <div style="margin-bottom:var(--space-5)">
+        <label class="form-label" style="margin-bottom:var(--space-3)">Attachments (optional)</label>
+        <div style="border:2px dashed var(--color-border-strong);border-radius:var(--radius-xl);padding:var(--space-6);text-align:center;cursor:pointer;transition:all var(--duration-fast)" onmouseover="this.style.borderColor='var(--color-primary)'" onmouseout="this.style.borderColor='var(--color-border-strong)'">
+          <div style="font-size:2rem;margin-bottom:var(--space-2)">&#x1F4CE;</div>
+          <div style="font-size:var(--font-size-sm);font-weight:600;margin-bottom:var(--space-1)">Drop files here or click to upload</div>
+          <div style="font-size:var(--font-size-xs);color:var(--color-text-tertiary)">Screenshots, photos — JPG, PNG, PDF up to 10MB each</div>
+        </div>
+      </div>
+      <button class="btn btn-primary btn-full btn-lg" id="sendBtn" onclick="sendForm()">Send Message</button>
+      <div id="sentMsg" style="display:none;margin-top:var(--space-4)">
+        <div class="alert alert-success"><svg class="alert-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg><div class="alert-content"><div class="alert-title">Message Sent!</div>We&apos;ll get back to you within 24 hours at your email address.</div></div>
+      </div>
+    </div>
+    <div>
+      <h2 style="font-weight:700;font-size:var(--font-size-2xl);margin-bottom:var(--space-5)">Other Ways to Reach Us</h2>
+      <div style="display:flex;flex-direction:column;gap:var(--space-4)">
+        <div style="background:#fff;border-radius:var(--radius-2xl);padding:var(--space-5)">
+          <div style="font-weight:700;margin-bottom:var(--space-2)">&#x1F4CD; Head Office</div>
+          <div style="font-size:var(--font-size-sm);color:var(--color-text-secondary);line-height:var(--line-height-relaxed)">Rakuma Inc.<br>1-14-1 Tamagawa, Setagaya-ku<br>Tokyo 158-0094, Japan</div>
+        </div>
+        <div style="background:#fff;border-radius:var(--radius-2xl);padding:var(--space-5)">
+          <div style="font-weight:700;margin-bottom:var(--space-2)">&#x23F0; Business Hours</div>
+          <div style="font-size:var(--font-size-sm);color:var(--color-text-secondary);line-height:var(--line-height-relaxed)">Weekdays 9:00 AM – 6:00 PM JST<br>Weekend support available via chat for urgent matters</div>
+        </div>
+        <div style="background:#fff;border-radius:var(--radius-2xl);padding:var(--space-5)">
+          <div style="font-weight:700;margin-bottom:var(--space-3)">&#x1F310; Follow Us</div>
+          <div style="display:flex;gap:var(--space-3)">
+            <a href="#" class="btn btn-secondary btn-sm">&#x1F426; Twitter / X</a>
+            <a href="#" class="btn btn-secondary btn-sm">&#x1F4F8; Instagram</a>
+            <a href="#" class="btn btn-secondary btn-sm">&#x1F3A5; YouTube</a>
+          </div>
+        </div>
+        <div style="background:#fff;border-radius:var(--radius-2xl);padding:var(--space-5)">
+          <div style="font-weight:700;margin-bottom:var(--space-2)">&#x1F4F1; Press &amp; Media</div>
+          <div style="font-size:var(--font-size-sm);color:var(--color-text-secondary);margin-bottom:var(--space-3)">For media inquiries, press releases, and brand partnerships.</div>
+          <a href="mailto:press@rakuma.jp" class="btn btn-ghost btn-sm">press@rakuma.jp &#8599;</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>function sendForm(){document.getElementById("sendBtn").disabled=true;document.getElementById("sendBtn").textContent="Sending...";setTimeout(function(){document.getElementById("sentMsg").style.display="block";document.getElementById("sendBtn").style.display="none";document.getElementById("sentMsg").scrollIntoView({behavior:"smooth"});},1500);}</script>
+</body></html>
