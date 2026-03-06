@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles/tokens.css">
+<link rel="stylesheet" href="../styles/main.css">
+<style>body{padding:2rem;background:var(--color-bg-subtle)}</style>
+</head><body>
+<h2 style="margin-bottom:1.5rem;font-family:var(--font-family-display)">Color Swatches</h2>
+<div style="margin-bottom:1.5rem">
+  <div style="font-size:.875rem;font-weight:600;margin-bottom:.75rem">Color: <span style="color:var(--color-text-secondary);font-weight:400">Rose Pink</span></div>
+  <div class="color-swatches">
+    <div class="swatch active" style="background:#db2777" title="Rose Pink"></div>
+    <div class="swatch" style="background:#ec4899" title="Hot Pink"></div>
+    <div class="swatch" style="background:#171717" title="Black"></div>
+    <div class="swatch" style="background:#fdf8f0;border:1px solid var(--color-border-default)" title="Ivory"></div>
+    <div class="swatch" style="background:#1e3a5f" title="Navy"></div>
+    <div class="swatch" style="background:#7a9e7e" title="Sage"></div>
+    <div class="swatch" style="background:#c19a6b" title="Camel"></div>
+    <div class="swatch" style="background:#d4a5a5" title="Dusty Rose"></div>
+  </div>
+</div>
+<script>document.querySelectorAll(".swatch").forEach(function(s){s.addEventListener("click",function(){s.parentElement.querySelectorAll(".swatch").forEach(function(x){x.classList.remove("active")});s.classList.add("active")})});</script>
+</body></html>

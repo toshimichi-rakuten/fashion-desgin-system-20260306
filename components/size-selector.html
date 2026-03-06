@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles/tokens.css">
+<link rel="stylesheet" href="../styles/main.css">
+<style>body{padding:2rem;background:var(--color-bg-subtle)}</style>
+</head><body>
+<h2 style="margin-bottom:1.5rem;font-family:var(--font-family-display)">Size Selector</h2>
+<div style="max-width:360px">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.75rem">
+    <span style="font-size:.875rem;font-weight:600">Select Size</span>
+    <a href="#" style="font-size:.75rem;color:var(--color-primary)">Size Guide &#8594;</a>
+  </div>
+  <div class="size-grid" style="margin-bottom:1.25rem">
+    <div class="size-btn disabled">XS</div><div class="size-btn">S</div><div class="size-btn active">M</div><div class="size-btn">L</div><div class="size-btn">XL</div><div class="size-btn disabled">XXL</div>
+  </div>
+  <div style="font-size:.875rem;font-weight:600;margin-bottom:.75rem">Shoe Sizes</div>
+  <div class="size-grid">
+    <div class="size-btn">22</div><div class="size-btn active">23</div><div class="size-btn disabled">24</div><div class="size-btn">25</div><div class="size-btn">26</div>
+  </div>
+</div>
+<script>document.querySelectorAll(".size-btn:not(.disabled)").forEach(function(b){b.addEventListener("click",function(){b.parentElement.querySelectorAll(".size-btn").forEach(function(x){x.classList.remove("active")});b.classList.add("active")})});</script>
+</body></html>

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Checkout — Rakuma</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles/tokens.css">
+<link rel="stylesheet" href="../styles/main.css">
+<style>
+.checkout-layout{display:grid;grid-template-columns:1fr 400px;gap:var(--space-12);align-items:start;max-width:1100px;margin-inline:auto}
+.checkout-step{border-radius:var(--radius-2xl);border:2px solid var(--color-border-default);overflow:hidden;margin-bottom:var(--space-5);transition:border-color var(--duration-fast)}
+.checkout-step.active{border-color:var(--color-primary)}
+.checkout-step.done{border-color:var(--color-success-500)}
+.step-header{display:flex;align-items:center;gap:var(--space-4);padding:var(--space-5) var(--space-6);cursor:pointer;background:#fff}
+.step-num{width:2rem;height:2rem;border-radius:var(--radius-full);background:var(--color-bg-muted);color:var(--color-text-tertiary);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:var(--font-size-sm);flex-shrink:0}
+.checkout-step.active .step-num{background:var(--color-primary);color:#fff}
+.checkout-step.done .step-num{background:var(--color-success-500);color:#fff}
+.step-body{padding:var(--space-6);border-top:1px solid var(--color-border-default);background:var(--color-bg-subtle);display:none}
+.checkout-step.active .step-body{display:block}
+.order-sidebar{background:#fff;border:1px solid var(--color-border-default);border-radius:var(--radius-2xl);overflow:hidden;position:sticky;top:calc(68px + var(--space-6))}
+@media(max-width:900px){.checkout-layout{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav class="navbar">
+  <a href="../index.html" class="navbar-brand" style="text-decoration:none">Rakuma</a>
+  <div style="display:flex;align-items:center;gap:var(--space-4)">
+    <div class="step-indicator" style="margin:0">
+      <div class="step done"><div class="step-circle"><svg width="10" height="10" fill="none" stroke="#fff" stroke-width="3" viewBox="0 0 24 24"><path d="M4.5 12.75l6 6 9-13.5"/></svg></div><div class="step-label">Cart</div></div>
+      <div class="step-line done"></div>
+      <div class="step active"><div class="step-circle">2</div><div class="step-label">Checkout</div></div>
+      <div class="step-line"></div>
+      <div class="step"><div class="step-circle">3</div><div class="step-label">Confirm</div></div>
+    </div>
+  </div>
+  <div style="display:flex;align-items:center;gap:var(--space-2);color:var(--color-success-500);font-size:var(--font-size-sm);font-weight:600">
+    <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"/></svg>
+    Secure Checkout
+  </div>
+</nav>
+
+<div class="container" style="padding-top:var(--space-10);padding-bottom:var(--space-20)">
+  <div class="checkout-layout">
+    <!-- Left: Steps -->
+    <div>
+
+      <!-- Step 1: Shipping -->
+      <div class="checkout-step done">
+        <div class="step-header">
+          <div class="step-num"><svg width="12" height="12" fill="none" stroke="#fff" stroke-width="3" viewBox="0 0 24 24"><path d="M4.5 12.75l6 6 9-13.5"/></svg></div>
+          <div style="flex:1">
+            <div style="font-weight:700">Shipping Address</div>
+            <div style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Yuki Kobayashi &nbsp;·&nbsp; 1-2-3 Shibuya, Tokyo 150-0002</div>
+          </div>
+          <button class="btn btn-ghost btn-sm">Edit</button>
+        </div>
+      </div>
+
+      <!-- Step 2: Payment (active) -->
+      <div class="checkout-step active">
+        <div class="step-header">
+          <div class="step-num">2</div>
+          <div style="font-weight:700">Payment Method</div>
+        </div>
+        <div class="step-body">
+          <!-- Payment method selector -->
+          <div style="display:flex;flex-direction:column;gap:var(--space-3);margin-bottom:var(--space-6)">
+            <label style="border:2px solid var(--color-primary);background:var(--color-primary-subtle);border-radius:var(--radius-xl);padding:var(--space-4);display:flex;align-items:center;gap:var(--space-3);cursor:pointer">
+              <div class="radio-circle" style="border-color:var(--color-primary);border-width:5px"></div>
+              <div style="flex:1">
+                <div style="font-weight:600;font-size:var(--font-size-sm)">Credit / Debit Card</div>
+                <div style="font-size:var(--font-size-xs);color:var(--color-text-secondary)">Visa, Mastercard, AMEX, JCB</div>
+              </div>
+              <div style="display:flex;gap:var(--space-1)">
+                <div style="background:#1a1f71;color:#fff;border-radius:4px;padding:2px 6px;font-size:.6rem;font-weight:900">VISA</div>
+                <div style="background:#eb001b;color:#fff;border-radius:4px;padding:2px 6px;font-size:.6rem;font-weight:900">MC</div>
+              </div>
+            </label>
+            <label style="border:1.5px solid var(--color-border-default);background:#fff;border-radius:var(--radius-xl);padding:var(--space-4);display:flex;align-items:center;gap:var(--space-3);cursor:pointer">
+              <div class="radio-circle"></div>
+              <div style="flex:1">
+                <div style="font-weight:600;font-size:var(--font-size-sm)">PayPay</div>
+                <div style="font-size:var(--font-size-xs);color:var(--color-text-secondary)">Japan&apos;s #1 QR payment</div>
+              </div>
+              <div style="background:#ff0033;color:#fff;border-radius:4px;padding:2px 8px;font-size:.65rem;font-weight:900">PayPay</div>
+            </label>
+            <label style="border:1.5px solid var(--color-border-default);background:#fff;border-radius:var(--radius-xl);padding:var(--space-4);display:flex;align-items:center;gap:var(--space-3);cursor:pointer">
+              <div class="radio-circle"></div>
+              <div style="flex:1">
+                <div style="font-weight:600;font-size:var(--font-size-sm)">Convenience Store</div>
+                <div style="font-size:var(--font-size-xs);color:var(--color-text-secondary)">Pay at Lawson, 7-Eleven, FamilyMart</div>
+              </div>
+            </label>
+          </div>
+          <!-- Card form -->
+          <div style="padding:var(--space-5);background:#fff;border-radius:var(--radius-xl);border:1px solid var(--color-border-default)">
+            <div class="form-group" style="margin-bottom:var(--space-4)">
+              <label class="form-label form-label-required">Card Number</label>
+              <div class="input-group">
+                <span class="input-addon input-addon-left"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg></span>
+                <input type="text" class="form-input" placeholder="1234 5678 9012 3456" style="padding-left:2.5rem;letter-spacing:.05em">
+              </div>
+            </div>
+            <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:var(--space-4);margin-bottom:var(--space-4)">
+              <div class="form-group" style="grid-column:span 1">
+                <label class="form-label form-label-required">Month</label>
+                <select class="form-input form-select"><option value="">MM</option><option>01</option><option>02</option><option>03</option><option>04</option><option>05</option><option>06</option><option>07</option><option>08</option><option>09</option><option>10</option><option>11</option><option>12</option></select>
+              </div>
+              <div class="form-group">
+                <label class="form-label form-label-required">Year</label>
+                <select class="form-input form-select"><option value="">YY</option><option>2026</option><option>2027</option><option>2028</option><option>2029</option><option>2030</option></select>
+              </div>
+              <div class="form-group">
+                <label class="form-label form-label-required">CVV</label>
+                <input type="text" class="form-input" placeholder="•••">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label form-label-required">Name on Card</label>
+              <input type="text" class="form-input" placeholder="YUKI KOBAYASHI">
+            </div>
+          </div>
+          <div style="display:flex;align-items:center;gap:var(--space-2);margin-top:var(--space-4);font-size:var(--font-size-xs);color:var(--color-text-tertiary)">
+            <svg width="12" height="12" fill="none" stroke="var(--color-success-500)" stroke-width="2" viewBox="0 0 24 24"><path d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"/></svg>
+            Your payment information is encrypted with 256-bit SSL
+          </div>
+          <div style="margin-top:var(--space-5)">
+            <button class="btn btn-primary btn-full btn-lg" onclick="showConfirm()">Place Order — &#xA5;15,240</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 3: Confirmation (hidden) -->
+      <div class="checkout-step" id="confirmStep">
+        <div class="step-header">
+          <div class="step-num">3</div>
+          <div style="font-weight:700;color:var(--color-text-tertiary)">Order Confirmation</div>
+        </div>
+      </div>
+
+      <!-- Success state (hidden) -->
+      <div id="successMsg" style="display:none;text-align:center;padding:var(--space-12);background:#fff;border:1px solid var(--color-border-default);border-radius:var(--radius-2xl)">
+        <div style="width:4rem;height:4rem;background:var(--color-success-50);border-radius:var(--radius-full);display:flex;align-items:center;justify-content:center;margin:0 auto var(--space-5)">
+          <svg width="28" height="28" fill="none" stroke="var(--color-success-500)" stroke-width="2.5" viewBox="0 0 24 24"><path d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        </div>
+        <h2 style="font-family:var(--font-family-display);font-size:var(--font-size-3xl);font-weight:700;margin-bottom:var(--space-3)">Order Placed!</h2>
+        <p style="color:var(--color-text-secondary);margin-bottom:var(--space-6)">Order #RK-20489 confirmed. You&apos;ll receive an email shortly.</p>
+        <div style="display:flex;gap:var(--space-3);justify-content:center">
+          <a href="orders.html" class="btn btn-primary">Track Order</a>
+          <a href="home.html" class="btn btn-secondary">Continue Shopping</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right: Order summary -->
+    <div>
+      <div class="order-sidebar">
+        <div style="padding:var(--space-5) var(--space-6);border-bottom:1px solid var(--color-border-default);font-weight:700">Order Summary (2 items)</div>
+        <!-- items -->
+        <div style="padding:var(--space-5) var(--space-6)">
+          <div style="display:flex;gap:var(--space-3);margin-bottom:var(--space-4)">
+            <div style="width:4rem;height:4rem;background:linear-gradient(135deg,#fce7f3,#fbcfe8);border-radius:var(--radius-lg);display:flex;align-items:center;justify-content:center;font-size:1.75rem;flex-shrink:0">&#x1F457;</div>
+            <div style="flex:1">
+              <div style="font-size:var(--font-size-xs);color:var(--color-text-tertiary)">Zara</div>
+              <div style="font-weight:600;font-size:var(--font-size-sm)">Floral Wrap Midi Dress</div>
+              <div style="font-size:var(--font-size-xs);color:var(--color-text-secondary)">Size M</div>
+            </div>
+            <div style="font-weight:700">&#xA5;3,500</div>
+          </div>
+          <div style="display:flex;gap:var(--space-3);margin-bottom:var(--space-5)">
+            <div style="width:4rem;height:4rem;background:linear-gradient(135deg,#171717,#404040);border-radius:var(--radius-lg);display:flex;align-items:center;justify-content:center;font-size:1.75rem;flex-shrink:0">&#x1F45F;</div>
+            <div style="flex:1">
+              <div style="font-size:var(--font-size-xs);color:var(--color-text-tertiary)">Nike</div>
+              <div style="font-weight:600;font-size:var(--font-size-sm)">Air Force 1 Low White</div>
+              <div style="font-size:var(--font-size-xs);color:var(--color-text-secondary)">Size 24</div>
+            </div>
+            <div style="font-weight:700">&#xA5;12,800</div>
+          </div>
+          <!-- Coupon -->
+          <div style="display:flex;gap:var(--space-2);margin-bottom:var(--space-5)">
+            <input type="text" class="form-input" placeholder="Coupon code" value="SUMMER10">
+            <button class="btn btn-secondary btn-sm" style="white-space:nowrap">Apply</button>
+          </div>
+          <!-- Totals -->
+          <div style="display:flex;flex-direction:column;gap:var(--space-3);padding-top:var(--space-4);border-top:1px solid var(--color-border-default)">
+            <div style="display:flex;justify-content:space-between;font-size:var(--font-size-sm);color:var(--color-text-secondary)"><span>Subtotal</span><span style="color:var(--color-text-primary)">&#xA5;16,300</span></div>
+            <div style="display:flex;justify-content:space-between;font-size:var(--font-size-sm);color:var(--color-text-secondary)"><span>Shipping</span><span style="color:var(--color-success-700);font-weight:500">Free</span></div>
+            <div style="display:flex;justify-content:space-between;font-size:var(--font-size-sm);color:var(--color-text-secondary)"><span>Service fee (3.5%)</span><span>&#xA5;570</span></div>
+            <div style="display:flex;justify-content:space-between;font-size:var(--font-size-sm);color:var(--color-error-600)">
+              <span>Coupon: SUMMER10</span>
+              <span>-&#xA5;1,630</span>
+            </div>
+          </div>
+          <div style="display:flex;justify-content:space-between;font-size:var(--font-size-xl);font-weight:700;margin-top:var(--space-4);padding-top:var(--space-4);border-top:2px solid var(--color-border-default)">
+            <span>Total</span><span style="color:var(--color-primary)">&#xA5;15,240</span>
+          </div>
+        </div>
+        <!-- Trust -->
+        <div style="padding:var(--space-4) var(--space-6);background:var(--color-bg-subtle);border-top:1px solid var(--color-border-default);display:flex;flex-direction:column;gap:var(--space-2)">
+          <div style="display:flex;align-items:center;gap:var(--space-2);font-size:var(--font-size-xs);color:var(--color-text-secondary)">
+            <svg width="12" height="12" fill="none" stroke="var(--color-success-500)" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg>
+            Buyer Protection included
+          </div>
+          <div style="display:flex;align-items:center;gap:var(--space-2);font-size:var(--font-size-xs);color:var(--color-text-secondary)">
+            <svg width="12" height="12" fill="none" stroke="var(--color-info-500)" stroke-width="2" viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+            256-bit SSL encryption
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function showConfirm(){
+  document.querySelector(".checkout-step.active").classList.remove("active");
+  document.querySelector(".checkout-step.active");
+  var step2=document.querySelectorAll(".checkout-step")[1];
+  step2.classList.add("done");
+  var step3=document.querySelector("#confirmStep");
+  step3.classList.add("active");
+  step3.querySelector(".step-num").innerHTML="<svg width='12' height='12' fill='none' stroke='#fff' stroke-width='3' viewBox='0 0 24 24'><path d='M4.5 12.75l6 6 9-13.5'/></svg>";
+  step3.querySelector(".step-header div").style.color="";
+  document.getElementById("successMsg").style.display="block";
+  document.getElementById("successMsg").scrollIntoView({behavior:"smooth"});
+}
+document.querySelectorAll("label[style*=border]").forEach(function(l){
+  l.addEventListener("click",function(){
+    document.querySelectorAll("label[style*=border]").forEach(function(x){
+      x.style.borderWidth="1.5px";
+      x.style.borderColor="var(--color-border-default)";
+      x.style.background="#fff";
+      var r=x.querySelector(".radio-circle");if(r){r.style.borderColor="var(--color-border-strong)";r.style.borderWidth="1.5px";}
+    });
+    l.style.borderWidth="2px";
+    l.style.borderColor="var(--color-primary)";
+    l.style.background="var(--color-primary-subtle)";
+    var r=l.querySelector(".radio-circle");if(r){r.style.borderColor="var(--color-primary)";r.style.borderWidth="5px";}
+  });
+});
+</script>
+</body></html>

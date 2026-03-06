@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles/tokens.css">
+<link rel="stylesheet" href="../styles/main.css">
+<style>body{padding:2rem;background:var(--color-bg-subtle)}</style>
+</head><body>
+<h2 style="margin-bottom:1.5rem;font-family:var(--font-family-display)">Tabs</h2>
+<div class="tabs">
+  <div class="tab active">Item Details</div><div class="tab">Size Guide</div><div class="tab">Seller Info</div><div class="tab">Reviews (24)</div>
+</div>
+<div style="padding:1.25rem 0">
+  <p style="font-size:.875rem;color:var(--color-text-secondary)">Tab content area. Click tabs above to switch between sections.</p>
+</div>
+<script>document.querySelectorAll(".tab").forEach(function(t){t.addEventListener("click",function(){t.parentElement.querySelectorAll(".tab").forEach(function(s){s.classList.remove("active")});t.classList.add("active")})});</script>
+</body></html>
