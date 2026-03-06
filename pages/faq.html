@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Help Center — Rakuma</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles/tokens.css">
+<link rel="stylesheet" href="../styles/main.css">
+<style>
+.help-hero{background:linear-gradient(135deg,#831843,#db2777);padding:var(--space-20) 0;text-align:center;color:#fff}
+.help-search{max-width:560px;margin:0 auto;background:#fff;border-radius:var(--radius-2xl);padding:var(--space-2) var(--space-2) var(--space-2) var(--space-6);display:flex;align-items:center;gap:var(--space-3);box-shadow:var(--shadow-2xl)}
+.topic-card{background:#fff;border:1px solid var(--color-border-default);border-radius:var(--radius-2xl);padding:var(--space-6);display:flex;align-items:flex-start;gap:var(--space-4);cursor:pointer;transition:all var(--duration-normal);text-decoration:none;color:var(--color-text-primary)}
+.topic-card:hover{box-shadow:var(--shadow-lg);transform:translateY(-2px)}
+.topic-icon{width:3rem;height:3rem;border-radius:var(--radius-xl);display:flex;align-items:center;justify-content:center;font-size:1.5rem;flex-shrink:0}
+</style>
+</head>
+<body>
+<div class="announcement-bar">
+  &#x1F4E2; Having issues? Our support team responds within 2 hours &nbsp;<a href="messages.html">Contact Support</a>
+  <button class="announcement-close" onclick="this.parentElement.style.display='none'">&#x2715;</button>
+</div>
+<nav class="navbar">
+  <a href="../index.html" class="navbar-brand" style="text-decoration:none">Rakuma</a>
+  <div class="navbar-nav"><a class="nav-link" href="home.html">Home</a><a class="nav-link" href="search.html">Browse</a><a class="nav-link" href="sell.html">Sell</a></div>
+  <div class="navbar-actions"><a href="login.html" class="btn btn-ghost btn-sm">Log In</a><a href="register.html" class="btn btn-primary btn-sm">Sign Up</a></div>
+</nav>
+
+<!-- Hero -->
+<div class="help-hero">
+  <h1 style="font-family:var(--font-family-display);font-size:var(--font-size-5xl);font-weight:900;margin-bottom:var(--space-4)">How can we help?</h1>
+  <p style="font-size:var(--font-size-lg);opacity:.85;margin-bottom:var(--space-8)">Search our help articles or browse topics below</p>
+  <div class="help-search">
+    <svg width="18" height="18" fill="none" stroke="var(--color-text-tertiary)" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+    <input type="search" placeholder="e.g. how to list an item, buyer protection..." style="flex:1;border:none;outline:none;font-size:var(--font-size-sm);color:var(--color-text-primary)">
+    <button class="btn btn-primary btn-sm">Search</button>
+  </div>
+</div>
+
+<!-- Topics -->
+<section style="padding:var(--space-16) 0;background:var(--color-bg-subtle)">
+  <div class="container">
+    <h2 style="font-family:var(--font-family-display);font-size:var(--font-size-3xl);font-weight:700;text-align:center;margin-bottom:var(--space-10)">Browse Help Topics</h2>
+    <div class="grid grid-3" style="gap:var(--space-4)">
+      <a href="#buying" class="topic-card">
+        <div class="topic-icon" style="background:var(--color-brand-50)">&#x1F6D2;</div>
+        <div><div style="font-weight:700;margin-bottom:var(--space-1)">Buying</div><div style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Orders, payments, tracking, returns</div></div>
+      </a>
+      <a href="#selling" class="topic-card">
+        <div class="topic-icon" style="background:var(--color-success-50)">&#x1F4B0;</div>
+        <div><div style="font-weight:700;margin-bottom:var(--space-1)">Selling</div><div style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Listings, pricing, shipping, earnings</div></div>
+      </a>
+      <a href="#account" class="topic-card">
+        <div class="topic-icon" style="background:var(--color-info-50)">&#x1F464;</div>
+        <div><div style="font-weight:700;margin-bottom:var(--space-1)">Account</div><div style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Profile, verification, security</div></div>
+      </a>
+      <a href="#payments" class="topic-card">
+        <div class="topic-icon" style="background:var(--color-warning-50)">&#x1F4B3;</div>
+        <div><div style="font-weight:700;margin-bottom:var(--space-1)">Payments</div><div style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Methods, fees, withdrawals, refunds</div></div>
+      </a>
+      <a href="#safety" class="topic-card">
+        <div class="topic-icon" style="background:var(--color-error-50)">&#x1F512;</div>
+        <div><div style="font-weight:700;margin-bottom:var(--space-1)">Safety &amp; Trust</div><div style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Authentication, scam prevention</div></div>
+      </a>
+      <a href="#shipping" class="topic-card">
+        <div class="topic-icon" style="background:var(--color-neutral-100)">&#x1F4E6;</div>
+        <div><div style="font-weight:700;margin-bottom:var(--space-1)">Shipping</div><div style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Carriers, tracking, packaging tips</div></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FAQs -->
+<section style="padding:var(--space-16) 0">
+  <div class="container" style="max-width:800px">
+    <h2 id="buying" style="font-family:var(--font-family-display);font-size:var(--font-size-3xl);font-weight:700;margin-bottom:var(--space-8)">Buying on Rakuma</h2>
+    <div class="accordion" style="margin-bottom:var(--space-12)">
+      <div class="accordion-item open"><div class="accordion-header"><div class="accordion-title">How does Buyer Protection work?</div><svg class="accordion-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg></div><div class="accordion-body"><div class="accordion-content">Rakuma Buyer Protection covers every purchase made through our platform. If your item doesn&apos;t arrive, or is significantly different from the listing description, you&apos;re fully covered. Raise a dispute within 72 hours of delivery (or expected delivery) and our team will investigate. If the claim is valid, you&apos;ll receive a full refund including shipping. Your payment is held securely in escrow until you confirm safe receipt.</div></div></div>
+      <div class="accordion-item"><div class="accordion-header"><div class="accordion-title">How do I track my order?</div><svg class="accordion-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg></div><div class="accordion-body"><div class="accordion-content">Once the seller ships your item, you&apos;ll receive a tracking number via email and in-app notification. Go to My Orders and tap &quot;Track Package&quot; to see real-time shipping status. Most domestic Japan shipments arrive within 2–5 business days.</div></div></div>
+      <div class="accordion-item"><div class="accordion-header"><div class="accordion-title">Can I return an item I bought?</div><svg class="accordion-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg></div><div class="accordion-body"><div class="accordion-content">Returns are at the seller&apos;s discretion for change-of-mind purchases. However, if the item is not as described (wrong size, undisclosed damage, not authentic), you are covered by Buyer Protection for a full refund. Contact the seller first — most issues can be resolved directly.</div></div></div>
+      <div class="accordion-item"><div class="accordion-header"><div class="accordion-title">How do I make an offer?</div><svg class="accordion-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg></div><div class="accordion-body"><div class="accordion-content">On any product listing, click &quot;Make an Offer&quot; and enter your proposed price. The seller will receive a notification and can accept, decline, or counter-offer within 24 hours. Once both parties agree, payment is processed automatically.</div></div></div>
+    </div>
+
+    <h2 id="selling" style="font-family:var(--font-family-display);font-size:var(--font-size-3xl);font-weight:700;margin-bottom:var(--space-8)">Selling on Rakuma</h2>
+    <div class="accordion" style="margin-bottom:var(--space-12)">
+      <div class="accordion-item"><div class="accordion-header"><div class="accordion-title">How much does it cost to sell?</div><svg class="accordion-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg></div><div class="accordion-body"><div class="accordion-content">Listing items on Rakuma is completely free. When an item sells, Rakuma charges a 3.5% service fee. This covers Buyer Protection, secure payments, and our 24/7 support team. There are no hidden fees or monthly subscription costs.</div></div></div>
+      <div class="accordion-item"><div class="accordion-header"><div class="accordion-title">When do I receive payment?</div><svg class="accordion-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg></div><div class="accordion-body"><div class="accordion-content">Payment is released to your Rakuma balance 3 business days after the buyer confirms receipt (or after the dispute window closes). From your balance, you can withdraw to your Japanese bank account within 1–3 business days. A minimum withdrawal of &#xA5;1,000 applies.</div></div></div>
+      <div class="accordion-item"><div class="accordion-header"><div class="accordion-title">What items can I sell on Rakuma?</div><svg class="accordion-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg></div><div class="accordion-body"><div class="accordion-content">Rakuma specialises in fashion — clothing, shoes, bags, accessories, and beauty items. Items must be in sellable condition (not damaged beyond what&apos;s disclosed in the listing). Counterfeit goods, hazardous materials, and illegal items are strictly prohibited and will result in account suspension.</div></div></div>
+      <div class="accordion-item"><div class="accordion-header"><div class="accordion-title">How do I take great listing photos?</div><svg class="accordion-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg></div><div class="accordion-body"><div class="accordion-content">Listings with 5+ photos sell 3x faster. Use natural light, a clean background, and photograph the item from multiple angles including close-ups of any brand labels, condition issues, and unique details. For bags and shoes, always include a photo next to a common reference object for scale.</div></div></div>
+    </div>
+
+    <!-- Still need help CTA -->
+    <div style="background:var(--color-primary-subtle);border:1px solid var(--color-brand-200);border-radius:var(--radius-2xl);padding:var(--space-8);text-align:center">
+      <div style="font-size:2rem;margin-bottom:var(--space-3)">&#x1F4AC;</div>
+      <h3 style="font-weight:700;font-size:var(--font-size-xl);margin-bottom:var(--space-2)">Still need help?</h3>
+      <p style="color:var(--color-text-secondary);font-size:var(--font-size-sm);margin-bottom:var(--space-6)">Our support team responds within 2 hours on weekdays.</p>
+      <div style="display:flex;gap:var(--space-3);justify-content:center;flex-wrap:wrap">
+        <a href="messages.html" class="btn btn-primary">&#x2709;&#xFE0F; Contact Support</a>
+        <a href="home.html" class="btn btn-secondary">&#x1F3E0; Back to Home</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>document.querySelectorAll(".accordion-item").forEach(function(item){item.querySelector(".accordion-header").addEventListener("click",function(){item.classList.toggle("open")})});</script>
+</body></html>
