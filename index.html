@@ -5,87 +5,177 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Component Library</title>
   <style>
+    :root {
+      --primary-color: #bf0000;
+      --primary-hover: #990000;
+      --bg-color: #f8fafc;
+      --card-bg: #ffffff;
+      --text-main: #1e293b;
+      --text-muted: #64748b;
+      --border-color: #e2e8f0;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.06);
+      --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+      --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+      --radius-md: 8px;
+      --radius-lg: 12px;
+    }
+
     body {
-      font-family: sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #f4f6f8;
-      color: #333;
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      line-height: 1.5;
     }
+
     .header {
-      background-color: #bf0000;
+      background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
       color: #fff;
-      padding: 24px;
+      padding: 48px 24px;
       text-align: center;
+      box-shadow: var(--shadow-md);
     }
+
     .header h1 {
       margin: 0;
-      font-size: 28px;
+      font-size: 36px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
     }
+
+    .header p {
+      margin: 12px 0 0 0;
+      font-size: 18px;
+      opacity: 0.9;
+      font-weight: 400;
+    }
+
     .main-container {
-      max-width: 800px;
-      margin: 40px auto;
+      max-width: 900px;
+      margin: -24px auto 48px;
       padding: 0 24px;
+      position: relative;
     }
+
+    .section-card {
+      background-color: var(--card-bg);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-sm);
+      padding: 32px;
+      margin-bottom: 32px;
+      border: 1px solid var(--border-color);
+    }
+
     .section-title {
-      font-size: 22px;
-      font-weight: bold;
+      font-size: 24px;
+      font-weight: 700;
       margin: 0 0 24px 0;
-      padding-bottom: 8px;
-      border-bottom: 2px solid #ddd;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--text-main);
     }
+
+    .section-title::before {
+      content: '';
+      display: block;
+      width: 4px;
+      height: 24px;
+      background-color: var(--primary-color);
+      border-radius: 4px;
+    }
+
     .card-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 16px;
-      margin-bottom: 48px;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 20px;
     }
-    .nav-button {
+
+    .nav-card {
       display: flex;
+      flex-direction: column;
       justify-content: center;
-      align-items: center;
-      padding: 24px 16px;
-      background-color: #fff;
-      color: #bf0000;
-      font-size: 16px;
-      font-weight: bold;
+      padding: 24px;
+      background-color: var(--card-bg);
+      color: var(--text-main);
       text-decoration: none;
-      border: 1px solid #e0e0e0;
-      border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-      transition: all 0.2s ease;
-      text-align: center;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
     }
-    .nav-button:hover {
-      background-color: #bf0000;
-      color: #fff;
-      transform: translateY(-2px);
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+
+    .nav-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background-color: var(--primary-color);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease;
+    }
+
+    .nav-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+      border-color: transparent;
+    }
+
+    .nav-card:hover::after {
+      transform: scaleX(1);
+    }
+
+    .nav-card-title {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: var(--primary-color);
+    }
+
+    .nav-card-desc {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin: 0;
     }
   </style>
 </head>
 <body>
-  
+
   <header class="header">
     <h1>デザインシステム 目次</h1>
+    <p>コンポーネントとページのプレビューカタログ</p>
   </header>
 
   <main class="main-container">
-    
-    <section>
-      <h2 class="section-title">パーツ (Components)</h2>
-      <div class="card-grid">
-        <a href="button.html" class="nav-button">ボタン (Button)</a>
-        <a href="heading.html" class="nav-button">見出し (Heading)</a>
-      </div>
-    </section>
 
-    <section>
+    <div class="section-card">
       <h2 class="section-title">ページ (Pages)</h2>
       <div class="card-grid">
-        <a href="simple-page.html" class="nav-button">シンプルなページ</a>
+        <a href="simple-page.html" class="nav-card">
+          <span class="nav-card-title">シンプルなページ</span>
+          <span class="nav-card-desc">パーツを組み合わせた基本レイアウト</span>
+        </a>
       </div>
-    </section>
+    </div>
+
+    <div class="section-card">
+      <h2 class="section-title">パーツ (Components)</h2>
+      <div class="card-grid">
+        <a href="button.html" class="nav-card">
+          <span class="nav-card-title">ボタン (Button)</span>
+          <span class="nav-card-desc">アクションを促す基本コンポーネント</span>
+        </a>
+        <a href="heading.html" class="nav-card">
+          <span class="nav-card-title">見出し (Heading)</span>
+          <span class="nav-card-desc">セクションのタイトルを表示</span>
+        </a>
+      </div>
+    </div>
 
   </main>
 </body>
