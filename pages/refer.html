@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Refer Friends — Rakuma</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,700;0,900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles/tokens.css">
+<link rel="stylesheet" href="../styles/main.css">
+<style>.refer-card{background:#fff;border:1px solid var(--color-border-default);border-radius:var(--radius-2xl);padding:var(--space-6);margin-bottom:var(--space-4)}.reward-tier{border:1.5px solid var(--color-border-default);border-radius:var(--radius-2xl);padding:var(--space-5);display:flex;align-items:center;gap:var(--space-4);transition:all var(--duration-fast)}.reward-tier.reached{border-color:var(--color-success-500);background:var(--color-success-50)}</style>
+</head>
+<body style="background:var(--color-bg-subtle);min-height:100vh">
+<nav class="navbar">
+  <a href="../index.html" class="navbar-brand" style="text-decoration:none">Rakuma</a>
+  <div class="navbar-actions"><div class="avatar avatar-sm" style="background:linear-gradient(135deg,#db2777,#9d174d);color:#fff">YK</div></div>
+</nav>
+
+<!-- Hero -->
+<div style="background:linear-gradient(135deg,#831843,#db2777);padding:var(--space-16) 0;text-align:center;color:#fff">
+  <div class="container">
+    <div style="font-size:3.5rem;margin-bottom:var(--space-4)">&#x1F91D;</div>
+    <h1 style="font-family:var(--font-family-display);font-size:var(--font-size-5xl);font-weight:900;margin-bottom:var(--space-4)">Share the Fashion</h1>
+    <p style="font-size:var(--font-size-lg);opacity:.85;margin-bottom:var(--space-8);max-width:480px;margin-inline:auto">Invite friends to Rakuma and earn &#xA5;500 for each friend who makes their first purchase.</p>
+    <div style="display:flex;gap:var(--space-6);justify-content:center;flex-wrap:wrap">
+      <div style="text-align:center"><div style="font-family:var(--font-family-display);font-size:var(--font-size-3xl);font-weight:900">&#xA5;500</div><div style="opacity:.7;font-size:var(--font-size-sm)">You earn</div></div>
+      <div style="width:1px;background:rgba(255,255,255,.2)"></div>
+      <div style="text-align:center"><div style="font-family:var(--font-family-display);font-size:var(--font-size-3xl);font-weight:900">&#xA5;300</div><div style="opacity:.7;font-size:var(--font-size-sm)">Friend gets</div></div>
+      <div style="width:1px;background:rgba(255,255,255,.2)"></div>
+      <div style="text-align:center"><div style="font-family:var(--font-family-display);font-size:var(--font-size-3xl);font-weight:900">12</div><div style="opacity:.7;font-size:var(--font-size-sm)">Friends invited</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="container" style="padding-top:var(--space-10);padding-bottom:var(--space-20);max-width:720px">
+  <!-- Referral link -->
+  <div class="refer-card" style="border-color:var(--color-primary);background:var(--color-primary-subtle);margin-bottom:var(--space-8)">
+    <div style="font-weight:700;font-size:var(--font-size-md);color:var(--color-primary);margin-bottom:var(--space-4)">Your Unique Referral Link</div>
+    <div style="display:flex;gap:var(--space-3);align-items:center;margin-bottom:var(--space-5)">
+      <div style="flex:1;background:#fff;border:1.5px solid var(--color-primary);border-radius:var(--radius-lg);padding:var(--space-3) var(--space-4);font-family:var(--font-family-mono);font-size:var(--font-size-sm);color:var(--color-primary);overflow:hidden;text-overflow:ellipsis;white-space:nowrap">
+        rakuma.jp/invite/YUKI2026FASHION
+      </div>
+      <button class="btn btn-primary" id="copyBtn" onclick="copyLink()">Copy Link</button>
+    </div>
+    <div style="font-size:var(--font-size-sm);font-weight:600;color:var(--color-text-secondary);margin-bottom:var(--space-3)">Share via:</div>
+    <div style="display:flex;gap:var(--space-3);flex-wrap:wrap">
+      <button class="btn btn-neutral btn-sm"><svg width="14" height="14" viewBox="0 0 24 24" fill="#1877F2"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg> Facebook</button>
+      <button class="btn btn-neutral btn-sm" style="background:#25D366">&#x1F4AC; LINE</button>
+      <button class="btn btn-neutral btn-sm">&#x1F4F1; SMS</button>
+      <button class="btn btn-neutral btn-sm">&#x2709;&#xFE0F; Email</button>
+      <button class="btn btn-neutral btn-sm">&#x1F4F2; More</button>
+    </div>
+    <div id="copied" style="display:none;margin-top:var(--space-3)"><div class="alert alert-success" style="padding:var(--space-3) var(--space-4)"><svg class="alert-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg><div class="alert-content">Link copied to clipboard!</div></div></div>
+  </div>
+
+  <div class="grid grid-2" style="gap:var(--space-6);margin-bottom:var(--space-8);align-items:start">
+    <!-- Progress -->
+    <div>
+      <h2 style="font-weight:700;font-size:var(--font-size-lg);margin-bottom:var(--space-5)">Your Progress</h2>
+      <div style="display:flex;flex-direction:column;gap:var(--space-4)">
+        <div>
+          <div style="display:flex;justify-content:space-between;font-size:var(--font-size-sm);margin-bottom:var(--space-2)">
+            <span style="color:var(--color-text-secondary)">Friends Invited</span>
+            <span style="font-weight:700;color:var(--color-primary)">12 / 20</span>
+          </div>
+          <div class="progress"><div class="progress-bar" style="width:60%"></div></div>
+        </div>
+        <div>
+          <div style="display:flex;justify-content:space-between;font-size:var(--font-size-sm);margin-bottom:var(--space-2)">
+            <span style="color:var(--color-text-secondary)">Friends Purchased</span>
+            <span style="font-weight:700;color:var(--color-success-700)">8</span>
+          </div>
+          <div class="progress"><div class="progress-bar" style="width:40%;background:var(--color-success-500)"></div></div>
+        </div>
+        <div style="background:var(--color-bg-subtle);border-radius:var(--radius-xl);padding:var(--space-4)">
+          <div style="font-size:var(--font-size-xs);color:var(--color-text-tertiary);margin-bottom:var(--space-1)">Total Earned</div>
+          <div style="font-family:var(--font-family-display);font-size:var(--font-size-3xl);font-weight:900;color:var(--color-primary)">&#xA5;4,000</div>
+          <div style="font-size:var(--font-size-xs);color:var(--color-text-secondary)">8 friends &times; &#xA5;500 each</div>
+        </div>
+      </div>
+    </div>
+    <!-- Reward tiers -->
+    <div>
+      <h2 style="font-weight:700;font-size:var(--font-size-lg);margin-bottom:var(--space-5)">Bonus Rewards</h2>
+      <div style="display:flex;flex-direction:column;gap:var(--space-3)">
+        <div class="reward-tier reached">
+          <div style="font-size:1.5rem">&#x1F947;</div>
+          <div style="flex:1"><div style="font-weight:700;font-size:var(--font-size-sm)">5 Friends — Starter</div><div style="font-size:var(--font-size-xs);color:var(--color-text-secondary)">Extra &#xA5;1,000 bonus + Bronze badge</div></div>
+          <span class="badge badge-success">&#x2713; Reached</span>
+        </div>
+        <div class="reward-tier reached">
+          <div style="font-size:1.5rem">&#x1F948;</div>
+          <div style="flex:1"><div style="font-weight:700;font-size:var(--font-size-sm)">10 Friends — Achiever</div><div style="font-size:var(--font-size-xs);color:var(--color-text-secondary)">Extra &#xA5;2,500 bonus + Silver badge</div></div>
+          <span class="badge badge-success">&#x2713; Reached</span>
+        </div>
+        <div class="reward-tier" style="border-color:var(--color-warning-500);background:var(--color-warning-50)">
+          <div style="font-size:1.5rem">&#x1F3C6;</div>
+          <div style="flex:1"><div style="font-weight:700;font-size:var(--font-size-sm)">20 Friends — Champion</div><div style="font-size:var(--font-size-xs);color:var(--color-text-secondary)">Extra &#xA5;5,000 bonus + Gold badge + 0% fees for 1 month</div></div>
+          <span style="font-size:var(--font-size-xs);color:var(--color-warning-700);font-weight:600;white-space:nowrap">8 more!</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Recent referrals -->
+  <h2 style="font-weight:700;font-size:var(--font-size-lg);margin-bottom:var(--space-5)">Recent Referrals</h2>
+  <div style="background:#fff;border:1px solid var(--color-border-default);border-radius:var(--radius-2xl);overflow:hidden">
+    <div style="display:flex;gap:var(--space-4);align-items:center;padding:var(--space-4) var(--space-5);border-bottom:1px solid var(--color-border-default)">
+      <div class="avatar avatar-sm" style="background:linear-gradient(135deg,#f59e0b,#d97706);color:#fff;font-weight:700">MN</div>
+      <div style="flex:1"><div style="font-size:var(--font-size-sm);font-weight:600">Mana_N</div><div style="font-size:var(--font-size-xs);color:var(--color-text-tertiary)">Joined Mar 5 &nbsp;·&nbsp; Made purchase</div></div>
+      <span class="badge badge-success">+&#xA5;500</span>
+    </div>
+    <div style="display:flex;gap:var(--space-4);align-items:center;padding:var(--space-4) var(--space-5);border-bottom:1px solid var(--color-border-default)">
+      <div class="avatar avatar-sm" style="background:linear-gradient(135deg,#3b82f6,#1d4ed8);color:#fff;font-weight:700">RK</div>
+      <div style="flex:1"><div style="font-size:var(--font-size-sm);font-weight:600">Rin_K</div><div style="font-size:var(--font-size-xs);color:var(--color-text-tertiary)">Joined Feb 28 &nbsp;·&nbsp; Made purchase</div></div>
+      <span class="badge badge-success">+&#xA5;500</span>
+    </div>
+    <div style="display:flex;gap:var(--space-4);align-items:center;padding:var(--space-4) var(--space-5)">
+      <div class="avatar avatar-sm" style="background:linear-gradient(135deg,#22c55e,#15803d);color:#fff;font-weight:700">AS</div>
+      <div style="flex:1"><div style="font-size:var(--font-size-sm);font-weight:600">Ami_S</div><div style="font-size:var(--font-size-xs);color:var(--color-text-tertiary)">Joined Mar 1 &nbsp;·&nbsp; Not yet purchased</div></div>
+      <span class="badge badge-warning">Pending</span>
+    </div>
+  </div>
+</div>
+<script>
+function copyLink(){navigator.clipboard.writeText("https://rakuma.jp/invite/YUKI2026FASHION").then(function(){document.getElementById("copied").style.display="block";document.getElementById("copyBtn").textContent="Copied!";setTimeout(function(){document.getElementById("copied").style.display="none";document.getElementById("copyBtn").textContent="Copy Link";},3000);}).catch(function(){document.getElementById("copied").style.display="block";});}
+</script>
+</body></html>
