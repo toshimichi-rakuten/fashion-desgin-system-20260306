@@ -421,3 +421,32 @@ input,button,textarea,select{font:inherit}
 /* ── BADGE COUNTER ── */
 .badge-counter{position:relative;display:inline-flex}
 .badge-counter .counter{position:absolute;top:-.375rem;right:-.375rem;min-width:1.125rem;height:1.125rem;background:var(--color-error-500);color:#fff;border-radius:var(--radius-full);font-size:.6rem;font-weight:700;display:flex;align-items:center;justify-content:center;padding:0 .25rem;border:2px solid var(--color-bg-base)}
+/* ── FOCUS STYLES (Accessibility) ── */
+:focus-visible{outline:2px solid var(--color-border-focus);outline-offset:2px;border-radius:var(--radius-sm)}
+button:focus-visible,.btn:focus-visible,.nav-link:focus-visible,.tab:focus-visible,.accordion-header:focus-visible{outline:2px solid var(--color-border-focus);outline-offset:2px}
+.form-input:focus-visible{outline:none}
+
+/* ── PRINT STYLES ── */
+@media print{
+  .navbar,.docs-sidebar,.toast-container,.modal-overlay,.btn-primary:not(.print-btn){display:none!important}
+  body{background:#fff;color:#000;font-size:12pt}
+  .container{max-width:100%;padding:0}
+  .card,.section-card{box-shadow:none;border:1px solid #ccc}
+  a{color:#000;text-decoration:none}
+  .print-header{display:block!important;text-align:center;margin-bottom:1cm;border-bottom:2px solid #000;padding-bottom:.5cm}
+  .print-header::before{content:"Rakuma — Order Receipt";font-size:18pt;font-weight:bold;display:block;margin-bottom:.25cm}
+}
+.print-header{display:none}
+
+/* ── CUSTOM SCROLLBAR ── */
+::-webkit-scrollbar{width:8px;height:8px}
+::-webkit-scrollbar-track{background:var(--color-bg-subtle)}
+::-webkit-scrollbar-thumb{background:var(--color-neutral-300);border-radius:var(--radius-full);border:2px solid var(--color-bg-subtle)}
+::-webkit-scrollbar-thumb:hover{background:var(--color-neutral-400)}
+
+/* ── SELECTION COLOR ── */
+::selection{background:var(--color-brand-100);color:var(--color-brand-800)}
+
+/* ── INLINE CODE ── */
+code,.code{font-family:var(--font-family-mono);font-size:.85em;background:var(--color-bg-muted);padding:.1em .35em;border-radius:var(--radius-sm);color:var(--color-brand-700)}
+pre{background:var(--color-neutral-900);color:var(--color-neutral-100);padding:var(--space-5);border-radius:var(--radius-xl);overflow-x:auto;font-family:var(--font-family-mono);font-size:var(--font-size-sm);line-height:var(--line-height-relaxed)}
