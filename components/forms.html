@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles/tokens.css">
+<link rel="stylesheet" href="../styles/main.css">
+<style>body{padding:2rem;background:var(--color-bg-subtle)}</style>
+</head><body>
+<h2 style="margin-bottom:1.5rem;font-family:var(--font-family-display)">Form Elements</h2>
+<div style="max-width:400px;display:flex;flex-direction:column;gap:1rem">
+  <div class="form-group">
+    <label class="form-label form-label-required">Email</label>
+    <div class="input-group"><span class="input-addon input-addon-left"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg></span><input type="email" class="form-input" placeholder="you@email.com" style="padding-left:2.5rem"></div>
+  </div>
+  <div class="form-group">
+    <label class="form-label form-label-required">Category</label>
+    <select class="form-input form-select"><option value="">Select category</option><option>Dresses</option><option>Tops</option><option>Bottoms</option></select>
+  </div>
+  <div class="form-group">
+    <label class="form-label">Description</label>
+    <textarea class="form-input" rows="3" placeholder="Write a description..."></textarea>
+  </div>
+  <div class="form-group">
+    <label class="form-label">Error state</label>
+    <input type="text" class="form-input error" value="bad input">
+    <div class="form-error">This field is invalid</div>
+  </div>
+  <button class="btn btn-primary btn-full">Submit</button>
+</div>
+</body></html>

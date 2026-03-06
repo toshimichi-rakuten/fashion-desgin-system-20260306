@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Messages — Rakuma</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles/tokens.css">
+<link rel="stylesheet" href="../styles/main.css">
+<style>
+.msg-layout{display:grid;grid-template-columns:320px 1fr;height:calc(100vh - 68px)}
+.thread-list{border-right:1px solid var(--color-border-default);overflow-y:auto;background:#fff}
+.thread-item{display:flex;gap:var(--space-3);padding:var(--space-4) var(--space-5);border-bottom:1px solid var(--color-border-default);cursor:pointer;transition:background var(--duration-fast);position:relative}
+.thread-item:hover{background:var(--color-bg-subtle)}
+.thread-item.active{background:var(--color-primary-subtle);border-right:3px solid var(--color-primary)}
+.thread-body{flex:1;min-width:0}
+.thread-name{font-weight:600;font-size:var(--font-size-sm);margin-bottom:2px;display:flex;justify-content:space-between;align-items:center}
+.thread-preview{font-size:var(--font-size-xs);color:var(--color-text-tertiary);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:200px}
+.thread-time{font-size:.65rem;color:var(--color-text-tertiary);white-space:nowrap}
+.unread-dot{width:.5rem;height:.5rem;background:var(--color-primary);border-radius:var(--radius-full);flex-shrink:0;margin-top:var(--space-2)}
+.chat-area{display:flex;flex-direction:column;background:var(--color-bg-subtle)}
+.chat-header{padding:var(--space-4) var(--space-6);border-bottom:1px solid var(--color-border-default);background:#fff;display:flex;align-items:center;gap:var(--space-4)}
+.chat-messages{flex:1;overflow-y:auto;padding:var(--space-6);display:flex;flex-direction:column;gap:var(--space-4)}
+.chat-input-bar{padding:var(--space-4) var(--space-6);border-top:1px solid var(--color-border-default);background:#fff;display:flex;gap:var(--space-3);align-items:flex-end}
+.msg-bubble{max-width:68%;padding:var(--space-3) var(--space-4);border-radius:var(--radius-2xl);font-size:var(--font-size-sm);line-height:var(--line-height-relaxed)}
+.msg-out{background:var(--color-primary);color:#fff;border-bottom-right-radius:var(--radius-sm);align-self:flex-end}
+.msg-in{background:#fff;color:var(--color-text-primary);border-bottom-left-radius:var(--radius-sm);box-shadow:var(--shadow-sm)}
+.msg-time{font-size:.65rem;margin-top:var(--space-1);opacity:.65}
+.msg-row-out{display:flex;flex-direction:column;align-items:flex-end}
+.msg-row-in{display:flex;flex-direction:column;align-items:flex-start}
+.product-msg{background:#fff;border:1px solid var(--color-border-default);border-radius:var(--radius-xl);padding:var(--space-3) var(--space-4);display:flex;gap:var(--space-3);align-items:center;max-width:280px;cursor:pointer;transition:box-shadow var(--duration-fast)}
+.product-msg:hover{box-shadow:var(--shadow-md)}
+</style>
+</head>
+<body>
+<nav class="navbar">
+  <a href="../index.html" class="navbar-brand" style="text-decoration:none">Rakuma</a>
+  <div class="navbar-nav">
+    <a class="nav-link" href="home.html">Home</a>
+    <a class="nav-link" href="#">Browse</a>
+    <a class="nav-link" href="#">Sell</a>
+    <a class="nav-link active" href="#">Messages <span class="badge badge-error" style="margin-left:.25rem;padding:.15rem .4rem">3</span></a>
+  </div>
+  <div class="navbar-actions">
+    <button class="btn btn-primary btn-sm">List Item</button>
+    <div class="avatar avatar-sm" style="background:linear-gradient(135deg,#db2777,#9d174d);color:#fff;cursor:pointer">YK</div>
+  </div>
+</nav>
+
+<div class="msg-layout">
+  <!-- Thread list -->
+  <div class="thread-list">
+    <!-- Search -->
+    <div style="padding:var(--space-4) var(--space-5);border-bottom:1px solid var(--color-border-default)">
+      <div class="input-group">
+        <span class="input-addon input-addon-left"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></span>
+        <input type="search" class="form-input" placeholder="Search messages..." style="padding-left:2.25rem;padding-top:.5rem;padding-bottom:.5rem">
+      </div>
+    </div>
+    <!-- Threads -->
+    <div class="thread-item active">
+      <div class="avatar avatar-md" style="background:linear-gradient(135deg,#f59e0b,#d97706);color:#fff;font-weight:700;flex-shrink:0">MN</div>
+      <div class="thread-body">
+        <div class="thread-name">Mana_N <span class="thread-time">2m ago</span></div>
+        <div class="thread-preview">Is the dress still available?</div>
+      </div>
+      <div class="unread-dot"></div>
+    </div>
+    <div class="thread-item">
+      <div class="avatar avatar-md" style="background:linear-gradient(135deg,#3b82f6,#1d4ed8);color:#fff;font-weight:700;flex-shrink:0">RK</div>
+      <div class="thread-body">
+        <div class="thread-name">Rin_K <span class="thread-time">1h ago</span></div>
+        <div class="thread-preview">Thank you so much! It arrived perfectly.</div>
+      </div>
+    </div>
+    <div class="thread-item">
+      <div class="avatar avatar-md" style="background:linear-gradient(135deg,#22c55e,#15803d);color:#fff;font-weight:700;flex-shrink:0">AS</div>
+      <div class="thread-body">
+        <div class="thread-name">Ami_S <span class="thread-time">3h ago</span></div>
+        <div class="thread-preview">Could you do ¥2,800 for the sneakers?</div>
+      </div>
+      <div class="unread-dot"></div>
+    </div>
+    <div class="thread-item">
+      <div class="avatar avatar-md" style="background:linear-gradient(135deg,#a855f7,#7c3aed);color:#fff;font-weight:700;flex-shrink:0">TH</div>
+      <div class="thread-body">
+        <div class="thread-name">Tomo_H <span class="thread-time">Yesterday</span></div>
+        <div class="thread-preview">Shipped! Tracking: JP1234567890</div>
+      </div>
+    </div>
+    <div class="thread-item">
+      <div class="avatar avatar-md" style="background:linear-gradient(135deg,#ef4444,#b91c1c);color:#fff;font-weight:700;flex-shrink:0">YA</div>
+      <div class="thread-body">
+        <div class="thread-name">Yui_A <span class="thread-time">2d ago</span></div>
+        <div class="thread-preview">Does size M fit like a JP 36?</div>
+      </div>
+      <div class="unread-dot"></div>
+    </div>
+    <div class="thread-item">
+      <div class="avatar avatar-md" style="background:linear-gradient(135deg,#db2777,#831843);color:#fff;font-weight:700;flex-shrink:0">KM</div>
+      <div class="thread-body">
+        <div class="thread-name">Kana_M <span class="thread-time">3d ago</span></div>
+        <div class="thread-preview">Ok thanks! I will buy it now.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Chat area -->
+  <div class="chat-area">
+    <!-- Header -->
+    <div class="chat-header">
+      <div class="avatar avatar-md" style="background:linear-gradient(135deg,#f59e0b,#d97706);color:#fff;font-weight:700">MN</div>
+      <div style="flex:1">
+        <div style="font-weight:700;font-size:var(--font-size-md)">Mana_N</div>
+        <div style="font-size:var(--font-size-xs);color:var(--color-text-tertiary);display:flex;align-items:center;gap:var(--space-1)">
+          <span class="badge-dot" style="background:var(--color-success-500);width:.5rem;height:.5rem;border-radius:9999px;display:inline-block"></span> Online now
+        </div>
+      </div>
+      <div style="display:flex;gap:var(--space-2)">
+        <button class="btn btn-ghost btn-icon btn-sm" title="View profile"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"/></svg></button>
+        <button class="btn btn-ghost btn-icon btn-sm" title="More options"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM12.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM18.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"/></svg></button>
+      </div>
+    </div>
+    <!-- Messages -->
+    <div class="chat-messages">
+      <div style="text-align:center;font-size:var(--font-size-xs);color:var(--color-text-tertiary);margin:var(--space-2) 0">Today, 2:34 PM</div>
+
+      <!-- Incoming -->
+      <div class="msg-row-in">
+        <div class="msg-bubble msg-in">Hi! Is the Zara Floral Wrap Dress still available? I&apos;m very interested!</div>
+        <div class="msg-time" style="color:var(--color-text-tertiary)">2:34 PM</div>
+      </div>
+
+      <!-- Product card in chat -->
+      <div class="msg-row-in" style="margin-top:var(--space-1)">
+        <div class="product-msg">
+          <div style="width:3.5rem;height:3.5rem;background:linear-gradient(135deg,#fce7f3,#fbcfe8);border-radius:var(--radius-lg);display:flex;align-items:center;justify-content:center;font-size:1.75rem;flex-shrink:0">👗</div>
+          <div>
+            <div style="font-size:var(--font-size-xs);color:var(--color-text-tertiary)">Zara</div>
+            <div style="font-weight:600;font-size:var(--font-size-xs);line-height:1.3">Floral Wrap Midi Dress</div>
+            <div style="color:var(--color-primary);font-weight:700;font-size:var(--font-size-sm);margin-top:2px">&#xA5;3,500</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Outgoing -->
+      <div class="msg-row-out">
+        <div class="msg-bubble msg-out">Yes, it&apos;s still available! 😊 Great condition, only worn once.</div>
+        <div class="msg-time" style="color:var(--color-text-tertiary)">2:36 PM</div>
+      </div>
+
+      <!-- Incoming offer -->
+      <div class="msg-row-in">
+        <div class="msg-bubble msg-in">Wonderful! Could you do &#xA5;3,200? I&apos;d buy right away.</div>
+        <div class="msg-time" style="color:var(--color-text-tertiary)">2:37 PM</div>
+      </div>
+
+      <!-- Outgoing counter -->
+      <div class="msg-row-out">
+        <div class="msg-bubble msg-out">I can do &#xA5;3,300 as the lowest. That&apos;s already -30% from original!</div>
+        <div class="msg-time" style="color:var(--color-text-tertiary)">2:38 PM</div>
+      </div>
+
+      <!-- Incoming accept -->
+      <div class="msg-row-in">
+        <div class="msg-bubble msg-in">Deal! &#xA5;3,300 works for me. Can you ship tomorrow?</div>
+        <div class="msg-time" style="color:var(--color-text-tertiary)">2:40 PM</div>
+      </div>
+
+      <!-- Outgoing -->
+      <div class="msg-row-out">
+        <div class="msg-bubble msg-out">Of course! I&apos;ll ship it first thing tomorrow morning. Please proceed with the purchase.</div>
+        <div class="msg-time" style="color:var(--color-text-tertiary)">2:41 PM</div>
+      </div>
+
+      <!-- Latest incoming -->
+      <div class="msg-row-in">
+        <div class="msg-bubble msg-in" style="display:flex;align-items:center;gap:var(--space-2)">
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          Is the dress still available?
+        </div>
+        <div class="msg-time" style="color:var(--color-text-tertiary)">Just now</div>
+      </div>
+    </div>
+    <!-- Input bar -->
+    <div class="chat-input-bar">
+      <button class="btn btn-ghost btn-icon btn-sm" title="Attach photo"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m2.25 15.75 5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5 1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"/></svg></button>
+      <input type="text" class="form-input" placeholder="Type a message..." style="flex:1">
+      <button class="btn btn-primary btn-icon"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5"/></svg></button>
+    </div>
+  </div>
+</div>
+
+<script>
+document.querySelectorAll(".thread-item").forEach(function(t){t.addEventListener("click",function(){document.querySelectorAll(".thread-item").forEach(function(x){x.classList.remove("active")});t.classList.add("active");var dot=t.querySelector(".unread-dot");if(dot)dot.remove();});});
+var input=document.querySelector(".chat-input-bar input");var send=document.querySelector(".chat-input-bar .btn-primary");var msgs=document.querySelector(".chat-messages");function sendMsg(){var v=input.value.trim();if(!v)return;var d=document.createElement("div");d.className="msg-row-out";d.innerHTML="<div class='msg-bubble msg-out'>"+v+"</div><div class='msg-time' style='color:var(--color-text-tertiary)'>Just now</div>";msgs.appendChild(d);input.value="";msgs.scrollTop=msgs.scrollHeight;}
+send.addEventListener("click",sendMsg);
+input.addEventListener("keydown",function(e){if(e.key==="Enter"&&!e.shiftKey){e.preventDefault();sendMsg();}});
+</script>
+</body></html>
