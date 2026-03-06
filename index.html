@@ -6,18 +6,11 @@
   <title>Component Library</title>
   <style>
     :root {
-      --primary-color: #bf0000;
-      --primary-hover: #990000;
-      --bg-color: #f8fafc;
-      --card-bg: #ffffff;
-      --text-main: #1e293b;
-      --text-muted: #64748b;
-      --border-color: #e2e8f0;
-      --shadow-sm: 0 1px 3px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.06);
-      --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
-      --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
-      --radius-md: 8px;
-      --radius-lg: 12px;
+      --primary-color: #111111;
+      --bg-color: #ffffff;
+      --text-main: #333333;
+      --text-muted: #888888;
+      --border-color: #eaeaea;
     }
 
     body {
@@ -26,155 +19,141 @@
       padding: 0;
       background-color: var(--bg-color);
       color: var(--text-main);
-      line-height: 1.5;
-    }
-
-    .header {
-      background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
-      color: #fff;
-      padding: 48px 24px;
-      text-align: center;
-      box-shadow: var(--shadow-md);
-    }
-
-    .header h1 {
-      margin: 0;
-      font-size: 36px;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-    }
-
-    .header p {
-      margin: 12px 0 0 0;
-      font-size: 18px;
-      opacity: 0.9;
-      font-weight: 400;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
     }
 
     .main-container {
-      max-width: 900px;
-      margin: -24px auto 48px;
-      padding: 0 24px;
-      position: relative;
+      max-width: 640px;
+      margin: 80px auto;
+      padding: 0 32px;
     }
 
-    .section-card {
-      background-color: var(--card-bg);
-      border-radius: var(--radius-lg);
-      box-shadow: var(--shadow-sm);
-      padding: 32px;
-      margin-bottom: 32px;
-      border: 1px solid var(--border-color);
+    .header {
+      margin-bottom: 64px;
     }
 
-    .section-title {
-      font-size: 24px;
-      font-weight: 700;
-      margin: 0 0 24px 0;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      color: var(--text-main);
-    }
-
-    .section-title::before {
-      content: '';
-      display: block;
-      width: 4px;
-      height: 24px;
-      background-color: var(--primary-color);
-      border-radius: 4px;
-    }
-
-    .card-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-      gap: 20px;
-    }
-
-    .nav-card {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 24px;
-      background-color: var(--card-bg);
-      color: var(--text-main);
-      text-decoration: none;
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius-md);
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .nav-card::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 3px;
-      background-color: var(--primary-color);
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform 0.3s ease;
-    }
-
-    .nav-card:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-lg);
-      border-color: transparent;
-    }
-
-    .nav-card:hover::after {
-      transform: scaleX(1);
-    }
-
-    .nav-card-title {
-      font-size: 18px;
+    .header h1 {
+      margin: 0 0 8px 0;
+      font-size: 28px;
       font-weight: 600;
-      margin-bottom: 8px;
+      letter-spacing: -0.02em;
       color: var(--primary-color);
     }
 
-    .nav-card-desc {
+    .header p {
+      margin: 0;
+      font-size: 15px;
+      color: var(--text-muted);
+    }
+
+    .section-block {
+      margin-bottom: 48px;
+    }
+
+    .section-title {
+      font-size: 14px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      margin: 0 0 16px 0;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .link-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .link-item {
+      margin-bottom: 8px;
+    }
+
+    .nav-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 16px;
+      color: var(--text-main);
+      text-decoration: none;
+      border-radius: 6px;
+      transition: background-color 0.2s ease;
+    }
+
+    .nav-link:hover {
+      background-color: #f5f5f5;
+    }
+
+    .nav-link-title {
+      font-size: 16px;
+      font-weight: 500;
+    }
+
+    .nav-link-desc {
       font-size: 14px;
       color: var(--text-muted);
-      margin: 0;
+    }
+
+    .nav-icon {
+      color: var(--text-muted);
+      font-size: 18px;
+      transition: transform 0.2s ease;
+    }
+
+    .nav-link:hover .nav-icon {
+      transform: translateX(4px);
+      color: var(--primary-color);
     }
   </style>
 </head>
 <body>
 
-  <header class="header">
-    <h1>デザインシステム 目次</h1>
-    <p>コンポーネントとページのプレビューカタログ</p>
-  </header>
-
   <main class="main-container">
+    <header class="header">
+      <h1>デザインシステム 目次</h1>
+      <p>コンポーネントとページのプレビューカタログ</p>
+    </header>
 
-    <div class="section-card">
-      <h2 class="section-title">ページ (Pages)</h2>
-      <div class="card-grid">
-        <a href="pages/simple-page.html" class="nav-card">
-          <span class="nav-card-title">シンプルなページ</span>
-          <span class="nav-card-desc">パーツを組み合わせた基本レイアウト</span>
-        </a>
-      </div>
+    <div class="section-block">
+      <h2 class="section-title">Pages</h2>
+      <ul class="link-list">
+        <li class="link-item">
+          <a href="pages/simple-page.html" class="nav-link">
+            <div>
+              <div class="nav-link-title">シンプルなページ</div>
+              <div class="nav-link-desc">パーツを組み合わせた基本レイアウト</div>
+            </div>
+            <span class="nav-icon">→</span>
+          </a>
+        </li>
+      </ul>
     </div>
 
-    <div class="section-card">
-      <h2 class="section-title">パーツ (Components)</h2>
-      <div class="card-grid">
-        <a href="components/button.html" class="nav-card">
-          <span class="nav-card-title">ボタン (Button)</span>
-          <span class="nav-card-desc">アクションを促す基本コンポーネント</span>
-        </a>
-        <a href="components/heading.html" class="nav-card">
-          <span class="nav-card-title">見出し (Heading)</span>
-          <span class="nav-card-desc">セクションのタイトルを表示</span>
-        </a>
-      </div>
+    <div class="section-block">
+      <h2 class="section-title">Components</h2>
+      <ul class="link-list">
+        <li class="link-item">
+          <a href="components/button.html" class="nav-link">
+            <div>
+              <div class="nav-link-title">ボタン (Button)</div>
+              <div class="nav-link-desc">アクションを促す基本コンポーネント</div>
+            </div>
+            <span class="nav-icon">→</span>
+          </a>
+        </li>
+        <li class="link-item">
+          <a href="components/heading.html" class="nav-link">
+            <div>
+              <div class="nav-link-title">見出し (Heading)</div>
+              <div class="nav-link-desc">セクションのタイトルを表示</div>
+            </div>
+            <span class="nav-icon">→</span>
+          </a>
+        </li>
+      </ul>
     </div>
 
   </main>
