@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Rakuma Premium — Upgrade</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,700;0,900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles/tokens.css">
+<link rel="stylesheet" href="../styles/main.css">
+<style>.plan-card{background:#fff;border:2px solid var(--color-border-default);border-radius:var(--radius-3xl);padding:var(--space-8);position:relative;transition:all var(--duration-normal)}.plan-card:hover{box-shadow:var(--shadow-xl);transform:translateY(-4px)}.plan-card.featured{border-color:var(--color-primary);box-shadow:var(--shadow-xl)}.featured-badge{position:absolute;top:-1rem;left:50%;transform:translateX(-50%);white-space:nowrap}.feature-row{display:flex;justify-content:space-between;align-items:center;padding:var(--space-3) 0;border-bottom:1px solid var(--color-border-default);font-size:var(--font-size-sm)}.feature-row:last-child{border-bottom:none}.check-yes{color:var(--color-success-500);font-size:1.125rem}.check-no{color:var(--color-neutral-300);font-size:1.125rem}</style>
+</head>
+<body style="background:var(--color-bg-subtle);min-height:100vh">
+<nav class="navbar">
+  <a href="../index.html" class="navbar-brand" style="text-decoration:none">Rakuma</a>
+  <div class="navbar-nav"><a class="nav-link" href="home.html">Home</a></div>
+  <div class="navbar-actions">
+    <a href="login.html" class="btn btn-ghost btn-sm">Log In</a>
+    <div class="avatar avatar-sm" style="background:linear-gradient(135deg,#db2777,#9d174d);color:#fff">YK</div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<div style="background:linear-gradient(135deg,#831843,#db2777);padding:var(--space-20) 0 var(--space-32);text-align:center;color:#fff">
+  <div class="container">
+    <span class="badge" style="background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.3);margin-bottom:var(--space-4)">&#x2728; Rakuma Premium</span>
+    <h1 style="font-family:var(--font-family-display);font-size:var(--font-size-6xl);font-weight:900;margin-bottom:var(--space-5);line-height:1.1">Sell More,<br>Keep More</h1>
+    <p style="font-size:var(--font-size-xl);opacity:.85;max-width:520px;margin-inline:auto;line-height:var(--line-height-relaxed)">Lower fees, higher limits, priority support, and exclusive seller tools — all in one plan.</p>
+  </div>
+</div>
+
+<!-- Pricing cards -->
+<div class="container" style="margin-top:calc(var(--space-32) * -1 + var(--space-10));padding-bottom:var(--space-20)">
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:var(--space-6);max-width:960px;margin-inline:auto">
+
+    <!-- Free tier -->
+    <div class="plan-card">
+      <div style="font-weight:700;font-size:var(--font-size-lg);margin-bottom:var(--space-2)">Free</div>
+      <div style="color:var(--color-text-secondary);font-size:var(--font-size-sm);margin-bottom:var(--space-6)">Get started for free</div>
+      <div style="margin-bottom:var(--space-8)">
+        <div style="font-size:var(--font-size-5xl);font-weight:900;line-height:1">&#xA5;0</div>
+        <div style="color:var(--color-text-tertiary);font-size:var(--font-size-sm)">forever</div>
+      </div>
+      <button class="btn btn-secondary btn-full btn-lg" style="margin-bottom:var(--space-8)">Current Plan</button>
+      <div style="display:flex;flex-direction:column;gap:var(--space-3)">
+        <div style="display:flex;align-items:center;gap:var(--space-3);font-size:var(--font-size-sm)"><span class="check-yes">&#x2714;</span> Up to 20 active listings</div>
+        <div style="display:flex;align-items:center;gap:var(--space-3);font-size:var(--font-size-sm)"><span class="check-yes">&#x2714;</span> 3.5% service fee</div>
+        <div style="display:flex;align-items:center;gap:var(--space-3);font-size:var(--font-size-sm)"><span class="check-yes">&#x2714;</span> Standard support</div>
+        <div style="display:flex;align-items:center;gap:var(--space-3);font-size:var(--font-size-sm);color:var(--color-text-tertiary)"><span class="check-no">&#x2715;</span> Boosted listings</div>
+        <div style="display:flex;align-items:center;gap:var(--space-3);font-size:var(--font-size-sm);color:var(--color-text-tertiary)"><span class="check-no">&#x2715;</span> Analytics dashboard</div>
+        <div style="display:flex;align-items:center;gap:var(--space-3);font-size:var(--font-size-sm);color:var(--color-text-tertiary)"><span class="check-no">&#x2715;</span> Bulk editing tools</div>
+      </div>
+    </div>
+
+    <!-- Premium tier -->
+    <div class="plan-card featured">
+      <div class="featured-badge"><span class="badge badge-solid badge-lg">&#x2B50; Most Popular</span></div>
+      <div style="font-weight:700;font-size:var(--font-size-lg);margin-bottom:var(--space-2);color:var(--color-primary)">Premium</div>
+      <div style="color:var(--color-text-secondary);font-size:var(--font-size-sm);margin-bottom:var(--space-6)">For serious sellers</div>
+      <div style="margin-bottom:var(--space-8)">
+        <div style="display:flex;align-items:baseline;gap:var(--space-2)">
+          <div style="font-size:var(--font-size-5xl);font-weight:900;line-height:1;color:var(--color-primary)">&#xA5;980</div>
+          <div style="color:var(--color-text-tertiary);font-size:var(--font-size-sm)">/month</div>
+        </div>
+        <div style="color:var(--color-text-tertiary);font-size:var(--font-size-xs)">or &#xA5;8,820/year (save 25%)</div>
+      </div>
+      <button class="btn btn-primary btn-full btn-lg" style="margin-bottom:var(--space-8)">Start Free 14-Day Trial</button>
+      <div style="display:flex;flex-direction:column;gap:var(--space-3)">
+        <div style="display:flex;align-items:center;gap:var(--space-3);font-size:var(--font-size-sm)"><span class="check-yes">&#x2714;</span> Unlimited active listings</div>
+        <div style="display:flex;align-items:center;gap:var(--space-3);font-size:var(--font-size-sm)"><span class="check-yes">&#x2714;</span> <strong>2.5% service fee</strong> (save 1%)</div>
+        <div style="display:flex;align-items:center;gap:var(--space-3);font-size:var(--font-size-sm)"><span class="check-yes">&#x2714;</span> Priority support (24h)</div>
+        <div style="display:flex;align-items:center;gap:var(--space-3);font-size:var(--font-size-sm)"><span class="check-yes">&#x2714;</span> 5 boosted listings/month</div>
+        <div style="display:flex;align-items:center;gap:var(--space-3);font-size:var(--font-size-sm)"><span class="check-yes">&#x2714;</span> Full analytics dashboard</div>
+        <div style="display:flex;align-items:center;gap:var(--space-3);font-size:var(--font-size-sm);color:var(--color-text-tertiary)"><span class="check-no">&#x2715;</span> Bulk editing tools</div>
+      </div>
+    </div>
+
+    <!-- Pro tier -->
+    <div class="plan-card">
+      <div style="font-weight:700;font-size:var(--font-size-lg);margin-bottom:var(--space-2)">Pro Seller</div>
+      <div style="color:var(--color-text-secondary);font-size:var(--font-size-sm);margin-bottom:var(--space-6)">For power sellers</div>
+      <div style="margin-bottom:var(--space-8)">
+        <div style="display:flex;align-items:baseline;gap:var(--space-2)">
+          <div style="font-size:var(--font-size-5xl);font-weight:900;line-height:1">&#xA5;2,480</div>
+          <div style="color:var(--color-text-tertiary);font-size:var(--font-size-sm)">/month</div>
+        </div>
+        <div style="color:var(--color-text-tertiary);font-size:var(--font-size-xs)">or &#xA5;22,320/year (save 25%)</div>
+      </div>
+      <button class="btn btn-neutral btn-full btn-lg" style="margin-bottom:var(--space-8)">Contact Sales</button>
+      <div style="display:flex;flex-direction:column;gap:var(--space-3)">
+        <div style="display:flex;align-items:center;gap:var(--space-3);font-size:var(--font-size-sm)"><span class="check-yes">&#x2714;</span> Everything in Premium</div>
+        <div style="display:flex;align-items:center;gap:var(--space-3);font-size:var(--font-size-sm)"><span class="check-yes">&#x2714;</span> <strong>1.5% service fee</strong></div>
+        <div style="display:flex;align-items:center;gap:var(--space-3);font-size:var(--font-size-sm)"><span class="check-yes">&#x2714;</span> VIP support (dedicated)</div>
+        <div style="display:flex;align-items:center;gap:var(--space-3);font-size:var(--font-size-sm)"><span class="check-yes">&#x2714;</span> Unlimited boosted listings</div>
+        <div style="display:flex;align-items:center;gap:var(--space-3);font-size:var(--font-size-sm)"><span class="check-yes">&#x2714;</span> Advanced analytics + export</div>
+        <div style="display:flex;align-items:center;gap:var(--space-3);font-size:var(--font-size-sm)"><span class="check-yes">&#x2714;</span> Bulk editing tools</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <div style="max-width:640px;margin:var(--space-16) auto 0">
+    <h2 style="font-family:var(--font-family-display);font-size:var(--font-size-3xl);font-weight:700;text-align:center;margin-bottom:var(--space-8)">Common Questions</h2>
+    <div class="accordion">
+      <div class="accordion-item open"><div class="accordion-header"><div class="accordion-title">Can I cancel anytime?</div><svg class="accordion-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg></div><div class="accordion-body"><div class="accordion-content">Yes! Cancel anytime from your account settings. Your plan continues until the end of your billing period. No cancellation fees.</div></div></div>
+      <div class="accordion-item"><div class="accordion-header"><div class="accordion-title">What happens to my listings if I downgrade?</div><svg class="accordion-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg></div><div class="accordion-body"><div class="accordion-content">If you have more than 20 listings when downgrading to Free, your newest listings will be temporarily hidden until you&apos;re within the free tier limit. You choose which to keep active.</div></div></div>
+      <div class="accordion-item"><div class="accordion-header"><div class="accordion-title">Is the 14-day trial really free?</div><svg class="accordion-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg></div><div class="accordion-body"><div class="accordion-content">Absolutely. No credit card required to start your trial. After 14 days, you can choose to subscribe or return to the Free plan — no charges either way.</div></div></div>
+    </div>
+  </div>
+</div>
+<script>document.querySelectorAll(".accordion-item").forEach(function(item){item.querySelector(".accordion-header").addEventListener("click",function(){item.classList.toggle("open")})});</script>
+</body></html>
