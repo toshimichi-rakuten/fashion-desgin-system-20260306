@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Server Error 500 - Rakuma</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles/tokens.css">
+<link rel="stylesheet" href="../styles/main.css">
+<style>body{min-height:100vh;display:flex;flex-direction:column;background:var(--color-bg-subtle)}</style>
+</head>
+<body>
+<nav class="navbar"><a href="../index.html" class="navbar-brand" style="text-decoration:none">Rakuma</a><div class="navbar-actions"><a href="home.html" class="btn btn-ghost btn-sm">Go Home</a></div></nav>
+<div style="flex:1;display:flex;align-items:center;justify-content:center;padding:var(--space-16) var(--space-6);text-align:center">
+  <div style="max-width:520px">
+    <div style="font-family:var(--font-family-display);font-size:8rem;font-weight:900;color:var(--color-error-200);line-height:1;margin-bottom:var(--space-6);letter-spacing:var(--letter-spacing-tight)">500</div>
+    <h1 style="font-family:var(--font-family-display);font-size:var(--font-size-3xl);font-weight:700;margin-bottom:var(--space-4)">Something went wrong</h1>
+    <p style="font-size:var(--font-size-lg);color:var(--color-text-secondary);margin-bottom:var(--space-8);line-height:var(--line-height-relaxed)">Our servers hit an unexpected snag. Our team has been notified and is working on a fix.</p>
+    <div class="alert alert-warning" style="margin-bottom:var(--space-8);text-align:left">
+      <svg class="alert-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"/></svg>
+      <div class="alert-content">Error ID: <code>ERR_500_1a2b3c4d</code></div>
+    </div>
+    <div style="display:flex;gap:var(--space-3);justify-content:center;flex-wrap:wrap;margin-bottom:var(--space-8)">
+      <button class="btn btn-primary btn-lg" onclick="location.reload()">Try Again</button>
+      <a href="home.html" class="btn btn-secondary btn-lg">Go Home</a>
+      <a href="contact.html" class="btn btn-ghost btn-lg">Contact Us</a>
+    </div>
+  </div>
+</div>
+<footer style="padding:var(--space-4);text-align:center;font-size:var(--font-size-xs);color:var(--color-text-tertiary)">
+  2026 Rakuma Inc.
+</footer>
+</body></html>
