@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Coupons &amp; Vouchers — Rakuma</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles/tokens.css">
+<link rel="stylesheet" href="../styles/main.css">
+<style>.coupon-card{background:#fff;border:2px dashed var(--color-border-strong);border-radius:var(--radius-3xl);padding:var(--space-6);position:relative;overflow:hidden;transition:all var(--duration-normal)}.coupon-card:hover{border-color:var(--color-primary);box-shadow:var(--shadow-lg)}.coupon-card.used{opacity:.5;cursor:not-allowed}.coupon-card.used:hover{border-color:var(--color-border-strong);box-shadow:none}.coupon-left{width:.875rem;height:.875rem;background:var(--color-bg-subtle);border-radius:var(--radius-full);position:absolute;left:-.4375rem;top:50%;transform:translateY(-50%);border:2px dashed var(--color-border-strong)}.coupon-right{width:.875rem;height:.875rem;background:var(--color-bg-subtle);border-radius:var(--radius-full);position:absolute;right:-.4375rem;top:50%;transform:translateY(-50%);border:2px dashed var(--color-border-strong)}.coupon-divider{border-left:2px dashed var(--color-border-default);margin:0 var(--space-5);height:100%}</style>
+</head>
+<body style="background:var(--color-bg-subtle);min-height:100vh">
+<nav class="navbar">
+  <a href="../index.html" class="navbar-brand" style="text-decoration:none">Rakuma</a>
+  <div class="navbar-nav"><a class="nav-link" href="profile.html">Profile</a><a class="nav-link active" href="#">Coupons</a></div>
+  <div class="navbar-actions"><div class="avatar avatar-sm" style="background:linear-gradient(135deg,#db2777,#9d174d);color:#fff">YK</div></div>
+</nav>
+<div class="container" style="padding-top:var(--space-10);padding-bottom:var(--space-20);max-width:760px">
+  <div style="margin-bottom:var(--space-8)">
+    <h1 style="font-family:var(--font-family-display);font-size:var(--font-size-3xl);font-weight:700">Coupons &amp; Vouchers</h1>
+    <p style="color:var(--color-text-secondary);margin-top:var(--space-2)">Your savings on every purchase</p>
+  </div>
+  <!-- Redeem form -->
+  <div style="background:#fff;border-radius:var(--radius-2xl);padding:var(--space-6);margin-bottom:var(--space-8);border:1px solid var(--color-border-default)">
+    <div style="font-weight:700;margin-bottom:var(--space-4)">Have a coupon code?</div>
+    <div style="display:flex;gap:var(--space-3)">
+      <input type="text" class="form-input" placeholder="Enter coupon code (e.g. SUMMER10)" id="couponCode" style="font-family:var(--font-family-mono);letter-spacing:.05em">
+      <button class="btn btn-primary" onclick="redeemCoupon()">Redeem</button>
+    </div>
+    <div id="redeemMsg" style="display:none;margin-top:var(--space-3)"><div class="alert alert-success"><svg class="alert-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg><div class="alert-content"><div class="alert-title">Coupon Added!</div>SUMMER10 — &#xA5;1,630 off your next order added to your account.</div></div></div>
+  </div>
+  <!-- Tabs -->
+  <div class="tabs" style="margin-bottom:var(--space-6)">
+    <div class="tab active">Available (4)</div>
+    <div class="tab">Used (12)</div>
+    <div class="tab">Expired (3)</div>
+  </div>
+  <!-- Coupon cards -->
+  <div style="display:flex;flex-direction:column;gap:var(--space-4)">
+    <div class="coupon-card">
+      <div class="coupon-left"></div>
+      <div class="coupon-right"></div>
+      <div style="display:flex;gap:var(--space-6);align-items:center">
+        <div style="min-width:120px;text-align:center">
+          <div style="font-family:var(--font-family-display);font-size:var(--font-size-4xl);font-weight:900;color:var(--color-primary);line-height:1">&#xA5;500</div>
+          <div style="font-size:var(--font-size-xs);color:var(--color-text-tertiary)">Welcome Bonus</div>
+        </div>
+        <div class="coupon-divider"></div>
+        <div style="flex:1">
+          <div style="display:flex;align-items:center;gap:var(--space-2);margin-bottom:var(--space-2)">
+            <div style="font-weight:700">Welcome Coupon</div>
+            <span class="badge badge-success">Available</span>
+          </div>
+          <div style="font-size:var(--font-size-sm);color:var(--color-text-secondary);margin-bottom:var(--space-3)">&#xA5;500 off your first purchase. Min. order &#xA5;2,000.</div>
+          <div style="font-family:var(--font-family-mono);background:var(--color-brand-50);color:var(--color-brand-700);padding:var(--space-2) var(--space-3);border-radius:var(--radius-md);font-size:var(--font-size-sm);font-weight:700;letter-spacing:.05em;display:inline-block;margin-bottom:var(--space-2)">WELCOME500</div>
+          <div style="font-size:var(--font-size-xs);color:var(--color-text-tertiary)">Expires: May 31, 2026</div>
+        </div>
+        <button class="btn btn-primary btn-sm" style="flex-shrink:0">Use Now</button>
+      </div>
+    </div>
+    <div class="coupon-card" style="border-color:var(--color-error-300)">
+      <div class="coupon-left" style="border-color:var(--color-error-300)"></div>
+      <div class="coupon-right" style="border-color:var(--color-error-300)"></div>
+      <div style="display:flex;gap:var(--space-6);align-items:center">
+        <div style="min-width:120px;text-align:center">
+          <div style="font-family:var(--font-family-display);font-size:var(--font-size-4xl);font-weight:900;color:var(--color-error-500);line-height:1">10%</div>
+          <div style="font-size:var(--font-size-xs);color:var(--color-text-tertiary)">Summer Sale</div>
+        </div>
+        <div class="coupon-divider"></div>
+        <div style="flex:1">
+          <div style="display:flex;align-items:center;gap:var(--space-2);margin-bottom:var(--space-2)">
+            <div style="font-weight:700">Summer Sale Coupon</div>
+            <span class="badge badge-error">Expires Soon!</span>
+          </div>
+          <div style="font-size:var(--font-size-sm);color:var(--color-text-secondary);margin-bottom:var(--space-3)">10% off any purchase. Max discount &#xA5;3,000. All categories.</div>
+          <div style="font-family:var(--font-family-mono);background:var(--color-error-50);color:var(--color-error-700);padding:var(--space-2) var(--space-3);border-radius:var(--radius-md);font-size:var(--font-size-sm);font-weight:700;letter-spacing:.05em;display:inline-block;margin-bottom:var(--space-2)">SUMMER10</div>
+          <div style="font-size:var(--font-size-xs);color:var(--color-error-600);font-weight:600">Expires in 3 days — March 9, 2026</div>
+        </div>
+        <button class="btn btn-danger btn-sm" style="flex-shrink:0">Use Now</button>
+      </div>
+    </div>
+    <div class="coupon-card" style="border-color:var(--color-success-500)">
+      <div class="coupon-left" style="border-color:var(--color-success-500)"></div>
+      <div class="coupon-right" style="border-color:var(--color-success-500)"></div>
+      <div style="display:flex;gap:var(--space-6);align-items:center">
+        <div style="min-width:120px;text-align:center">
+          <div style="font-family:var(--font-family-display);font-size:var(--font-size-3xl);font-weight:900;color:var(--color-success-700);line-height:1">FREE</div>
+          <div style="font-size:var(--font-size-xs);color:var(--color-text-tertiary)">Shipping</div>
+        </div>
+        <div class="coupon-divider"></div>
+        <div style="flex:1">
+          <div style="display:flex;align-items:center;gap:var(--space-2);margin-bottom:var(--space-2)">
+            <div style="font-weight:700">Free Shipping Voucher</div>
+            <span class="badge badge-success">Available</span>
+          </div>
+          <div style="font-size:var(--font-size-sm);color:var(--color-text-secondary);margin-bottom:var(--space-3)">Free shipping on any order. No minimum spend. One-time use.</div>
+          <div style="font-family:var(--font-family-mono);background:var(--color-success-50);color:var(--color-success-700);padding:var(--space-2) var(--space-3);border-radius:var(--radius-md);font-size:var(--font-size-sm);font-weight:700;letter-spacing:.05em;display:inline-block;margin-bottom:var(--space-2)">FREESHIP24</div>
+          <div style="font-size:var(--font-size-xs);color:var(--color-text-tertiary)">Expires: Dec 31, 2026</div>
+        </div>
+        <button class="btn btn-secondary btn-sm" style="flex-shrink:0;color:var(--color-success-700);border-color:var(--color-success-500)">Use Now</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+document.querySelectorAll(".tab").forEach(function(t){t.addEventListener("click",function(){t.parentElement.querySelectorAll(".tab").forEach(function(s){s.classList.remove("active")});t.classList.add("active")})});
+function redeemCoupon(){var v=document.getElementById("couponCode").value.trim().toUpperCase();if(v.length<3){return;}document.getElementById("redeemMsg").style.display="block";document.getElementById("couponCode").value="";}
+</script>
+</body></html>
