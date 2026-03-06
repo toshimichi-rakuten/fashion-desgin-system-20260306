@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>My Wishlist — Rakuma</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles/tokens.css">
+<link rel="stylesheet" href="../styles/main.css">
+<style>
+.wishlist-card{background:#fff;border:1px solid var(--color-border-default);border-radius:var(--radius-2xl);overflow:hidden;position:relative;transition:all var(--duration-normal) var(--easing-default)}
+.wishlist-card:hover{box-shadow:var(--shadow-xl);transform:translateY(-3px)}
+.wishlist-img{aspect-ratio:.75;position:relative;overflow:hidden}
+.wishlist-img .inner{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:5.5rem;transition:transform var(--duration-slower) var(--easing-default)}
+.wishlist-card:hover .inner{transform:scale(1.06)}
+.remove-btn{position:absolute;top:var(--space-3);right:var(--space-3);width:2rem;height:2rem;background:#fff;border:none;border-radius:var(--radius-full);display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:var(--shadow-sm);transition:all var(--duration-fast);color:var(--color-text-tertiary);z-index:10}
+.remove-btn:hover{background:var(--color-error-50);color:var(--color-error-500)}
+.wishlist-body{padding:var(--space-4)}
+</style>
+</head>
+<body>
+<nav class="navbar">
+  <a href="../index.html" class="navbar-brand" style="text-decoration:none">Rakuma</a>
+  <div class="navbar-nav">
+    <a class="nav-link" href="home.html">Home</a><a class="nav-link" href="#">Browse</a><a class="nav-link" href="#">Sell</a><a class="nav-link" href="messages.html">Messages</a>
+  </div>
+  <div class="navbar-actions">
+    <button class="btn btn-primary btn-sm">List Item</button>
+    <div class="avatar avatar-sm" style="background:linear-gradient(135deg,#db2777,#9d174d);color:#fff;cursor:pointer">YK</div>
+  </div>
+</nav>
+
+<div class="container" style="padding-top:var(--space-10);padding-bottom:var(--space-20)">
+  <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:var(--space-8)">
+    <div>
+      <h1 style="font-family:var(--font-family-display);font-size:var(--font-size-3xl);font-weight:700">My Wishlist</h1>
+      <p style="color:var(--color-text-secondary);margin-top:var(--space-2)">8 saved items &nbsp;·&nbsp; &#xA5;75,200 total value</p>
+    </div>
+    <div style="display:flex;gap:var(--space-3)">
+      <select class="form-input form-select" style="width:auto;font-size:var(--font-size-sm)"><option>Sort: Date Added</option><option>Price: Low to High</option><option>Price: High to Low</option></select>
+      <button class="btn btn-secondary btn-sm">Share Wishlist</button>
+    </div>
+  </div>
+
+  <div class="alert alert-warning" style="margin-bottom:var(--space-6)">
+    <svg class="alert-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"/></svg>
+    <div class="alert-content"><strong>2 items</strong> have dropped in price since you saved them. Check them out!</div>
+  </div>
+
+  <div class="grid grid-4" style="gap:var(--space-5)">
+    <div class="wishlist-card"><div class="wishlist-img" style="background:linear-gradient(145deg,#fce7f3,#fbcfe8)"><div class="inner">👗</div><button class="remove-btn" title="Remove from wishlist"><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12"/></svg></button></div><div class="wishlist-body"><div style="font-size:var(--font-size-xs);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--color-text-tertiary);margin-bottom:var(--space-1)">Zara</div><div style="font-weight:600;margin-bottom:var(--space-2);line-height:var(--line-height-snug)">Floral Wrap Midi Dress</div><div style="display:flex;align-items:center;gap:var(--space-2);flex-wrap:wrap;margin-bottom:var(--space-3)"><span style="font-size:var(--font-size-lg);font-weight:700">&#xA5;3,500</span><span style="font-size:var(--font-size-sm);color:var(--color-text-tertiary);text-decoration:line-through">&#xA5;4,700</span><span class="badge badge-error badge-lg" style="margin-top:var(--space-1)">-25%</span></div><button class="btn btn-primary btn-sm btn-full">Buy Now</button></div></div>
+<div class="wishlist-card"><div class="wishlist-img" style="background:linear-gradient(145deg,#171717,#404040)"><div class="inner">👜</div><button class="remove-btn" title="Remove from wishlist"><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12"/></svg></button></div><div class="wishlist-body"><div style="font-size:var(--font-size-xs);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--color-text-tertiary);margin-bottom:var(--space-1)">Coach</div><div style="font-weight:600;margin-bottom:var(--space-2);line-height:var(--line-height-snug)">Tabby Shoulder Bag 26</div><div style="display:flex;align-items:center;gap:var(--space-2);flex-wrap:wrap;margin-bottom:var(--space-3)"><span style="font-size:var(--font-size-lg);font-weight:700">&#xA5;38,000</span></div><button class="btn btn-primary btn-sm btn-full">Buy Now</button></div></div>
+<div class="wishlist-card"><div class="wishlist-img" style="background:linear-gradient(145deg,#fffbeb,#fde68a)"><div class="inner">👟</div><button class="remove-btn" title="Remove from wishlist"><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12"/></svg></button></div><div class="wishlist-body"><div style="font-size:var(--font-size-xs);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--color-text-tertiary);margin-bottom:var(--space-1)">Nike</div><div style="font-weight:600;margin-bottom:var(--space-2);line-height:var(--line-height-snug)">Air Force 1 Low White</div><div style="display:flex;align-items:center;gap:var(--space-2);flex-wrap:wrap;margin-bottom:var(--space-3)"><span style="font-size:var(--font-size-lg);font-weight:700">&#xA5;12,800</span><span style="font-size:var(--font-size-sm);color:var(--color-text-tertiary);text-decoration:line-through">&#xA5;15,500</span></div><button class="btn btn-primary btn-sm btn-full">Buy Now</button></div></div>
+<div class="wishlist-card"><div class="wishlist-img" style="background:linear-gradient(145deg,#eff6ff,#bfdbfe)"><div class="inner">🧥</div><button class="remove-btn" title="Remove from wishlist"><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12"/></svg></button></div><div class="wishlist-body"><div style="font-size:var(--font-size-xs);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--color-text-tertiary);margin-bottom:var(--space-1)">Uniqlo</div><div style="font-weight:600;margin-bottom:var(--space-2);line-height:var(--line-height-snug)">Wool Blend Overcoat Camel</div><div style="display:flex;align-items:center;gap:var(--space-2);flex-wrap:wrap;margin-bottom:var(--space-3)"><span style="font-size:var(--font-size-lg);font-weight:700">&#xA5;8,900</span><span style="font-size:var(--font-size-sm);color:var(--color-text-tertiary);text-decoration:line-through">&#xA5;19,900</span><span class="badge badge-error badge-lg" style="margin-top:var(--space-1)">-55%</span></div><button class="btn btn-primary btn-sm btn-full">Buy Now</button></div></div>
+<div class="wishlist-card"><div class="wishlist-img" style="background:linear-gradient(145deg,#f0fdf4,#bbf7d0)"><div class="inner">💍</div><button class="remove-btn" title="Remove from wishlist"><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12"/></svg></button></div><div class="wishlist-body"><div style="font-size:var(--font-size-xs);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--color-text-tertiary);margin-bottom:var(--space-1)">Agete</div><div style="font-weight:600;margin-bottom:var(--space-2);line-height:var(--line-height-snug)">Silver Ring Set</div><div style="display:flex;align-items:center;gap:var(--space-2);flex-wrap:wrap;margin-bottom:var(--space-3)"><span style="font-size:var(--font-size-lg);font-weight:700">&#xA5;4,200</span></div><button class="btn btn-primary btn-sm btn-full">Buy Now</button></div></div>
+<div class="wishlist-card"><div class="wishlist-img" style="background:linear-gradient(145deg,#fff1f2,#fecdd3)"><div class="inner">🧣</div><button class="remove-btn" title="Remove from wishlist"><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12"/></svg></button></div><div class="wishlist-body"><div style="font-size:var(--font-size-xs);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--color-text-tertiary);margin-bottom:var(--space-1)">Uniqlo</div><div style="font-weight:600;margin-bottom:var(--space-2);line-height:var(--line-height-snug)">Cashmere Blend Scarf</div><div style="display:flex;align-items:center;gap:var(--space-2);flex-wrap:wrap;margin-bottom:var(--space-3)"><span style="font-size:var(--font-size-lg);font-weight:700">&#xA5;2,400</span><span style="font-size:var(--font-size-sm);color:var(--color-text-tertiary);text-decoration:line-through">&#xA5;3,990</span><span class="badge badge-error badge-lg" style="margin-top:var(--space-1)">-40%</span></div><button class="btn btn-primary btn-sm btn-full">Buy Now</button></div></div>
+<div class="wishlist-card"><div class="wishlist-img" style="background:linear-gradient(145deg,#f5f3ff,#ddd6fe)"><div class="inner">👚</div><button class="remove-btn" title="Remove from wishlist"><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12"/></svg></button></div><div class="wishlist-body"><div style="font-size:var(--font-size-xs);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--color-text-tertiary);margin-bottom:var(--space-1)">H&M</div><div style="font-weight:600;margin-bottom:var(--space-2);line-height:var(--line-height-snug)">Oversized Knit Sweater</div><div style="display:flex;align-items:center;gap:var(--space-2);flex-wrap:wrap;margin-bottom:var(--space-3)"><span style="font-size:var(--font-size-lg);font-weight:700">&#xA5;1,600</span></div><button class="btn btn-primary btn-sm btn-full">Buy Now</button></div></div>
+<div class="wishlist-card"><div class="wishlist-img" style="background:linear-gradient(145deg,#fffbeb,#fef3c7)"><div class="inner">💄</div><button class="remove-btn" title="Remove from wishlist"><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12"/></svg></button></div><div class="wishlist-body"><div style="font-size:var(--font-size-xs);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--color-text-tertiary);margin-bottom:var(--space-1)">NARS</div><div style="font-weight:600;margin-bottom:var(--space-2);line-height:var(--line-height-snug)">Radiant Creamy Concealer</div><div style="display:flex;align-items:center;gap:var(--space-2);flex-wrap:wrap;margin-bottom:var(--space-3)"><span style="font-size:var(--font-size-lg);font-weight:700">&#xA5;3,800</span></div><button class="btn btn-primary btn-sm btn-full">Buy Now</button></div></div>
+  </div>
+</div>
+
+<script>document.querySelectorAll(".remove-btn").forEach(function(btn){btn.addEventListener("click",function(){const card=btn.closest(".wishlist-card");card.style.transition="all .3s";card.style.opacity="0";card.style.transform="scale(.9)";setTimeout(function(){card.remove()},300)})});</script>
+</body></html>
