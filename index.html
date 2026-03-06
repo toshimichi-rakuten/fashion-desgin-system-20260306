@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Component Library</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f6f8;
+      color: #333;
+    }
+    .header {
+      background-color: #bf0000;
+      color: #fff;
+      padding: 24px;
+      text-align: center;
+    }
+    .header h1 {
+      margin: 0;
+      font-size: 28px;
+    }
+    .main-container {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 24px;
+    }
+    .section-title {
+      font-size: 22px;
+      font-weight: bold;
+      margin: 0 0 24px 0;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #ddd;
+    }
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 16px;
+      margin-bottom: 48px;
+    }
+    .nav-button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 24px 16px;
+      background-color: #fff;
+      color: #bf0000;
+      font-size: 16px;
+      font-weight: bold;
+      text-decoration: none;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      transition: all 0.2s ease;
+      text-align: center;
+    }
+    .nav-button:hover {
+      background-color: #bf0000;
+      color: #fff;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+  
+  <header class="header">
+    <h1>デザインシステム 目次</h1>
+  </header>
+
+  <main class="main-container">
+    
+    <section>
+      <h2 class="section-title">パーツ (Components)</h2>
+      <div class="card-grid">
+        <a href="button.html" class="nav-button">ボタン (Button)</a>
+        <a href="heading.html" class="nav-button">見出し (Heading)</a>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">ページ (Pages)</h2>
+      <div class="card-grid">
+        <a href="simple-page.html" class="nav-button">シンプルなページ</a>
+      </div>
+    </section>
+
+  </main>
+</body>
+</html>
