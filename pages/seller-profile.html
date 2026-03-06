@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Yuki_Style — Rakuma Seller</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles/tokens.css">
+<link rel="stylesheet" href="../styles/main.css">
+<style>
+.profile-hero{background:linear-gradient(135deg,#831843 0%,#db2777 60%,#f472b6 100%);padding:var(--space-16) 0 0}
+.profile-avatar{width:7rem;height:7rem;border-radius:var(--radius-full);border:4px solid #fff;font-size:2.5rem;font-weight:900;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#9d174d,#db2777);color:#fff;margin-bottom:var(--space-4);box-shadow:var(--shadow-xl)}
+.stat-card{text-align:center;padding:var(--space-5);background:rgba(255,255,255,.15);border-radius:var(--radius-2xl);backdrop-filter:blur(8px)}
+.stat-val{font-size:var(--font-size-3xl);font-weight:900;color:#fff}
+.stat-label{font-size:var(--font-size-xs);color:rgba(255,255,255,.8);margin-top:var(--space-1)}
+.profile-tabs{background:#fff;border-bottom:1px solid var(--color-border-default);position:sticky;top:68px;z-index:var(--z-sticky)}
+</style>
+</head>
+<body>
+<nav class="navbar">
+  <a href="../index.html" class="navbar-brand" style="text-decoration:none">Rakuma</a>
+  <div class="navbar-nav">
+    <a class="nav-link" href="../index.html">Home</a>
+    <a class="nav-link" href="#">Browse</a>
+    <a class="nav-link" href="#">Sell</a>
+    <a class="nav-link" href="#">Messages</a>
+  </div>
+  <div class="navbar-actions">
+    <button class="btn btn-ghost btn-icon btn-sm"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></button>
+    <button class="btn btn-primary btn-sm">List Item</button>
+    <div class="avatar avatar-sm" style="background:linear-gradient(135deg,#db2777,#9d174d);color:#fff;cursor:pointer">YK</div>
+  </div>
+</nav>
+
+<!-- Profile Hero -->
+<div class="profile-hero">
+  <div class="container">
+    <div style="display:flex;gap:var(--space-8);align-items:flex-end;padding-bottom:var(--space-8)">
+      <div>
+        <div class="profile-avatar">YK</div>
+        <h1 style="font-family:var(--font-family-display);font-size:var(--font-size-4xl);font-weight:900;color:#fff;margin-bottom:var(--space-2)">Yuki_Style</h1>
+        <div style="display:flex;align-items:center;gap:var(--space-3);margin-bottom:var(--space-4)">
+          <div class="rating"><span class="star filled" style="color:#fbbf24">&#9733;</span><span class="star filled" style="color:#fbbf24">&#9733;</span><span class="star filled" style="color:#fbbf24">&#9733;</span><span class="star filled" style="color:#fbbf24">&#9733;</span><span class="star filled" style="color:#fbbf24">&#9733;</span></div>
+          <span style="color:rgba(255,255,255,.9);font-size:var(--font-size-sm);font-weight:600">4.9 / 5.0</span>
+          <span style="color:rgba(255,255,255,.6);font-size:var(--font-size-sm)">·</span>
+          <span style="color:rgba(255,255,255,.7);font-size:var(--font-size-sm)">Member since April 2021</span>
+        </div>
+        <div style="display:flex;gap:var(--space-2);flex-wrap:wrap">
+          <span class="badge" style="background:rgba(255,255,255,.2);color:#fff">✓ ID Verified</span>
+          <span class="badge" style="background:rgba(255,255,255,.2);color:#fff">⭐ Top Seller</span>
+          <span class="badge" style="background:rgba(255,255,255,.2);color:#fff">🚀 Fast Shipper</span>
+        </div>
+      </div>
+      <div style="flex:1"></div>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:var(--space-3);min-width:480px">
+        <div class="stat-card"><div class="stat-val">312</div><div class="stat-label">Sales</div></div>
+        <div class="stat-card"><div class="stat-val">4.9</div><div class="stat-label">Rating</div></div>
+        <div class="stat-card"><div class="stat-val">98%</div><div class="stat-label">Positive</div></div>
+        <div class="stat-card"><div class="stat-val">1d</div><div class="stat-label">Avg Ship</div></div>
+      </div>
+    </div>
+  </div>
+  <!-- Profile tabs -->
+  <div class="profile-tabs">
+    <div class="container">
+      <div style="display:flex">
+        <div class="tab active">Listings (48)</div>
+        <div class="tab">Reviews (312)</div>
+        <div class="tab">About</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Main content -->
+<div class="container" style="padding-top:var(--space-10);padding-bottom:var(--space-20)">
+  <div style="display:grid;grid-template-columns:1fr 300px;gap:var(--space-10);align-items:start">
+
+    <!-- Listings grid -->
+    <div>
+      <!-- Sort + filter bar -->
+      <div style="display:flex;gap:var(--space-3);margin-bottom:var(--space-6);align-items:center">
+        <select class="form-input form-select" style="width:auto;min-width:160px;font-size:var(--font-size-sm)">
+          <option>Sort: Newest</option>
+          <option>Price: Low to High</option>
+          <option>Price: High to Low</option>
+          <option>Most Popular</option>
+        </select>
+        <div style="display:flex;gap:var(--space-2);flex-wrap:wrap">
+          <span class="tag active">All</span>
+          <span class="tag">Tops</span>
+          <span class="tag">Dresses</span>
+          <span class="tag">Bags</span>
+          <span class="tag">Shoes</span>
+        </div>
+        <div style="margin-left:auto;color:var(--color-text-tertiary);font-size:var(--font-size-sm)">48 items</div>
+      </div>
+      <!-- Grid -->
+      <div class="grid grid-3" style="gap:var(--space-4)">
+        <div class="product-card"><div class="product-card-image" style="background:linear-gradient(145deg,#fce7f3,#fbcfe8)"><div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:5rem">👗</div><div class="product-card-badges"><span class="badge badge-error">-25%</span></div><div class="product-card-actions"><button class="product-card-action-btn"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"/></svg></button></div></div><div class="product-card-body"><div class="product-card-brand">Zara</div><div class="product-card-name">Floral Wrap Midi Dress</div><div class="product-card-price"><span class="price-current">¥3,500</span><span class="price-original">¥4,700</span></div></div></div>
+        <div class="product-card"><div class="product-card-image" style="background:linear-gradient(145deg,#171717,#404040)"><div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:5rem">👜</div><div class="product-card-badges"><span class="badge badge-neutral">AUTHENTIC</span></div><div class="product-card-actions"><button class="product-card-action-btn"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"/></svg></button></div></div><div class="product-card-body"><div class="product-card-brand">Coach</div><div class="product-card-name">Tabby Shoulder Bag 26</div><div class="product-card-price"><span class="price-current">¥38,000</span></div></div></div>
+        <div class="product-card"><div class="product-card-image" style="background:linear-gradient(145deg,#f5f3ff,#ddd6fe)"><div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:5rem">👚</div><div class="product-card-actions"><button class="product-card-action-btn"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"/></svg></button></div></div><div class="product-card-body"><div class="product-card-brand">H&amp;M</div><div class="product-card-name">Oversized Knit Sweater</div><div class="product-card-price"><span class="price-current">¥1,600</span></div></div></div>
+        <div class="product-card"><div class="product-card-image" style="background:linear-gradient(145deg,#fffbeb,#fde68a)"><div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:5rem">👟</div><div class="product-card-badges"><span class="badge badge-success">NEW</span></div><div class="product-card-actions"><button class="product-card-action-btn"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"/></svg></button></div></div><div class="product-card-body"><div class="product-card-brand">Nike</div><div class="product-card-name">Air Force 1 Low White</div><div class="product-card-price"><span class="price-current">¥12,800</span><span class="price-original">¥15,500</span></div></div></div>
+        <div class="product-card"><div class="product-card-image" style="background:linear-gradient(145deg,#f0fdf4,#bbf7d0)"><div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:5rem">💍</div><div class="product-card-actions"><button class="product-card-action-btn"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"/></svg></button></div></div><div class="product-card-body"><div class="product-card-brand">Agete</div><div class="product-card-name">Silver Ring Set</div><div class="product-card-price"><span class="price-current">¥4,200</span></div></div></div>
+        <div class="product-card"><div class="product-card-image" style="background:linear-gradient(145deg,#fff1f2,#fecdd3)"><div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:5rem">🧣</div><div class="product-card-badges"><span class="badge badge-error">-40%</span></div><div class="product-card-actions"><button class="product-card-action-btn"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"/></svg></button></div></div><div class="product-card-body"><div class="product-card-brand">Uniqlo</div><div class="product-card-name">Cashmere Blend Scarf</div><div class="product-card-price"><span class="price-current">¥2,400</span><span class="price-original">¥3,990</span></div></div></div>
+      </div>
+    </div>
+
+    <!-- Sidebar -->
+    <div style="position:sticky;top:calc(68px + 3rem + var(--space-10))">
+      <div class="card" style="margin-bottom:var(--space-4)">
+        <div class="card-body">
+          <div style="font-weight:600;margin-bottom:var(--space-4)">Seller Stats</div>
+          <div style="display:flex;flex-direction:column;gap:var(--space-3)">
+            <div style="display:flex;justify-content:space-between;font-size:var(--font-size-sm)"><span style="color:var(--color-text-secondary)">Response rate</span><span style="font-weight:600;color:var(--color-success-700)">99%</span></div>
+            <div style="display:flex;justify-content:space-between;font-size:var(--font-size-sm)"><span style="color:var(--color-text-secondary)">Response time</span><span style="font-weight:600">&lt; 1 hour</span></div>
+            <div style="display:flex;justify-content:space-between;font-size:var(--font-size-sm)"><span style="color:var(--color-text-secondary)">Avg ship time</span><span style="font-weight:600">1 business day</span></div>
+            <div style="display:flex;justify-content:space-between;font-size:var(--font-size-sm)"><span style="color:var(--color-text-secondary)">Return rate</span><span style="font-weight:600;color:var(--color-success-700)">0%</span></div>
+            <div style="display:flex;justify-content:space-between;font-size:var(--font-size-sm)"><span style="color:var(--color-text-secondary)">Total reviews</span><span style="font-weight:600">312</span></div>
+          </div>
+          <div class="divider"></div>
+          <button class="btn btn-primary btn-full btn-sm" style="margin-bottom:var(--space-2)">Message Yuki</button>
+          <button class="btn btn-ghost btn-full btn-sm">Follow Seller</button>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <div style="font-weight:600;margin-bottom:var(--space-4)">Recent Reviews</div>
+          <div style="display:flex;flex-direction:column;gap:var(--space-4)">
+            <div>
+              <div style="display:flex;align-items:center;gap:var(--space-2);margin-bottom:var(--space-2)">
+                <div class="avatar avatar-xs" style="background:linear-gradient(135deg,#f59e0b,#d97706);color:#fff;font-weight:700">MN</div>
+                <div class="rating" style="transform:scale(.7);transform-origin:left"><span class="star filled">&#9733;</span><span class="star filled">&#9733;</span><span class="star filled">&#9733;</span><span class="star filled">&#9733;</span><span class="star filled">&#9733;</span></div>
+              </div>
+              <p style="font-size:var(--font-size-xs);color:var(--color-text-secondary);line-height:var(--line-height-relaxed)">Super fast shipping, item exactly as described!</p>
+            </div>
+            <div>
+              <div style="display:flex;align-items:center;gap:var(--space-2);margin-bottom:var(--space-2)">
+                <div class="avatar avatar-xs" style="background:linear-gradient(135deg,#3b82f6,#1d4ed8);color:#fff;font-weight:700">RK</div>
+                <div class="rating" style="transform:scale(.7);transform-origin:left"><span class="star filled">&#9733;</span><span class="star filled">&#9733;</span><span class="star filled">&#9733;</span><span class="star filled">&#9733;</span><span class="star">&#9733;</span></div>
+              </div>
+              <p style="font-size:var(--font-size-xs);color:var(--color-text-secondary);line-height:var(--line-height-relaxed)">Great communication. Beautiful items, well packaged.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+document.querySelectorAll(".tab").forEach(function(tab){tab.addEventListener("click",function(){tab.parentElement.querySelectorAll(".tab").forEach(function(s){s.classList.remove("active")});tab.classList.add("active")});});
+document.querySelectorAll(".tag:not(.tag-close)").forEach(function(tag){if(!tag.querySelector(".tag-close")){tag.addEventListener("click",function(){tag.classList.toggle("active")});}});
+</script>
+</body></html>
