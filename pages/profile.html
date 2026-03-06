@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>My Profile — Rakuma</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles/tokens.css">
+<link rel="stylesheet" href="../styles/main.css">
+<style>
+.profile-layout{display:grid;grid-template-columns:240px 1fr;gap:var(--space-10);align-items:start;max-width:1100px;margin-inline:auto}
+.profile-nav{background:#fff;border:1px solid var(--color-border-default);border-radius:var(--radius-2xl);overflow:hidden;position:sticky;top:calc(68px + var(--space-6))}
+.profile-nav-item{display:flex;align-items:center;gap:var(--space-3);padding:var(--space-4) var(--space-5);font-size:var(--font-size-sm);font-weight:var(--font-weight-medium);color:var(--color-text-secondary);cursor:pointer;transition:all var(--duration-fast);border-bottom:1px solid var(--color-border-default)}
+.profile-nav-item:last-child{border-bottom:none}
+.profile-nav-item:hover{background:var(--color-bg-subtle);color:var(--color-text-primary)}
+.profile-nav-item.active{background:var(--color-primary-subtle);color:var(--color-primary)}
+.toggle{position:relative;display:inline-flex;align-items:center;width:2.75rem;height:1.5rem;cursor:pointer}
+.toggle input{opacity:0;width:0;height:0}
+.toggle-track{position:absolute;inset:0;background:var(--color-neutral-300);border-radius:var(--radius-full);transition:background var(--duration-normal)}
+.toggle input:checked~.toggle-track{background:var(--color-primary)}
+.toggle-thumb{position:absolute;width:1.125rem;height:1.125rem;background:#fff;border-radius:var(--radius-full);left:3px;transition:transform var(--duration-normal);box-shadow:var(--shadow-sm)}
+.toggle input:checked~.toggle-track~.toggle-thumb,.toggle input:checked+.toggle-track+.toggle-thumb{transform:translateX(1.25rem)}
+.settings-card{background:#fff;border:1px solid var(--color-border-default);border-radius:var(--radius-2xl);padding:var(--space-6);margin-bottom:var(--space-5)}
+.settings-card-title{font-weight:700;font-size:var(--font-size-lg);margin-bottom:var(--space-5);padding-bottom:var(--space-4);border-bottom:1px solid var(--color-border-default)}
+.setting-row{display:flex;justify-content:space-between;align-items:center;padding:var(--space-4) 0;border-bottom:1px solid var(--color-border-default)}
+.setting-row:last-child{border-bottom:none;padding-bottom:0}
+.setting-info{flex:1;margin-right:var(--space-4)}
+.setting-label{font-weight:var(--font-weight-medium);font-size:var(--font-size-sm);margin-bottom:var(--space-1)}
+.setting-desc{font-size:var(--font-size-xs);color:var(--color-text-tertiary);line-height:var(--line-height-normal)}
+@media(max-width:768px){.profile-layout{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav class="navbar">
+  <a href="../index.html" class="navbar-brand" style="text-decoration:none">Rakuma</a>
+  <div class="navbar-nav">
+    <a class="nav-link" href="home.html">Home</a>
+    <a class="nav-link" href="#">Browse</a>
+    <a class="nav-link" href="#">Sell</a>
+    <a class="nav-link" href="#">Messages</a>
+  </div>
+  <div class="navbar-actions">
+    <button class="btn btn-primary btn-sm">List Item</button>
+    <div class="avatar avatar-sm" style="background:linear-gradient(135deg,#db2777,#9d174d);color:#fff;cursor:pointer">YK</div>
+  </div>
+</nav>
+
+<div class="container" style="padding-top:var(--space-10);padding-bottom:var(--space-20)">
+  <div style="margin-bottom:var(--space-8)">
+    <h1 style="font-family:var(--font-family-display);font-size:var(--font-size-3xl);font-weight:700">Account Settings</h1>
+    <p style="color:var(--color-text-secondary);margin-top:var(--space-2)">Manage your profile, notifications, and preferences</p>
+  </div>
+
+  <div class="profile-layout">
+    <!-- Sidebar nav -->
+    <div class="profile-nav">
+      <div class="profile-nav-item active">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"/></svg>
+        Profile
+      </div>
+      <div class="profile-nav-item">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0"/></svg>
+        Notifications
+      </div>
+      <div class="profile-nav-item">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+        Payment
+      </div>
+      <div class="profile-nav-item">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 00-3.213-9.193 2.056 2.056 0 00-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 00-10.026 0 1.106 1.106 0 00-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12"/></svg>
+        Shipping
+      </div>
+      <div class="profile-nav-item">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg>
+        Security
+      </div>
+      <div class="profile-nav-item" style="color:var(--color-error-600)">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9"/></svg>
+        Sign Out
+      </div>
+    </div>
+
+    <!-- Content -->
+    <div>
+      <!-- Profile info -->
+      <div class="settings-card">
+        <div class="settings-card-title">Public Profile</div>
+        <div style="display:flex;align-items:center;gap:var(--space-6);margin-bottom:var(--space-8)">
+          <div style="position:relative">
+            <div class="avatar avatar-2xl" style="background:linear-gradient(135deg,#db2777,#9d174d);color:#fff;font-size:1.75rem;font-weight:900">YK</div>
+            <button class="btn btn-secondary btn-icon btn-sm" style="position:absolute;bottom:-4px;right:-4px;border-radius:var(--radius-full);box-shadow:var(--shadow-md)" title="Change photo">
+              <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125"/></svg>
+            </button>
+          </div>
+          <div>
+            <div style="font-weight:700;font-size:var(--font-size-xl);margin-bottom:var(--space-1)">Yuki Kobayashi</div>
+            <div style="color:var(--color-text-secondary);font-size:var(--font-size-sm);margin-bottom:var(--space-3)">@Yuki_Style &nbsp;·&nbsp; Member since April 2021</div>
+            <div style="display:flex;gap:var(--space-2)">
+              <span class="badge badge-success">✓ ID Verified</span>
+              <span class="badge badge-brand">⭐ Top Seller</span>
+              <span class="badge badge-neutral">312 Sales</span>
+            </div>
+          </div>
+        </div>
+        <div class="grid grid-2" style="gap:var(--space-5);margin-bottom:var(--space-5)">
+          <div class="form-group">
+            <label class="form-label">Display Name</label>
+            <input type="text" class="form-input" value="Yuki_Style">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Real Name</label>
+            <input type="text" class="form-input" value="Yuki Kobayashi">
+            <div class="form-hint">Not shown publicly</div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Location</label>
+            <select class="form-input form-select"><option>Tokyo, Japan</option><option>Osaka</option><option>Kyoto</option><option>Nagoya</option></select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Gender</label>
+            <select class="form-input form-select"><option>Female</option><option>Male</option><option>Non-binary</option><option>Prefer not to say</option></select>
+          </div>
+        </div>
+        <div class="form-group" style="margin-bottom:var(--space-6)">
+          <label class="form-label">Bio</label>
+          <textarea class="form-input" rows="3">Tokyo-based fashion curator. Authentic luxury items, always verified. Ships same day!</textarea>
+          <div style="display:flex;justify-content:flex-end;margin-top:var(--space-1)"><span style="font-size:var(--font-size-xs);color:var(--color-text-tertiary)">62 / 200</span></div>
+        </div>
+        <div style="display:flex;justify-content:flex-end;gap:var(--space-3)">
+          <button class="btn btn-ghost btn-sm">Discard</button>
+          <button class="btn btn-primary btn-sm">Save Profile</button>
+        </div>
+      </div>
+
+      <!-- Notification settings -->
+      <div class="settings-card">
+        <div class="settings-card-title">Notifications</div>
+        <div class="setting-row">
+          <div class="setting-info"><div class="setting-label">New message</div><div class="setting-desc">Get notified when a buyer sends you a message</div></div>
+          <label class="toggle"><input type="checkbox" checked><div class="toggle-track"></div><div class="toggle-thumb"></div></label>
+        </div>
+        <div class="setting-row">
+          <div class="setting-info"><div class="setting-label">Order updates</div><div class="setting-desc">Shipping confirmations and delivery notifications</div></div>
+          <label class="toggle"><input type="checkbox" checked><div class="toggle-track"></div><div class="toggle-thumb"></div></label>
+        </div>
+        <div class="setting-row">
+          <div class="setting-info"><div class="setting-label">Item liked</div><div class="setting-desc">When someone adds your item to their wishlist</div></div>
+          <label class="toggle"><input type="checkbox"><div class="toggle-track"></div><div class="toggle-thumb"></div></label>
+        </div>
+        <div class="setting-row">
+          <div class="setting-info"><div class="setting-label">Price drop alerts</div><div class="setting-desc">Notify me when wishlisted items drop in price</div></div>
+          <label class="toggle"><input type="checkbox" checked><div class="toggle-track"></div><div class="toggle-thumb"></div></label>
+        </div>
+        <div class="setting-row">
+          <div class="setting-info"><div class="setting-label">Marketing emails</div><div class="setting-desc">Weekly curated picks, style guides, and promotions</div></div>
+          <label class="toggle"><input type="checkbox"><div class="toggle-track"></div><div class="toggle-thumb"></div></label>
+        </div>
+      </div>
+
+      <!-- Security -->
+      <div class="settings-card">
+        <div class="settings-card-title">Security</div>
+        <div class="setting-row">
+          <div class="setting-info"><div class="setting-label">Email</div><div class="setting-desc">yuki.kobayashi@email.com</div></div>
+          <button class="btn btn-secondary btn-sm">Change</button>
+        </div>
+        <div class="setting-row">
+          <div class="setting-info"><div class="setting-label">Password</div><div class="setting-desc">Last changed 3 months ago</div></div>
+          <button class="btn btn-secondary btn-sm">Update</button>
+        </div>
+        <div class="setting-row">
+          <div class="setting-info"><div class="setting-label">Two-factor authentication</div><div class="setting-desc">Add an extra layer of security to your account</div></div>
+          <label class="toggle"><input type="checkbox" checked><div class="toggle-track"></div><div class="toggle-thumb"></div></label>
+        </div>
+        <div class="setting-row">
+          <div class="setting-info"><div class="setting-label">Login sessions</div><div class="setting-desc">2 active sessions (iPhone, MacBook)</div></div>
+          <button class="btn btn-ghost btn-sm" style="color:var(--color-error-500)">Sign Out All</button>
+        </div>
+      </div>
+
+      <!-- Danger zone -->
+      <div class="settings-card" style="border-color:var(--color-error-200);background:var(--color-error-50)">
+        <div class="settings-card-title" style="color:var(--color-error-700)">Danger Zone</div>
+        <div class="setting-row">
+          <div class="setting-info"><div class="setting-label" style="color:var(--color-error-700)">Deactivate Account</div><div class="setting-desc">Temporarily hide your profile and listings</div></div>
+          <button class="btn btn-ghost btn-sm" style="color:var(--color-error-500);border-color:var(--color-error-300)">Deactivate</button>
+        </div>
+        <div class="setting-row" style="border-bottom:none">
+          <div class="setting-info"><div class="setting-label" style="color:var(--color-error-700)">Delete Account</div><div class="setting-desc">Permanently delete your account and all data. This cannot be undone.</div></div>
+          <button class="btn btn-danger btn-sm">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+document.querySelectorAll(".profile-nav-item").forEach(function(item){
+  item.addEventListener("click",function(){
+    document.querySelectorAll(".profile-nav-item").forEach(function(i){i.classList.remove("active")});
+    item.classList.add("active");
+  });
+});
+</script>
+</body></html>

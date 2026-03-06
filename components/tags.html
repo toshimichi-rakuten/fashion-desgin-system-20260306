@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles/tokens.css">
+<link rel="stylesheet" href="../styles/main.css">
+<style>body{padding:2rem;background:var(--color-bg-subtle)}</style>
+</head><body>
+<h2 style="margin-bottom:1rem;font-family:var(--font-family-display)">Tags &amp; Chips</h2>
+<h3 style="font-size:.875rem;margin-bottom:.5rem;color:var(--color-text-secondary)">Category Tags</h3>
+<div style="display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1.25rem">
+  <span class="tag active">All</span><span class="tag">Tops</span><span class="tag">Dresses</span><span class="tag">Bottoms</span><span class="tag">Shoes</span><span class="tag">Bags</span>
+</div>
+<h3 style="font-size:.875rem;margin-bottom:.5rem;color:var(--color-text-secondary)">Filter Chips (removable)</h3>
+<div style="display:flex;gap:.5rem;flex-wrap:wrap">
+  <span class="tag active">Brand: Zara<span class="tag-close">&#x2715;</span></span>
+  <span class="tag active">Size: M<span class="tag-close">&#x2715;</span></span>
+  <span class="tag active">Under &#xA5;5,000<span class="tag-close">&#x2715;</span></span>
+</div>
+<script>document.querySelectorAll(".tag:not(:has(.tag-close))").forEach(function(t){t.addEventListener("click",function(){t.classList.toggle("active")})});document.querySelectorAll(".tag-close").forEach(function(c){c.addEventListener("click",function(){c.parentElement.remove()})});</script>
+</body></html>
