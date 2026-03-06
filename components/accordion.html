@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles/tokens.css">
+<link rel="stylesheet" href="../styles/main.css">
+<style>body{padding:2rem;background:var(--color-bg-subtle)}</style>
+</head><body>
+<h2 style="margin-bottom:1.5rem;font-family:var(--font-family-display)">Accordion</h2>
+<div class="accordion" style="max-width:560px">
+  <div class="accordion-item open"><div class="accordion-header"><div class="accordion-title">How does Buyer Protection work?</div><svg class="accordion-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg></div><div class="accordion-body"><div class="accordion-content">Rakuma Buyer Protection covers you if an item doesn&apos;t arrive or is significantly different from the listing description. You have 72 hours to raise a dispute.</div></div></div>
+  <div class="accordion-item"><div class="accordion-header"><div class="accordion-title">What fees does Rakuma charge?</div><svg class="accordion-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg></div><div class="accordion-body"><div class="accordion-content">Rakuma charges a 3.5% service fee on completed transactions. Listing items is completely free.</div></div></div>
+  <div class="accordion-item"><div class="accordion-header"><div class="accordion-title">Can I return an item?</div><svg class="accordion-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg></div><div class="accordion-body"><div class="accordion-content">Returns are at the seller&apos;s discretion. Buyer Protection applies if an item is not as described.</div></div></div>
+</div>
+<script>document.querySelectorAll(".accordion-item").forEach(function(item){item.querySelector(".accordion-header").addEventListener("click",function(){item.classList.toggle("open")})});</script>
+</body></html>

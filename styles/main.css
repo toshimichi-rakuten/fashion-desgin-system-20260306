@@ -352,3 +352,36 @@ input,button,textarea,select{font:inherit}
 .notif-text{font-size:var(--font-size-sm);line-height:var(--line-height-normal);margin-bottom:var(--space-1)}
 .notif-time{font-size:var(--font-size-xs);color:var(--color-text-tertiary)}
 .notif-item.unread .notif-text{font-weight:var(--font-weight-medium)}
+/* ── ACCORDION / FAQ ── */
+.accordion{border:1px solid var(--color-border-default);border-radius:var(--radius-2xl);overflow:hidden}
+.accordion-item{border-bottom:1px solid var(--color-border-default)}
+.accordion-item:last-child{border-bottom:none}
+.accordion-header{display:flex;justify-content:space-between;align-items:center;padding:var(--space-5) var(--space-6);cursor:pointer;user-select:none;transition:background var(--duration-fast);gap:var(--space-4)}
+.accordion-header:hover{background:var(--color-bg-subtle)}
+.accordion-title{font-weight:var(--font-weight-semibold);font-size:var(--font-size-md)}
+.accordion-icon{width:1.25rem;height:1.25rem;flex-shrink:0;transition:transform var(--duration-normal) var(--easing-default);color:var(--color-text-tertiary)}
+.accordion-item.open .accordion-icon{transform:rotate(180deg);color:var(--color-primary)}
+.accordion-item.open .accordion-header{background:var(--color-primary-subtle)}
+.accordion-item.open .accordion-title{color:var(--color-primary)}
+.accordion-body{max-height:0;overflow:hidden;transition:max-height var(--duration-slow) var(--easing-out)}
+.accordion-item.open .accordion-body{max-height:600px}
+.accordion-content{padding:var(--space-5) var(--space-6) var(--space-6);color:var(--color-text-secondary);font-size:var(--font-size-sm);line-height:var(--line-height-relaxed);border-top:1px solid var(--color-border-default)}
+
+/* ── CHIP / PILL ── */
+.chip{display:inline-flex;align-items:center;gap:var(--space-2);padding:.25rem var(--space-3);font-size:var(--font-size-xs);font-weight:var(--font-weight-medium);border-radius:var(--radius-full);background:var(--color-bg-muted);color:var(--color-text-secondary)}
+.chip-primary{background:var(--color-primary-subtle);color:var(--color-primary)}
+.chip-success{background:var(--color-success-50);color:var(--color-success-700)}
+.chip-error{background:var(--color-error-50);color:var(--color-error-700)}
+
+/* ── STEP INDICATOR (standalone) ── */
+.steps{display:flex;align-items:center;gap:0}
+.step-node{display:flex;flex-direction:column;align-items:center;gap:var(--space-2);position:relative;flex:1}
+.step-node:not(:first-child)::before{content:"";position:absolute;top:1rem;right:50%;width:100%;height:2px;background:var(--color-border-default);z-index:0}
+.step-node.done:not(:first-child)::before{background:var(--color-success-500)}
+.step-node.active:not(:first-child)::before,.step-node.done:not(:first-child)+.step-node::before{background:var(--color-primary)}
+.step-circle-node{width:2rem;height:2rem;border-radius:var(--radius-full);border:2px solid var(--color-border-default);background:#fff;display:flex;align-items:center;justify-content:center;font-size:var(--font-size-xs);font-weight:700;position:relative;z-index:1;transition:all var(--duration-normal)}
+.step-node.done .step-circle-node{background:var(--color-success-500);border-color:var(--color-success-500);color:#fff}
+.step-node.active .step-circle-node{background:var(--color-primary);border-color:var(--color-primary);color:#fff}
+.step-node-label{font-size:var(--font-size-xs);color:var(--color-text-tertiary);text-align:center}
+.step-node.done .step-node-label{color:var(--color-success-700)}
+.step-node.active .step-node-label{color:var(--color-primary);font-weight:600}
