@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Seller Dashboard — Rakuma</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles/tokens.css">
+<link rel="stylesheet" href="../styles/main.css">
+<style>
+.dash-layout{display:grid;grid-template-columns:220px 1fr;min-height:calc(100vh - 68px)}
+.dash-sidebar{border-right:1px solid var(--color-border-default);padding:var(--space-8) var(--space-5);background:var(--color-bg-base);position:sticky;top:68px;height:calc(100vh - 68px);overflow-y:auto}
+.dash-nav-item{display:flex;align-items:center;gap:var(--space-3);padding:var(--space-3) var(--space-4);border-radius:var(--radius-lg);font-size:var(--font-size-sm);font-weight:var(--font-weight-medium);color:var(--color-text-secondary);cursor:pointer;transition:all var(--duration-fast);text-decoration:none;margin-bottom:var(--space-1)}
+.dash-nav-item:hover{background:var(--color-bg-muted);color:var(--color-text-primary)}
+.dash-nav-item.active{background:var(--color-primary-subtle);color:var(--color-primary)}
+.dash-content{padding:var(--space-8) var(--space-10);background:var(--color-bg-subtle)}
+.stat-card{background:#fff;border:1px solid var(--color-border-default);border-radius:var(--radius-2xl);padding:var(--space-6)}
+.stat-value{font-size:var(--font-size-3xl);font-weight:var(--font-weight-bold);margin-bottom:var(--space-1)}
+.stat-label{font-size:var(--font-size-sm);color:var(--color-text-secondary);margin-bottom:var(--space-3)}
+.stat-change{font-size:var(--font-size-xs);font-weight:600;display:flex;align-items:center;gap:var(--space-1)}
+.stat-change.up{color:var(--color-success-700)}
+.stat-change.down{color:var(--color-error-600)}
+.chart-bar{display:flex;align-items:flex-end;gap:var(--space-2);height:160px;padding-top:var(--space-4)}
+.bar-col{flex:1;display:flex;flex-direction:column;align-items:center;gap:var(--space-2)}
+.bar-fill{width:100%;background:var(--color-primary);border-radius:var(--radius-sm) var(--radius-sm) 0 0;transition:height var(--duration-slower) var(--easing-out);min-height:4px;cursor:pointer;position:relative}
+.bar-fill:hover{background:var(--color-primary-hover)}
+.bar-label{font-size:.625rem;color:var(--color-text-tertiary)}
+.listing-img{width:2.75rem;height:2.75rem;border-radius:var(--radius-lg);display:flex;align-items:center;justify-content:center;font-size:1.25rem;flex-shrink:0}
+.quick-action{background:#fff;border:1px solid var(--color-border-default);border-radius:var(--radius-2xl);padding:var(--space-5);display:flex;flex-direction:column;align-items:center;text-align:center;gap:var(--space-3);cursor:pointer;transition:all var(--duration-normal);text-decoration:none;color:var(--color-text-primary)}
+.quick-action:hover{box-shadow:var(--shadow-lg);transform:translateY(-2px)}
+</style>
+</head>
+<body style="background:var(--color-bg-subtle)">
+<nav class="navbar" style="background:#fff;position:sticky;top:0;z-index:var(--z-sticky)">
+  <a href="../index.html" class="navbar-brand" style="text-decoration:none">Rakuma</a>
+  <div class="navbar-nav"><a class="nav-link" href="home.html">Marketplace</a><a class="nav-link active" href="#">Dashboard</a></div>
+  <div class="navbar-actions">
+    <span style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Yuki_Style</span>
+    <div class="avatar avatar-sm" style="background:linear-gradient(135deg,#db2777,#9d174d);color:#fff;cursor:pointer">YK</div>
+  </div>
+</nav>
+
+<div class="dash-layout">
+  <!-- Sidebar -->
+  <div class="dash-sidebar">
+    <div style="font-size:var(--font-size-xs);font-weight:600;letter-spacing:var(--letter-spacing-widest);text-transform:uppercase;color:var(--color-text-tertiary);margin-bottom:var(--space-3)">Overview</div>
+    <a class="dash-nav-item active" href="#">
+      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z"/></svg>
+      Analytics
+    </a>
+    <a class="dash-nav-item" href="sell.html">
+      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 4.5v15m7.5-7.5h-15"/></svg>
+      List New Item
+    </a>
+    <a class="dash-nav-item" href="seller-profile.html">
+      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3.75 12h16.5m-16.5 3.75h16.5M3.75 19.5h16.5M5.625 4.5h12.75a1.875 1.875 0 010 3.75H5.625a1.875 1.875 0 010-3.75z"/></svg>
+      My Listings
+    </a>
+    <a class="dash-nav-item" href="orders.html">
+      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"/></svg>
+      Orders
+    </a>
+    <a class="dash-nav-item" href="messages.html">
+      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 01-2.555-.337A5.972 5.972 0 015.41 20.97a5.969 5.969 0 01-.474-.065 4.48 4.48 0 00.978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25z"/></svg>
+      Messages <span class="badge badge-error" style="margin-left:auto;padding:.1rem .4rem">3</span>
+    </a>
+    <a class="dash-nav-item" href="profile.html">
+      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.324.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 011.37.49l1.296 2.247a1.125 1.125 0 01-.26 1.431l-1.003.827c-.293.24-.438.613-.431.992a6.759 6.759 0 010 .255c-.007.378.138.75.43.99l1.005.828c.424.35.534.954.26 1.43l-1.298 2.247a1.125 1.125 0 01-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.57 6.57 0 01-.22.128c-.331.183-.581.495-.644.869l-.213 1.28c-.09.543-.56.941-1.11.941h-2.594c-.55 0-1.02-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 01-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 01-1.369-.49l-1.297-2.247a1.125 1.125 0 01.26-1.431l1.004-.827c.292-.24.437-.613.43-.992a6.932 6.932 0 010-.255c.007-.378-.138-.75-.43-.99l-1.004-.828a1.125 1.125 0 01-.26-1.43l1.297-2.247a1.125 1.125 0 011.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.087.22-.128.332-.183.582-.495.644-.869l.214-1.281z"/><path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+      Settings
+    </a>
+    <div style="height:1px;background:var(--color-border-default);margin:var(--space-5) 0"></div>
+    <div style="font-size:var(--font-size-xs);font-weight:600;letter-spacing:var(--letter-spacing-widest);text-transform:uppercase;color:var(--color-text-tertiary);margin-bottom:var(--space-3)">Account</div>
+    <a class="dash-nav-item" href="#">
+      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12a2.25 2.25 0 00-2.25-2.25H15a3 3 0 11-6 0H5.25A2.25 2.25 0 003 12m18 0v6a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 18v-6m18 0V9M3 12V9m18 0a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 9m18 0V6a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 6v3"/></svg>
+      Balance: &#xA5;48,200
+    </a>
+    <a class="dash-nav-item" href="notifications.html">
+      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0"/></svg>
+      Notifications <span class="badge badge-error" style="margin-left:auto;padding:.1rem .4rem">5</span>
+    </a>
+  </div>
+
+  <!-- Main content -->
+  <div class="dash-content">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:var(--space-8)">
+      <div>
+        <h1 style="font-family:var(--font-family-display);font-size:var(--font-size-3xl);font-weight:700">Seller Analytics</h1>
+        <p style="color:var(--color-text-secondary);margin-top:var(--space-2)">Hello Yuki_Style! Here&apos;s your performance this month.</p>
+      </div>
+      <select class="form-input form-select" style="width:auto;font-size:var(--font-size-sm)"><option>Last 30 days</option><option>Last 7 days</option><option>This year</option><option>All time</option></select>
+    </div>
+
+    <!-- Stats grid -->
+    <div class="grid grid-4" style="gap:var(--space-4);margin-bottom:var(--space-8)">
+      <div class="stat-card">
+        <div style="font-size:1.75rem;margin-bottom:var(--space-3)">&#x1F4B0;</div>
+        <div class="stat-value" style="color:var(--color-primary)">&#xA5;127,500</div>
+        <div class="stat-label">Total Earnings</div>
+        <div class="stat-change up"><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"/></svg>+23% vs last month</div>
+      </div>
+      <div class="stat-card">
+        <div style="font-size:1.75rem;margin-bottom:var(--space-3)">&#x1F4E6;</div>
+        <div class="stat-value">48</div>
+        <div class="stat-label">Items Sold</div>
+        <div class="stat-change up"><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"/></svg>+12 vs last month</div>
+      </div>
+      <div class="stat-card">
+        <div style="font-size:1.75rem;margin-bottom:var(--space-3)">&#x2B50;</div>
+        <div class="stat-value" style="color:var(--color-warning-500)">4.9</div>
+        <div class="stat-label">Avg Rating</div>
+        <div class="stat-change up"><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"/></svg>312 total reviews</div>
+      </div>
+      <div class="stat-card">
+        <div style="font-size:1.75rem;margin-bottom:var(--space-3)">&#x1F4C3;</div>
+        <div class="stat-value">16</div>
+        <div class="stat-label">Active Listings</div>
+        <div class="stat-change down"><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M19.5 4.5l-15 15m0 0h11.25m-11.25 0V8.25"/></svg>-2 sold this week</div>
+      </div>
+    </div>
+
+    <div class="grid grid-2" style="gap:var(--space-6);margin-bottom:var(--space-8);align-items:start">
+      <!-- Revenue chart -->
+      <div style="background:#fff;border:1px solid var(--color-border-default);border-radius:var(--radius-2xl);padding:var(--space-6)">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:var(--space-6)">
+          <div>
+            <div style="font-weight:700;font-size:var(--font-size-md)">Monthly Revenue</div>
+            <div style="font-size:var(--font-size-xs);color:var(--color-text-tertiary)">&#xA5; earned per month</div>
+          </div>
+          <span class="badge badge-success">+23%</span>
+        </div>
+        <div class="chart-bar">
+          <div class="bar-col"><div class="bar-fill" style="height:40%"></div><div class="bar-label">Sep</div></div>
+          <div class="bar-col"><div class="bar-fill" style="height:55%"></div><div class="bar-label">Oct</div></div>
+          <div class="bar-col"><div class="bar-fill" style="height:48%"></div><div class="bar-label">Nov</div></div>
+          <div class="bar-col"><div class="bar-fill" style="height:72%"></div><div class="bar-label">Dec</div></div>
+          <div class="bar-col"><div class="bar-fill" style="height:65%"></div><div class="bar-label">Jan</div></div>
+          <div class="bar-col"><div class="bar-fill" style="height:80%"></div><div class="bar-label">Feb</div></div>
+          <div class="bar-col"><div class="bar-fill" style="height:100%;background:var(--color-brand-400)" title="&#xA5;127,500 (current month)"></div><div class="bar-label" style="color:var(--color-primary);font-weight:600">Mar</div></div>
+        </div>
+        <div style="display:flex;justify-content:space-between;font-size:var(--font-size-xs);color:var(--color-text-tertiary);margin-top:var(--space-2);border-top:1px solid var(--color-border-default);padding-top:var(--space-3)">
+          <span>&#xA5;0</span><span>&#xA5;50k</span><span>&#xA5;100k</span><span style="color:var(--color-primary);font-weight:600">&#xA5;127k</span>
+        </div>
+      </div>
+      <!-- Category breakdown -->
+      <div style="background:#fff;border:1px solid var(--color-border-default);border-radius:var(--radius-2xl);padding:var(--space-6)">
+        <div style="font-weight:700;font-size:var(--font-size-md);margin-bottom:var(--space-5)">Sales by Category</div>
+        <div style="display:flex;flex-direction:column;gap:var(--space-4)">
+          <div><div style="display:flex;justify-content:space-between;font-size:var(--font-size-sm);margin-bottom:var(--space-2)"><span style="display:flex;align-items:center;gap:var(--space-2)">&#x1F457; Dresses</span><span style="font-weight:600">&#xA5;52,000 &nbsp;<span style="color:var(--color-text-tertiary);font-weight:400">(41%)</span></span></div><div class="progress"><div class="progress-bar" style="width:41%"></div></div></div>
+          <div><div style="display:flex;justify-content:space-between;font-size:var(--font-size-sm);margin-bottom:var(--space-2)"><span>&#x1F45C; Bags</span><span style="font-weight:600">&#xA5;38,500 &nbsp;<span style="color:var(--color-text-tertiary);font-weight:400">(30%)</span></span></div><div class="progress"><div class="progress-bar" style="width:30%;background:var(--color-brand-400)"></div></div></div>
+          <div><div style="display:flex;justify-content:space-between;font-size:var(--font-size-sm);margin-bottom:var(--space-2)"><span>&#x1F45F; Shoes</span><span style="font-weight:600">&#xA5;25,600 &nbsp;<span style="color:var(--color-text-tertiary);font-weight:400">(20%)</span></span></div><div class="progress"><div class="progress-bar" style="width:20%;background:var(--color-brand-300)"></div></div></div>
+          <div><div style="display:flex;justify-content:space-between;font-size:var(--font-size-sm);margin-bottom:var(--space-2)"><span>&#x2728; Other</span><span style="font-weight:600">&#xA5;11,400 &nbsp;<span style="color:var(--color-text-tertiary);font-weight:400">(9%)</span></span></div><div class="progress"><div class="progress-bar" style="width:9%;background:var(--color-brand-200)"></div></div></div>
+        </div>
+        <div style="margin-top:var(--space-5);padding-top:var(--space-4);border-top:1px solid var(--color-border-default);display:flex;justify-content:space-between">
+          <div style="text-align:center"><div style="font-weight:700">&#xA5;2,656</div><div style="font-size:var(--font-size-xs);color:var(--color-text-tertiary)">Avg sale</div></div>
+          <div style="text-align:center"><div style="font-weight:700">1.2d</div><div style="font-size:var(--font-size-xs);color:var(--color-text-tertiary)">Avg ship time</div></div>
+          <div style="text-align:center"><div style="font-weight:700">99%</div><div style="font-size:var(--font-size-xs);color:var(--color-text-tertiary)">Response rate</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Recent orders table -->
+    <div style="background:#fff;border:1px solid var(--color-border-default);border-radius:var(--radius-2xl);overflow:hidden;margin-bottom:var(--space-8)">
+      <div style="padding:var(--space-5) var(--space-6);border-bottom:1px solid var(--color-border-default);display:flex;justify-content:space-between;align-items:center">
+        <div style="font-weight:700">Recent Sales</div>
+        <a href="orders.html" style="font-size:var(--font-size-sm);color:var(--color-primary)">View all &#8594;</a>
+      </div>
+      <div class="table-wrapper" style="border:none;border-radius:0">
+        <table class="table">
+          <thead><tr><th>Item</th><th>Buyer</th><th>Date</th><th>Price</th><th>Status</th></tr></thead>
+          <tbody>
+            <tr><td><div style="display:flex;align-items:center;gap:var(--space-3)"><div class="listing-img" style="background:linear-gradient(135deg,#fce7f3,#fbcfe8)">&#x1F457;</div><div><div style="font-weight:600;font-size:var(--font-size-sm)">Zara Floral Dress</div><div style="font-size:var(--font-size-xs);color:var(--color-text-tertiary)">Size M</div></div></div></td><td><div style="display:flex;align-items:center;gap:var(--space-2)"><div class="avatar avatar-xs" style="background:linear-gradient(135deg,#f59e0b,#d97706);color:#fff;font-size:.5rem;font-weight:700">MN</div>Mana_N</div></td><td style="color:var(--color-text-secondary)">Mar 6</td><td><strong>&#xA5;3,500</strong></td><td><span class="badge badge-info">Shipped</span></td></tr>
+            <tr><td><div style="display:flex;align-items:center;gap:var(--space-3)"><div class="listing-img" style="background:linear-gradient(135deg,#171717,#404040)">&#x1F45C;</div><div><div style="font-weight:600;font-size:var(--font-size-sm)">Coach Tabby Bag</div><div style="font-size:var(--font-size-xs);color:var(--color-text-tertiary)">Black</div></div></div></td><td><div style="display:flex;align-items:center;gap:var(--space-2)"><div class="avatar avatar-xs" style="background:linear-gradient(135deg,#3b82f6,#1d4ed8);color:#fff;font-size:.5rem;font-weight:700">RK</div>Rin_K</div></td><td style="color:var(--color-text-secondary)">Feb 28</td><td><strong>&#xA5;38,000</strong></td><td><span class="badge badge-success">Delivered</span></td></tr>
+            <tr><td><div style="display:flex;align-items:center;gap:var(--space-3)"><div class="listing-img" style="background:linear-gradient(135deg,#fffbeb,#fde68a)">&#x1F45F;</div><div><div style="font-weight:600;font-size:var(--font-size-sm)">Nike Air Force 1</div><div style="font-size:var(--font-size-xs);color:var(--color-text-tertiary)">Size 24</div></div></div></td><td><div style="display:flex;align-items:center;gap:var(--space-2)"><div class="avatar avatar-xs" style="background:linear-gradient(135deg,#22c55e,#15803d);color:#fff;font-size:.5rem;font-weight:700">AS</div>Ami_S</div></td><td style="color:var(--color-text-secondary)">Feb 25</td><td><strong>&#xA5;12,800</strong></td><td><span class="badge badge-success">Delivered</span></td></tr>
+            <tr><td><div style="display:flex;align-items:center;gap:var(--space-3)"><div class="listing-img" style="background:linear-gradient(135deg,#f0fdf4,#bbf7d0)">&#x1F9E5;</div><div><div style="font-weight:600;font-size:var(--font-size-sm)">Uniqlo Overcoat</div><div style="font-size:var(--font-size-xs);color:var(--color-text-tertiary)">Size M</div></div></div></td><td><div style="display:flex;align-items:center;gap:var(--space-2)"><div class="avatar avatar-xs" style="background:linear-gradient(135deg,#a855f7,#7c3aed);color:#fff;font-size:.5rem;font-weight:700">TH</div>Tomo_H</div></td><td style="color:var(--color-text-secondary)">Feb 20</td><td><strong>&#xA5;8,900</strong></td><td><span class="badge badge-neutral">Review Pending</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Quick actions -->
+    <div style="font-weight:700;font-size:var(--font-size-md);margin-bottom:var(--space-4)">Quick Actions</div>
+    <div class="grid grid-4" style="gap:var(--space-4)">
+      <a href="sell.html" class="quick-action" style="text-decoration:none">
+        <div style="width:3rem;height:3rem;background:var(--color-primary-subtle);border-radius:var(--radius-xl);display:flex;align-items:center;justify-content:center;font-size:1.5rem">&#x2795;</div>
+        <div style="font-weight:600;font-size:var(--font-size-sm)">List New Item</div>
+        <div style="font-size:var(--font-size-xs);color:var(--color-text-tertiary)">Add a new listing</div>
+      </a>
+      <a href="messages.html" class="quick-action" style="text-decoration:none">
+        <div style="width:3rem;height:3rem;background:var(--color-info-50);border-radius:var(--radius-xl);display:flex;align-items:center;justify-content:center;font-size:1.5rem;position:relative">&#x1F4AC;<span style="position:absolute;top:-3px;right:-3px;width:.875rem;height:.875rem;background:var(--color-error-500);border-radius:var(--radius-full);font-size:.55rem;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700">3</span></div>
+        <div style="font-weight:600;font-size:var(--font-size-sm)">Messages</div>
+        <div style="font-size:var(--font-size-xs);color:var(--color-text-tertiary)">3 unread</div>
+      </a>
+      <a href="#" class="quick-action" style="text-decoration:none">
+        <div style="width:3rem;height:3rem;background:var(--color-success-50);border-radius:var(--radius-xl);display:flex;align-items:center;justify-content:center;font-size:1.5rem">&#x1F4B8;</div>
+        <div style="font-weight:600;font-size:var(--font-size-sm)">Withdraw Funds</div>
+        <div style="font-size:var(--font-size-xs);color:var(--color-success-700)">&#xA5;48,200 available</div>
+      </a>
+      <a href="profile.html" class="quick-action" style="text-decoration:none">
+        <div style="width:3rem;height:3rem;background:var(--color-warning-50);border-radius:var(--radius-xl);display:flex;align-items:center;justify-content:center;font-size:1.5rem">&#x1F4CB;</div>
+        <div style="font-weight:600;font-size:var(--font-size-sm)">Verify ID</div>
+        <div style="font-size:var(--font-size-xs);color:var(--color-warning-700)">Unlock higher limits</div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<script>document.querySelectorAll(".bar-fill").forEach(function(b){b.addEventListener("mouseenter",function(){b.style.opacity=".85"});b.addEventListener("mouseleave",function(){b.style.opacity="1"})});</script>
+</body></html>
