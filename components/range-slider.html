@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles/tokens.css">
+<link rel="stylesheet" href="../styles/main.css">
+<style>body{padding:2rem;background:var(--color-bg-subtle)}</style>
+</head><body>
+<h2 style="margin-bottom:1.5rem;font-family:var(--font-family-display)">Range Slider</h2>
+<div style="max-width:400px">
+  <div style="display:flex;justify-content:space-between;font-size:.875rem;margin-bottom:.75rem"><span>Min Price</span><span id="rv" style="font-weight:700;color:var(--color-primary)">&#xA5;15,000</span></div>
+  <input type="range" class="range" min="0" max="50000" value="15000" step="500" oninput="document.getElementById('rv').textContent='&#xA5;'+Number(this.value).toLocaleString()">
+  <div style="display:flex;justify-content:space-between;font-size:.65rem;color:var(--color-text-tertiary);margin-top:.375rem"><span>&#xA5;0</span><span>&#xA5;50,000</span></div>
+</div>
+</body></html>
