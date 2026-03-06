@@ -1150,6 +1150,53 @@
   </div>
 </section>
 
+<!-- NEW CSS COMPONENTS -->
+<section id="misc-components" class="component-section">
+  <h2 class="component-title">Additional Components</h2>
+  <p class="component-desc">Supplementary components to complete any interface: range sliders for price filters, floating label inputs for elegant forms, blockquotes for testimonials, and lozenge status labels.</p>
+  <div class="preview-box preview-box-white">
+    <div class="subsection-title">Range Slider — Price Filter</div>
+    <div class="preview-row">
+      <div style="flex:1;max-width:400px">
+        <div style="display:flex;justify-content:space-between;font-size:var(--font-size-sm);margin-bottom:var(--space-3)"><span>&#xA5;0</span><span id="rangeVal" style="font-weight:700;color:var(--color-primary)">&#xA5;15,000</span><span>&#xA5;50,000</span></div>
+        <input type="range" class="range" min="0" max="50000" value="15000" step="500" oninput="document.getElementById('rangeVal').textContent='&#xA5;'+Number(this.value).toLocaleString()">
+      </div>
+    </div>
+    <div class="subsection-title">Floating Label Inputs</div>
+    <div class="preview-row">
+      <div class="float-group" style="width:240px">
+        <input type="text" class="float-input" placeholder=" ">
+        <label class="float-label">Item Name</label>
+      </div>
+      <div class="float-group" style="width:240px">
+        <input type="email" class="float-input" value="yuki@email.com" placeholder=" ">
+        <label class="float-label">Email</label>
+      </div>
+    </div>
+    <div class="subsection-title">Blockquote / Testimonial</div>
+    <div style="max-width:520px">
+      <div class="blockquote">
+        <div class="blockquote-text">&ldquo;I&apos;ve sold over 300 items on Rakuma. It changed how I think about fashion — and added &#xA5;400,000 to my savings.&rdquo;</div>
+        <div class="blockquote-author">Yuki_Style &nbsp;&bull;&nbsp; Top Seller, Tokyo</div>
+      </div>
+    </div>
+    <div class="subsection-title">Lozenge Labels</div>
+    <div class="preview-row">
+      <span class="lozenge lozenge-default">Default</span>
+      <span class="lozenge lozenge-primary">Feature Flag</span>
+      <span class="lozenge lozenge-success">Active</span>
+      <span class="lozenge lozenge-warning">Beta</span>
+      <span class="lozenge lozenge-error">Deprecated</span>
+    </div>
+    <div class="subsection-title">File Drop Zone</div>
+    <div class="drop-zone" style="max-width:360px">
+      <span class="drop-zone-icon">&#x1F4CE;</span>
+      <div class="drop-zone-label">Drop files here or click to upload</div>
+      <div class="drop-zone-hint">JPG, PNG, PDF &mdash; Max 10MB each</div>
+    </div>
+  </div>
+</section>
+
 <!-- COMPONENT SNIPPETS -->
 <section id="snippets" class="component-section">
   <h2 class="component-title">Component Snippets</h2>
