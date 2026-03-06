@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Notifications — Rakuma</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles/tokens.css">
+<link rel="stylesheet" href="../styles/main.css">
+</head>
+<body>
+<nav class="navbar">
+  <a href="../index.html" class="navbar-brand" style="text-decoration:none">Rakuma</a>
+  <div class="navbar-nav"><a class="nav-link" href="home.html">Home</a><a class="nav-link" href="search.html">Browse</a><a class="nav-link" href="sell.html">Sell</a><a class="nav-link active" href="#">Activity <span class="badge badge-error" style="margin-left:.25rem;padding:.15rem .4rem">5</span></a></div>
+  <div class="navbar-actions"><button class="btn btn-primary btn-sm">List Item</button><div class="avatar avatar-sm" style="background:linear-gradient(135deg,#db2777,#9d174d);color:#fff;cursor:pointer">YK</div></div>
+</nav>
+
+<div class="container" style="padding-top:var(--space-10);padding-bottom:var(--space-20);max-width:680px">
+  <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:var(--space-6)">
+    <div>
+      <h1 style="font-family:var(--font-family-display);font-size:var(--font-size-3xl);font-weight:700">Notifications</h1>
+      <p style="color:var(--color-text-secondary);margin-top:var(--space-2)">5 unread</p>
+    </div>
+    <button class="btn btn-ghost btn-sm" style="color:var(--color-primary)">Mark all read</button>
+  </div>
+
+  <div class="tabs" style="margin-bottom:0">
+    <div class="tab active">All (12)</div>
+    <div class="tab">Buying (5)</div>
+    <div class="tab">Selling (4)</div>
+    <div class="tab">System (3)</div>
+  </div>
+
+  <div style="background:#fff;border:1px solid var(--color-border-default);border-radius:var(--radius-2xl);overflow:hidden;margin-top:0;border-top-left-radius:0;border-top-right-radius:0;border-top:none">
+
+    <div class="notif-item unread">
+      <div class="notif-icon" style="background:var(--color-brand-100)">&#x1F4E8;</div>
+      <div class="notif-body">
+        <div class="notif-text"><strong>Mana_N</strong> sent you a message: &quot;Is the dress still available?&quot;</div>
+        <div class="notif-time">2 minutes ago</div>
+      </div>
+      <button class="btn btn-primary btn-sm" style="flex-shrink:0">Reply</button>
+    </div>
+
+    <div class="notif-item unread">
+      <div class="notif-icon" style="background:var(--color-success-50)">&#x2705;</div>
+      <div class="notif-body">
+        <div class="notif-text">Your order <strong>#RK-20481</strong> has been shipped! Track your Zara Floral Dress.</div>
+        <div class="notif-time">1 hour ago</div>
+      </div>
+      <button class="btn btn-secondary btn-sm" style="flex-shrink:0">Track</button>
+    </div>
+
+    <div class="notif-item unread">
+      <div class="notif-icon" style="background:var(--color-warning-50)">&#x1F48C;</div>
+      <div class="notif-body">
+        <div class="notif-text"><strong>Ami_S</strong> made an offer of <strong>&#xA5;2,800</strong> on your Nike Air Force 1s.</div>
+        <div class="notif-time">3 hours ago</div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:var(--space-2);flex-shrink:0">
+        <button class="btn btn-primary btn-sm">Accept</button>
+        <button class="btn btn-ghost btn-sm" style="color:var(--color-error-500)">Decline</button>
+      </div>
+    </div>
+
+    <div class="notif-item unread">
+      <div class="notif-icon" style="background:var(--color-error-50)">&#x1F525;</div>
+      <div class="notif-body">
+        <div class="notif-text"><strong>8 people</strong> have your Uniqlo Overcoat in their wishlist. Price is competitive!</div>
+        <div class="notif-time">5 hours ago</div>
+      </div>
+    </div>
+
+    <div class="notif-item unread">
+      <div class="notif-icon" style="background:var(--color-info-50)">&#x2B50;</div>
+      <div class="notif-body">
+        <div class="notif-text">Rin_K left you a <strong>5-star review</strong>: &quot;Fast shipping, item exactly as described!&quot;</div>
+        <div class="notif-time">Yesterday</div>
+      </div>
+    </div>
+
+    <div style="padding:var(--space-2) var(--space-4);background:var(--color-bg-subtle);border-bottom:1px solid var(--color-border-default)"><span style="font-size:var(--font-size-xs);font-weight:600;color:var(--color-text-tertiary);letter-spacing:var(--letter-spacing-wider);text-transform:uppercase">Earlier</span></div>
+
+    <div class="notif-item">
+      <div class="notif-icon" style="background:var(--color-bg-muted)">&#x1F4E6;</div>
+      <div class="notif-body">
+        <div class="notif-text">Order <strong>#RK-19872</strong> delivered! Nike Air Force 1 arrived. Please leave a review.</div>
+        <div class="notif-time">Feb 28</div>
+      </div>
+      <button class="btn btn-ghost btn-sm" style="flex-shrink:0;color:var(--color-primary)">Review</button>
+    </div>
+
+    <div class="notif-item">
+      <div class="notif-icon" style="background:var(--color-brand-50)">&#x1F381;</div>
+      <div class="notif-body">
+        <div class="notif-text">You earned a <strong>Top Seller badge</strong>! Your response rate is in the top 5% this month.</div>
+        <div class="notif-time">Feb 27</div>
+      </div>
+    </div>
+
+    <div class="notif-item">
+      <div class="notif-icon" style="background:var(--color-success-50)">&#x1F4B0;</div>
+      <div class="notif-body">
+        <div class="notif-text">Payment of <strong>&#xA5;38,500</strong> received for Coach Tabby Bag. Funds available in 3 days.</div>
+        <div class="notif-time">Feb 25</div>
+      </div>
+    </div>
+
+    <div class="notif-item">
+      <div class="notif-icon" style="background:var(--color-info-50)">&#x1F4CA;</div>
+      <div class="notif-body">
+        <div class="notif-text">Your listing &quot;Zara Floral Dress&quot; received <strong>47 views</strong> this week. Great performance!</div>
+        <div class="notif-time">Feb 24</div>
+      </div>
+    </div>
+
+    <div class="notif-item">
+      <div class="notif-icon" style="background:var(--color-warning-50)">&#x26A0;&#xFE0F;</div>
+      <div class="notif-body">
+        <div class="notif-text">Verify your ID to unlock selling limits over <strong>&#xA5;50,000/month</strong> and get a verification badge.</div>
+        <div class="notif-time">Feb 20</div>
+      </div>
+      <button class="btn btn-secondary btn-sm" style="flex-shrink:0">Verify</button>
+    </div>
+
+    <div class="notif-item" style="border-bottom:none">
+      <div class="notif-icon" style="background:var(--color-error-50)">&#x1F4C3;</div>
+      <div class="notif-body">
+        <div class="notif-text">Rakuma Terms of Service updated. Please review the changes before Feb 28.</div>
+        <div class="notif-time">Feb 18</div>
+      </div>
+      <button class="btn btn-ghost btn-sm" style="flex-shrink:0;color:var(--color-primary)">Read</button>
+    </div>
+  </div>
+
+  <div style="text-align:center;margin-top:var(--space-8)">
+    <button class="btn btn-secondary">Load Older Notifications</button>
+  </div>
+</div>
+
+<script>document.querySelectorAll(".tab").forEach(function(t){t.addEventListener("click",function(){t.parentElement.querySelectorAll(".tab").forEach(function(s){s.classList.remove("active")});t.classList.add("active")})});document.querySelectorAll(".notif-item").forEach(function(item){item.addEventListener("click",function(){item.classList.remove("unread")})});</script>
+</body></html>
