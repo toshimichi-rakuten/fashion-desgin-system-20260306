@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Gift Cards — Rakuma</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles/tokens.css">
+<link rel="stylesheet" href="../styles/main.css">
+<style>.gift-card-preview{background:linear-gradient(135deg,#831843 0%,#db2777 60%,#f472b6 100%);border-radius:var(--radius-3xl);padding:var(--space-8) var(--space-8) var(--space-6);color:#fff;box-shadow:var(--shadow-2xl);transition:all var(--duration-normal);aspect-ratio:1.586;display:flex;flex-direction:column;justify-content:space-between;max-width:380px;position:relative;overflow:hidden}.gift-card-preview::before{content:"";position:absolute;top:-60%;right:-20%;width:200%;height:200%;background:radial-gradient(circle,rgba(255,255,255,.1) 0%,transparent 60%);pointer-events:none}.amount-btn{border:2px solid var(--color-border-default);border-radius:var(--radius-xl);padding:var(--space-4) var(--space-5);font-size:var(--font-size-xl);font-weight:700;cursor:pointer;transition:all var(--duration-fast);background:#fff;text-align:center}.amount-btn:hover{border-color:var(--color-primary);color:var(--color-primary)}.amount-btn.active{border-color:var(--color-primary);background:var(--color-primary);color:#fff}</style>
+</head>
+<body>
+<nav class="navbar">
+  <a href="../index.html" class="navbar-brand" style="text-decoration:none">Rakuma</a>
+  <div class="navbar-nav"><a class="nav-link" href="home.html">Home</a><a class="nav-link" href="search.html">Browse</a></div>
+  <div class="navbar-actions">
+    <a href="cart.html" class="btn btn-ghost btn-icon btn-sm" style="position:relative"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"/></svg><span style="position:absolute;top:-3px;right:-3px;width:1rem;height:1rem;background:var(--color-primary);border-radius:var(--radius-full);font-size:.6rem;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700">2</span></a>
+    <div class="avatar avatar-sm" style="background:linear-gradient(135deg,#db2777,#9d174d);color:#fff;cursor:pointer">YK</div>
+  </div>
+</nav>
+
+<section style="padding:var(--space-16) 0;background:linear-gradient(180deg,var(--color-brand-50) 0%,var(--color-bg-base) 100%)">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:var(--space-12)">
+      <span class="badge badge-brand badge-lg" style="margin-bottom:var(--space-4)">&#x1F381; Gift Cards</span>
+      <h1 style="font-family:var(--font-family-display);font-size:var(--font-size-5xl);font-weight:900;margin-bottom:var(--space-4)">Give the gift of<br>fashion freedom</h1>
+      <p style="font-size:var(--font-size-lg);color:var(--color-text-secondary);max-width:520px;margin-inline:auto">Rakuma Gift Cards can be used on any purchase from 12 million+ items across Japan&apos;s biggest fashion marketplace.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-16);align-items:start;max-width:960px;margin-inline:auto">
+      <!-- Card preview -->
+      <div>
+        <div class="gift-card-preview" id="giftCard">
+          <div>
+            <div style="font-family:var(--font-family-display);font-size:var(--font-size-xl);font-weight:900;margin-bottom:var(--space-1)">Rakuma</div>
+            <div style="font-size:var(--font-size-xs);opacity:.7">Fashion Gift Card</div>
+          </div>
+          <div>
+            <div style="font-size:var(--font-size-xs);opacity:.6;margin-bottom:var(--space-2)">Gift Amount</div>
+            <div id="cardAmount" style="font-family:var(--font-family-display);font-size:var(--font-size-4xl);font-weight:900">&#xA5;5,000</div>
+          </div>
+        </div>
+        <div style="margin-top:var(--space-4);font-size:var(--font-size-xs);color:var(--color-text-tertiary);text-align:center">
+          Valid for 3 years &nbsp;·&nbsp; No expiry &nbsp;·&nbsp; Redeemable online
+        </div>
+      </div>
+      <!-- Purchase form -->
+      <div>
+        <div style="font-weight:700;font-size:var(--font-size-md);margin-bottom:var(--space-4)">1. Choose Amount</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-3);margin-bottom:var(--space-6)">
+          <div class="amount-btn" onclick="setAmount(this,1000)">&#xA5;1,000</div>
+          <div class="amount-btn" onclick="setAmount(this,3000)">&#xA5;3,000</div>
+          <div class="amount-btn active" onclick="setAmount(this,5000)">&#xA5;5,000</div>
+          <div class="amount-btn" onclick="setAmount(this,10000)">&#xA5;10,000</div>
+          <div class="amount-btn" onclick="setAmount(this,20000)">&#xA5;20,000</div>
+          <div class="amount-btn" onclick="setAmount(this,50000)">&#xA5;50,000</div>
+        </div>
+        <div style="font-weight:700;font-size:var(--font-size-md);margin-bottom:var(--space-4)">2. Recipient Details</div>
+        <div class="form-group" style="margin-bottom:var(--space-4)">
+          <label class="form-label form-label-required">Recipient Email</label>
+          <div class="input-group"><span class="input-addon input-addon-left"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg></span><input type="email" class="form-input" placeholder="friend@email.com" style="padding-left:2.5rem"></div>
+        </div>
+        <div class="form-group" style="margin-bottom:var(--space-4)">
+          <label class="form-label">Personal Message (optional)</label>
+          <textarea class="form-input" rows="3" placeholder="Happy birthday! Treat yourself to something beautiful &#x1F389;"></textarea>
+        </div>
+        <div style="margin-bottom:var(--space-4)">
+          <label class="form-label">Send On</label>
+          <div style="display:flex;gap:var(--space-3)">
+            <label class="radio-wrapper"><input type="radio" name="send" checked><div class="radio-circle"></div><span class="checkbox-label">Immediately</span></label>
+            <label class="radio-wrapper"><input type="radio" name="send"><div class="radio-circle"></div><span class="checkbox-label">Schedule a Date</span></label>
+          </div>
+        </div>
+        <div style="background:var(--color-bg-subtle);border-radius:var(--radius-xl);padding:var(--space-4);margin-bottom:var(--space-5);display:flex;justify-content:space-between;font-size:var(--font-size-sm)">
+          <span style="color:var(--color-text-secondary)">Gift card value</span>
+          <span id="summaryAmount" style="font-weight:700">&#xA5;5,000</span>
+        </div>
+        <button class="btn btn-primary btn-full btn-lg">Buy Gift Card &#xA5;5,000</button>
+        <div style="text-align:center;margin-top:var(--space-3);font-size:var(--font-size-xs);color:var(--color-text-tertiary)">Recipient receives an email with a unique gift code</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- How it works -->
+<section style="padding:var(--space-16) 0;background:var(--color-bg-subtle)">
+  <div class="container">
+    <h2 style="font-family:var(--font-family-display);font-size:var(--font-size-3xl);font-weight:700;text-align:center;margin-bottom:var(--space-12)">How it works</h2>
+    <div class="grid grid-3" style="gap:var(--space-8)">
+      <div style="text-align:center">
+        <div style="width:4rem;height:4rem;background:var(--color-primary-subtle);border-radius:var(--radius-full);display:flex;align-items:center;justify-content:center;font-size:1.75rem;margin:0 auto var(--space-4)">&#x1F4B3;</div>
+        <h3 style="font-weight:700;margin-bottom:var(--space-2)">Purchase & Send</h3>
+        <p style="color:var(--color-text-secondary);font-size:var(--font-size-sm)">Choose an amount and send the gift card directly to your friend&apos;s email address.</p>
+      </div>
+      <div style="text-align:center">
+        <div style="width:4rem;height:4rem;background:var(--color-info-50);border-radius:var(--radius-full);display:flex;align-items:center;justify-content:center;font-size:1.75rem;margin:0 auto var(--space-4)">&#x1F4E7;</div>
+        <h3 style="font-weight:700;margin-bottom:var(--space-2)">Receive the Code</h3>
+        <p style="color:var(--color-text-secondary);font-size:var(--font-size-sm)">Recipient gets a beautiful email with a unique 16-digit gift card code.</p>
+      </div>
+      <div style="text-align:center">
+        <div style="width:4rem;height:4rem;background:var(--color-success-50);border-radius:var(--radius-full);display:flex;align-items:center;justify-content:center;font-size:1.75rem;margin:0 auto var(--space-4)">&#x1F6CD;&#xFE0F;</div>
+        <h3 style="font-weight:700;margin-bottom:var(--space-2)">Shop & Enjoy</h3>
+        <p style="color:var(--color-text-secondary);font-size:var(--font-size-sm)">Apply the code at checkout and choose from 50 million+ fashion items across Japan.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+var currentAmount=5000;
+function setAmount(btn,amt){
+  currentAmount=amt;
+  document.querySelectorAll(".amount-btn").forEach(function(b){b.classList.remove("active")});
+  btn.classList.add("active");
+  var formatted="&#xA5;"+amt.toLocaleString();
+  document.getElementById("cardAmount").innerHTML=formatted;
+  document.getElementById("summaryAmount").innerHTML=formatted;
+  document.querySelector(".btn-primary").textContent="Buy Gift Card &#xA5;"+amt.toLocaleString();
+  var colors=[[1000,"linear-gradient(135deg,#1e3a5f,#3b82f6)"],[3000,"linear-gradient(135deg,#15803d,#22c55e)"],[5000,"linear-gradient(135deg,#831843,#db2777,#f472b6)"],[10000,"linear-gradient(135deg,#92400e,#d97706)"],[20000,"linear-gradient(135deg,#171717,#404040)"],[50000,"linear-gradient(135deg,#4c1d95,#7c3aed)"]];
+  colors.forEach(function(c){if(c[0]===amt)document.getElementById("giftCard").style.background=c[1];});
+}
+</script>
+</body></html>
