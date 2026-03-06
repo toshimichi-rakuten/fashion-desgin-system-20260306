@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Rakuma Style Edit — Subscribe</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles/tokens.css">
+<link rel="stylesheet" href="../styles/main.css">
+<style>body{min-height:100vh;background:var(--color-bg-subtle);display:flex;flex-direction:column}.preview-email{background:#fff;border-radius:var(--radius-2xl);box-shadow:var(--shadow-xl);overflow:hidden;max-width:480px;width:100%}</style>
+</head>
+<body>
+<nav class="navbar">
+  <a href="../index.html" class="navbar-brand" style="text-decoration:none">Rakuma</a>
+  <div class="navbar-actions">
+    <a href="home.html" class="btn btn-ghost btn-sm">Skip for now</a>
+    <a href="register.html" class="btn btn-primary btn-sm">Create Account</a>
+  </div>
+</nav>
+
+<div style="flex:1;display:flex;align-items:center;padding:var(--space-10) var(--space-4)">
+  <div class="container">
+    <div class="grid grid-2" style="gap:var(--space-16);align-items:center;max-width:960px;margin-inline:auto">
+      <!-- Left: Form -->
+      <div>
+        <span class="badge badge-brand" style="margin-bottom:var(--space-4)">&#x1F4E7; The Style Edit</span>
+        <h1 style="font-family:var(--font-family-display);font-size:var(--font-size-5xl);font-weight:900;margin-bottom:var(--space-5);line-height:1.1">Fashion Finds,<br>Every Week</h1>
+        <p style="font-size:var(--font-size-lg);color:var(--color-text-secondary);margin-bottom:var(--space-8);line-height:var(--line-height-relaxed)">The Rakuma Style Edit — curated preloved picks, trend reports, and exclusive deals delivered to your inbox every Wednesday.</p>
+        <div style="margin-bottom:var(--space-4)">
+          <div class="float-group">
+            <input type="email" class="float-input" id="emailIn" placeholder=" " style="font-size:var(--font-size-lg);padding-top:var(--space-6);padding-bottom:var(--space-3)">
+            <label class="float-label">Your email address</label>
+          </div>
+        </div>
+        <div style="margin-bottom:var(--space-6)">
+          <label class="checkbox-wrapper"><input type="checkbox" checked><div class="checkbox-box"></div><span class="checkbox-label" style="font-size:var(--font-size-xs)">Also send me flash sale alerts and new arrivals</span></label>
+        </div>
+        <button class="btn btn-primary btn-full btn-xl" onclick="subscribeNow()" id="subBtn">Subscribe Free &#x2192;</button>
+        <div id="subSuccess" style="display:none;margin-top:var(--space-4)">
+          <div class="alert alert-success"><svg class="alert-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg><div class="alert-content"><div class="alert-title">You&apos;re subscribed! &#x1F389;</div>Check your inbox for a welcome email from us.</div></div>
+        </div>
+        <div style="margin-top:var(--space-4);font-size:var(--font-size-xs);color:var(--color-text-tertiary)">
+          &#x1F512; No spam ever &nbsp;&bull;&nbsp; Unsubscribe anytime &nbsp;&bull;&nbsp; 48,000+ readers
+        </div>
+        <!-- Social proof -->
+        <div style="margin-top:var(--space-8);display:flex;align-items:center;gap:var(--space-3)">
+          <div class="avatar-group">
+            <div class="avatar avatar-sm" style="background:linear-gradient(135deg,#db2777,#9d174d);color:#fff;font-size:.5rem;font-weight:700">YK</div>
+            <div class="avatar avatar-sm" style="background:linear-gradient(135deg,#f59e0b,#d97706);color:#fff;font-size:.5rem;font-weight:700">MN</div>
+            <div class="avatar avatar-sm" style="background:linear-gradient(135deg,#3b82f6,#1d4ed8);color:#fff;font-size:.5rem;font-weight:700">RK</div>
+            <div class="avatar avatar-sm" style="background:linear-gradient(135deg,#22c55e,#15803d);color:#fff;font-size:.5rem;font-weight:700">AS</div>
+          </div>
+          <div style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">
+            <strong>48,000+ fashion lovers</strong> already subscribed
+          </div>
+        </div>
+      </div>
+      <!-- Right: Email preview -->
+      <div style="display:flex;justify-content:center">
+        <div class="preview-email">
+          <div style="background:linear-gradient(135deg,#831843,#db2777);padding:var(--space-6);text-align:center;color:#fff">
+            <div style="font-family:var(--font-family-display);font-size:var(--font-size-xl);font-weight:900;margin-bottom:var(--space-1)">The Style Edit</div>
+            <div style="font-size:var(--font-size-xs);opacity:.7">By Rakuma &nbsp;&bull;&nbsp; Weekly</div>
+          </div>
+          <div style="padding:var(--space-5)">
+            <div style="font-size:var(--font-size-xs);color:var(--color-text-tertiary);margin-bottom:var(--space-1)">This week&apos;s top picks &#x1F457;</div>
+            <div style="font-weight:700;font-size:var(--font-size-lg);font-family:var(--font-family-display);margin-bottom:var(--space-4)">The Floral Summer Edit</div>
+            <div class="grid grid-2" style="gap:var(--space-3);margin-bottom:var(--space-5)">
+              <div style="background:linear-gradient(135deg,#fce7f3,#fbcfe8);border-radius:var(--radius-xl);height:5rem;display:flex;align-items:center;justify-content:center;font-size:2rem">&#x1F457;</div>
+              <div style="background:linear-gradient(135deg,#fffbeb,#fde68a);border-radius:var(--radius-xl);height:5rem;display:flex;align-items:center;justify-content:center;font-size:2rem">&#x1F45F;</div>
+              <div style="background:linear-gradient(135deg,#171717,#404040);border-radius:var(--radius-xl);height:5rem;display:flex;align-items:center;justify-content:center;font-size:2rem">&#x1F45C;</div>
+              <div style="background:linear-gradient(135deg,#f0fdf4,#bbf7d0);border-radius:var(--radius-xl);height:5rem;display:flex;align-items:center;justify-content:center;font-size:2rem">&#x1F48D;</div>
+            </div>
+            <div style="background:var(--color-error-50);border-radius:var(--radius-lg);padding:var(--space-3) var(--space-4);text-align:center;margin-bottom:var(--space-4)">
+              <div style="font-size:var(--font-size-xs);color:var(--color-error-700);font-weight:700">&#x1F525; FLASH SALE — Ends in 6h</div>
+              <div style="font-size:var(--font-size-xs);color:var(--color-error-600)">20% off selected Zara &amp; H&amp;M</div>
+            </div>
+            <button style="width:100%;background:var(--color-primary);color:#fff;border:none;border-radius:var(--radius-lg);padding:var(--space-3);font-weight:700;font-size:var(--font-size-sm);cursor:pointer">Shop This Week&apos;s Picks &#x2192;</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>function subscribeNow(){var v=document.getElementById("emailIn").value.trim();if(!v.includes("@")){document.getElementById("emailIn").classList.add("error");return;}document.getElementById("subBtn").disabled=true;document.getElementById("subBtn").innerHTML="<div class='spinner spinner-sm spinner-white'></div> Subscribing...";setTimeout(function(){document.getElementById("subSuccess").style.display="block";document.getElementById("subBtn").style.display="none";},1500);}</script>
+</body></html>
