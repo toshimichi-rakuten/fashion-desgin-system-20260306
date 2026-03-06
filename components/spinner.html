@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles/tokens.css">
+<link rel="stylesheet" href="../styles/main.css">
+<style>body{padding:2rem;background:var(--color-bg-subtle)}</style>
+</head><body>
+<h2 style="margin-bottom:1.5rem;font-family:var(--font-family-display)">Spinners</h2>
+<div style="display:flex;align-items:center;gap:2rem;flex-wrap:wrap;margin-bottom:1.5rem">
+  <div class="spinner spinner-sm"></div>
+  <div class="spinner"></div>
+  <div class="spinner spinner-lg"></div>
+  <div class="spinner spinner-xl"></div>
+</div>
+<div style="display:flex;gap:1rem;flex-wrap:wrap">
+  <button class="btn btn-primary" style="display:inline-flex;align-items:center;gap:.5rem" disabled><div class="spinner spinner-sm spinner-white"></div>Processing...</button>
+  <button class="btn btn-secondary" style="display:inline-flex;align-items:center;gap:.5rem" disabled><div class="spinner spinner-sm"></div>Uploading</button>
+</div>
+</body></html>

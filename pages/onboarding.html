@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Welcome to Rakuma</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles/tokens.css">
+<link rel="stylesheet" href="../styles/main.css">
+<style>
+body{min-height:100vh;background:var(--color-bg-subtle);display:flex;flex-direction:column}
+.onboard-wrap{flex:1;display:flex;align-items:center;justify-content:center;padding:var(--space-8) var(--space-4)}
+.onboard-card{background:#fff;border-radius:var(--radius-3xl);padding:var(--space-10);width:100%;max-width:520px;box-shadow:var(--shadow-2xl)}
+.step-panel{display:none}.step-panel.active{display:block}
+.interest-btn{border:2px solid var(--color-border-default);border-radius:var(--radius-2xl);padding:var(--space-4) var(--space-5);display:flex;align-items:center;gap:var(--space-4);cursor:pointer;transition:all var(--duration-fast);background:#fff;width:100%;text-align:left;font-family:inherit}
+.interest-btn:hover{border-color:var(--color-primary);background:var(--color-primary-subtle)}
+.interest-btn.selected{border-color:var(--color-primary);background:var(--color-primary-subtle);color:var(--color-primary)}
+</style>
+</head>
+<body>
+<nav class="navbar">
+  <a href="../index.html" class="navbar-brand" style="text-decoration:none">Rakuma</a>
+</nav>
+
+<div class="onboard-wrap">
+  <div class="onboard-card">
+    <!-- Progress bar -->
+    <div style="background:var(--color-bg-muted);border-radius:var(--radius-full);height:.375rem;margin-bottom:var(--space-8)">
+      <div id="progress-bar" style="height:100%;background:var(--color-primary);border-radius:var(--radius-full);transition:width var(--duration-slow);width:25%"></div>
+    </div>
+
+    <!-- Step 1: Welcome -->
+    <div class="step-panel active" id="step1">
+      <div style="text-align:center;margin-bottom:var(--space-8)">
+        <div style="font-size:4rem;margin-bottom:var(--space-4)">&#x1F389;</div>
+        <h1 style="font-family:var(--font-family-display);font-size:var(--font-size-3xl);font-weight:900;margin-bottom:var(--space-3)">Welcome, Yuki!</h1>
+        <p style="color:var(--color-text-secondary);font-size:var(--font-size-md)">Let&apos;s personalise your Rakuma experience. This takes just 60 seconds.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-4);margin-bottom:var(--space-8)">
+        <div style="background:var(--color-primary-subtle);border:1px solid var(--color-brand-200);border-radius:var(--radius-2xl);padding:var(--space-5);text-align:center">
+          <div style="font-size:2rem;margin-bottom:var(--space-2)">&#x1F6D2;</div>
+          <div style="font-weight:700;margin-bottom:var(--space-1)">I want to buy</div>
+          <div style="font-size:var(--font-size-xs);color:var(--color-text-secondary)">Discover amazing deals</div>
+        </div>
+        <div style="background:var(--color-success-50);border:1px solid #bbf7d0;border-radius:var(--radius-2xl);padding:var(--space-5);text-align:center">
+          <div style="font-size:2rem;margin-bottom:var(--space-2)">&#x1F4B0;</div>
+          <div style="font-weight:700;margin-bottom:var(--space-1)">I want to sell</div>
+          <div style="font-size:var(--font-size-xs);color:var(--color-text-secondary)">Turn clothes into cash</div>
+        </div>
+      </div>
+      <button class="btn btn-primary btn-full btn-lg" onclick="nextStep(2,50)">Let&apos;s go &#x2192;</button>
+    </div>
+
+    <!-- Step 2: Interests -->
+    <div class="step-panel" id="step2">
+      <h2 style="font-family:var(--font-family-display);font-size:var(--font-size-2xl);font-weight:700;margin-bottom:var(--space-2)">What&apos;s your style?</h2>
+      <p style="color:var(--color-text-secondary);font-size:var(--font-size-sm);margin-bottom:var(--space-6)">Pick all that apply — we&apos;ll show you relevant items.</p>
+      <div style="display:flex;flex-direction:column;gap:var(--space-3);margin-bottom:var(--space-8)">
+        <button class="interest-btn" onclick="this.classList.toggle('selected')"><span style="font-size:1.5rem">&#x1F457;</span><div><div style="font-weight:600">Dresses &amp; Tops</div><div style="font-size:var(--font-size-xs);color:var(--color-text-secondary)">Casual to formal</div></div></button>
+        <button class="interest-btn" onclick="this.classList.toggle('selected')"><span style="font-size:1.5rem">&#x1F45C;</span><div><div style="font-weight:600">Bags &amp; Accessories</div><div style="font-size:var(--font-size-xs);color:var(--color-text-secondary)">Luxury &amp; everyday</div></div></button>
+        <button class="interest-btn" onclick="this.classList.toggle('selected')"><span style="font-size:1.5rem">&#x1F45F;</span><div><div style="font-weight:600">Shoes &amp; Sneakers</div><div style="font-size:var(--font-size-xs);color:var(--color-text-secondary)">All sizes &amp; styles</div></div></button>
+        <button class="interest-btn selected" onclick="this.classList.toggle('selected')"><span style="font-size:1.5rem">&#x1F48E;</span><div><div style="font-weight:600">Jewellery &amp; Watches</div><div style="font-size:var(--font-size-xs);color:var(--color-text-secondary)">Fine &amp; fashion</div></div></button>
+      </div>
+      <div style="display:flex;gap:var(--space-3)">
+        <button class="btn btn-ghost btn-lg" onclick="nextStep(1,25)" style="flex:0">&#8592;</button>
+        <button class="btn btn-primary btn-full btn-lg" onclick="nextStep(3,75)">Continue</button>
+      </div>
+    </div>
+
+    <!-- Step 3: Brand preferences -->
+    <div class="step-panel" id="step3">
+      <h2 style="font-family:var(--font-family-display);font-size:var(--font-size-2xl);font-weight:700;margin-bottom:var(--space-2)">Favourite brands?</h2>
+      <p style="color:var(--color-text-secondary);font-size:var(--font-size-sm);margin-bottom:var(--space-6)">We&apos;ll notify you when items from your favourite brands are listed.</p>
+      <div style="display:flex;gap:var(--space-2);flex-wrap:wrap;margin-bottom:var(--space-8)">
+        <span class="tag active" onclick="this.classList.toggle('active')">Zara</span>
+        <span class="tag" onclick="this.classList.toggle('active')">Uniqlo</span>
+        <span class="tag active" onclick="this.classList.toggle('active')">H&amp;M</span>
+        <span class="tag" onclick="this.classList.toggle('active')">Nike</span>
+        <span class="tag active" onclick="this.classList.toggle('active')">Adidas</span>
+        <span class="tag" onclick="this.classList.toggle('active')">Coach</span>
+        <span class="tag" onclick="this.classList.toggle('active')">Gucci</span>
+        <span class="tag" onclick="this.classList.toggle('active')">Chanel</span>
+        <span class="tag" onclick="this.classList.toggle('active')">Mango</span>
+        <span class="tag" onclick="this.classList.toggle('active')">GU</span>
+        <span class="tag active" onclick="this.classList.toggle('active')">Vintage</span>
+        <span class="tag" onclick="this.classList.toggle('active')">Agete</span>
+      </div>
+      <div style="display:flex;gap:var(--space-3)">
+        <button class="btn btn-ghost btn-lg" onclick="nextStep(2,50)" style="flex:0">&#8592;</button>
+        <button class="btn btn-primary btn-full btn-lg" onclick="nextStep(4,100)">Almost done!</button>
+      </div>
+    </div>
+
+    <!-- Step 4: Complete -->
+    <div class="step-panel" id="step4">
+      <div style="text-align:center;padding:var(--space-4) 0">
+        <div style="width:5rem;height:5rem;background:var(--color-success-50);border-radius:var(--radius-full);display:flex;align-items:center;justify-content:center;margin:0 auto var(--space-5)">
+          <svg width="36" height="36" fill="none" stroke="var(--color-success-500)" stroke-width="2.5" viewBox="0 0 24 24"><path d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        </div>
+        <h2 style="font-family:var(--font-family-display);font-size:var(--font-size-3xl);font-weight:900;margin-bottom:var(--space-3)">You&apos;re all set!</h2>
+        <p style="color:var(--color-text-secondary);margin-bottom:var(--space-8)">Your personalised feed is ready. Start discovering amazing fashion deals curated just for you.</p>
+        <div style="background:var(--color-bg-subtle);border-radius:var(--radius-2xl);padding:var(--space-5);margin-bottom:var(--space-6);text-align:left">
+          <div style="font-weight:600;font-size:var(--font-size-sm);margin-bottom:var(--space-4)">Your profile summary</div>
+          <div style="display:flex;gap:var(--space-2);flex-wrap:wrap">
+            <span class="badge badge-brand">Buyer &amp; Seller</span>
+            <span class="badge badge-neutral">Fashion Fan</span>
+            <span class="badge badge-success">Verified Email</span>
+          </div>
+        </div>
+        <a href="home.html" class="btn btn-primary btn-full btn-lg">&#x1F3E0; Go to My Feed</a>
+        <div style="margin-top:var(--space-4)"><a href="sell.html" style="font-size:var(--font-size-sm);color:var(--color-primary)">&#x2795; List your first item</a></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+function nextStep(n,progress){
+  document.querySelectorAll(".step-panel").forEach(function(p){p.classList.remove("active")});
+  document.getElementById("step"+n).classList.add("active");
+  document.getElementById("progress-bar").style.width=progress+"%";
+}
+</script>
+</body></html>
