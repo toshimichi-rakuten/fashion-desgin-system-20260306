@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Offer Received — Rakuma</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles/tokens.css">
+<link rel="stylesheet" href="../styles/main.css">
+<style>.offer-card{background:#fff;border:1.5px solid var(--color-border-default);border-radius:var(--radius-2xl);padding:var(--space-5);margin-bottom:var(--space-4);transition:all var(--duration-fast)}.offer-card.accepted{border-color:var(--color-success-500);background:var(--color-success-50)}.offer-card.declined{border-color:var(--color-error-300);background:var(--color-error-50);opacity:.65}</style>
+</head>
+<body style="background:var(--color-bg-subtle);min-height:100vh">
+<nav class="navbar">
+  <a href="../index.html" class="navbar-brand" style="text-decoration:none">Rakuma</a>
+  <div class="navbar-nav"><a class="nav-link" href="my-listings.html">My Listings</a><a class="nav-link active" href="#">Offers</a></div>
+  <div class="navbar-actions"><div class="avatar avatar-sm" style="background:linear-gradient(135deg,#db2777,#9d174d);color:#fff">YK</div></div>
+</nav>
+<div class="container" style="padding-top:var(--space-10);padding-bottom:var(--space-20);max-width:800px">
+  <div style="margin-bottom:var(--space-8)">
+    <h1 style="font-family:var(--font-family-display);font-size:var(--font-size-3xl);font-weight:700">Offers &amp; Negotiations</h1>
+    <p style="color:var(--color-text-secondary);margin-top:var(--space-2)">3 pending offers on your Nike Air Force 1</p>
+  </div>
+  <!-- Item context -->
+  <div style="background:#fff;border:1px solid var(--color-border-default);border-radius:var(--radius-2xl);padding:var(--space-5);margin-bottom:var(--space-8);display:flex;gap:var(--space-4);align-items:center">
+    <div style="width:5rem;height:5rem;background:linear-gradient(135deg,#fffbeb,#fde68a);border-radius:var(--radius-xl);display:flex;align-items:center;justify-content:center;font-size:2.25rem;flex-shrink:0">&#x1F45F;</div>
+    <div style="flex:1">
+      <div style="font-size:var(--font-size-xs);color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:.06em">Nike</div>
+      <div style="font-weight:700;font-size:var(--font-size-md)">Air Force 1 Low White — Size 24</div>
+      <div style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Your listing price: <strong>&#xA5;12,800</strong></div>
+    </div>
+    <a href="product-detail.html" class="btn btn-ghost btn-sm">View Listing &#8599;</a>
+  </div>
+  <!-- Offer 1: pending -->
+  <div style="font-size:var(--font-size-xs);font-weight:600;letter-spacing:var(--letter-spacing-widest);text-transform:uppercase;color:var(--color-text-tertiary);margin-bottom:var(--space-4)">Pending Offers (3)</div>
+  <div class="offer-card">
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:var(--space-4)">
+      <div style="display:flex;gap:var(--space-3);align-items:center">
+        <div class="avatar avatar-md" style="background:linear-gradient(135deg,#f59e0b,#d97706);color:#fff;font-weight:700">AS</div>
+        <div>
+          <div style="font-weight:700">Ami_S</div>
+          <div style="font-size:var(--font-size-xs);color:var(--color-text-tertiary)">&#9733; 4.8 &nbsp;·&nbsp; 24 purchases &nbsp;·&nbsp; 5 min ago</div>
+        </div>
+      </div>
+      <div style="text-align:right">
+        <div style="font-size:var(--font-size-2xl);font-weight:900;color:var(--color-primary)">&#xA5;11,000</div>
+        <div style="font-size:var(--font-size-xs);color:var(--color-text-tertiary)">-&#xA5;1,800 (14%)</div>
+      </div>
+    </div>
+    <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary);margin-bottom:var(--space-5)">Hi! I love these shoes. Would &#xA5;11,000 work? I can pay right away if you accept &#x1F64F;</p>
+    <div style="display:flex;gap:var(--space-3)">
+      <button class="btn btn-success btn-lg" style="background:var(--color-success-500);color:#fff;border-color:var(--color-success-500);flex:1" onclick="accept(this)">&#x2713; Accept &#xA5;11,000</button>
+      <button class="btn btn-secondary" onclick="showCounter(this)">Counter Offer</button>
+      <button class="btn btn-ghost" style="color:var(--color-error-500)" onclick="decline(this)">Decline</button>
+    </div>
+    <div class="counter-form" style="display:none;margin-top:var(--space-4);padding-top:var(--space-4);border-top:1px solid var(--color-border-default)">
+      <div style="font-weight:600;font-size:var(--font-size-sm);margin-bottom:var(--space-3)">Your Counter Offer</div>
+      <div style="display:flex;gap:var(--space-3)">
+        <div class="input-group" style="flex:1">
+          <span class="input-addon input-addon-left" style="font-weight:700">&#xA5;</span>
+          <input type="number" class="form-input" value="12000" style="padding-left:2rem;font-size:var(--font-size-lg);font-weight:700">
+        </div>
+        <button class="btn btn-primary">Send Counter</button>
+        <button class="btn btn-ghost" onclick="this.closest('.counter-form').style.display='none'">Cancel</button>
+      </div>
+      <div class="form-hint" style="margin-top:var(--space-2)">Buyer has 24 hours to respond to your counter</div>
+    </div>
+  </div>
+  <div class="offer-card">
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:var(--space-4)">
+      <div style="display:flex;gap:var(--space-3);align-items:center">
+        <div class="avatar avatar-md" style="background:linear-gradient(135deg,#3b82f6,#1d4ed8);color:#fff;font-weight:700">RK</div>
+        <div>
+          <div style="font-weight:700">Rin_K</div>
+          <div style="font-size:var(--font-size-xs);color:var(--color-text-tertiary)">&#9733; 4.6 &nbsp;·&nbsp; 12 purchases &nbsp;·&nbsp; 2 hours ago</div>
+        </div>
+      </div>
+      <div style="text-align:right">
+        <div style="font-size:var(--font-size-2xl);font-weight:900;color:var(--color-primary)">&#xA5;10,500</div>
+        <div style="font-size:var(--font-size-xs);color:var(--color-text-tertiary)">-&#xA5;2,300 (18%)</div>
+      </div>
+    </div>
+    <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary);margin-bottom:var(--space-5)">These look amazing! Can you do &#xA5;10,500? Happy to pay immediately.</p>
+    <div style="display:flex;gap:var(--space-3)">
+      <button class="btn btn-success btn-lg" style="background:var(--color-success-500);color:#fff;border-color:var(--color-success-500);flex:1" onclick="accept(this)">&#x2713; Accept &#xA5;10,500</button>
+      <button class="btn btn-secondary" onclick="showCounter(this)">Counter Offer</button>
+      <button class="btn btn-ghost" style="color:var(--color-error-500)" onclick="decline(this)">Decline</button>
+    </div>
+    <div class="counter-form" style="display:none;margin-top:var(--space-4);padding-top:var(--space-4);border-top:1px solid var(--color-border-default)">
+      <div style="font-weight:600;font-size:var(--font-size-sm);margin-bottom:var(--space-3)">Your Counter Offer</div>
+      <div style="display:flex;gap:var(--space-3)">
+        <div class="input-group" style="flex:1"><span class="input-addon input-addon-left" style="font-weight:700">&#xA5;</span><input type="number" class="form-input" value="12000" style="padding-left:2rem;font-size:var(--font-size-lg);font-weight:700"></div>
+        <button class="btn btn-primary">Send Counter</button>
+        <button class="btn btn-ghost" onclick="this.closest('.counter-form').style.display='none'">Cancel</button>
+      </div>
+    </div>
+  </div>
+  <div class="offer-card">
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:var(--space-4)">
+      <div style="display:flex;gap:var(--space-3);align-items:center">
+        <div class="avatar avatar-md" style="background:linear-gradient(135deg,#22c55e,#15803d);color:#fff;font-weight:700">MN</div>
+        <div>
+          <div style="font-weight:700">Mana_N</div>
+          <div style="font-size:var(--font-size-xs);color:var(--color-text-tertiary)">&#9733; 4.9 &nbsp;·&nbsp; 47 purchases &nbsp;·&nbsp; 4 hours ago</div>
+        </div>
+      </div>
+      <div style="text-align:right">
+        <div style="font-size:var(--font-size-2xl);font-weight:900;color:var(--color-primary)">&#xA5;11,500</div>
+        <div style="font-size:var(--font-size-xs);color:var(--color-text-tertiary)">-&#xA5;1,300 (10%)</div>
+      </div>
+    </div>
+    <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary);margin-bottom:var(--space-5)">Would you consider &#xA5;11,500? Fast buyer, 5-star rating! I really want these &#x1F64C;</p>
+    <div style="display:flex;gap:var(--space-3)">
+      <button class="btn btn-success btn-lg" style="background:var(--color-success-500);color:#fff;border-color:var(--color-success-500);flex:1" onclick="accept(this)">&#x2713; Accept &#xA5;11,500</button>
+      <button class="btn btn-secondary" onclick="showCounter(this)">Counter Offer</button>
+      <button class="btn btn-ghost" style="color:var(--color-error-500)" onclick="decline(this)">Decline</button>
+    </div>
+    <div class="counter-form" style="display:none;margin-top:var(--space-4);padding-top:var(--space-4);border-top:1px solid var(--color-border-default)">
+      <div style="font-weight:600;font-size:var(--font-size-sm);margin-bottom:var(--space-3)">Your Counter Offer</div>
+      <div style="display:flex;gap:var(--space-3)">
+        <div class="input-group" style="flex:1"><span class="input-addon input-addon-left" style="font-weight:700">&#xA5;</span><input type="number" class="form-input" value="12000" style="padding-left:2rem;font-size:var(--font-size-lg);font-weight:700"></div>
+        <button class="btn btn-primary">Send Counter</button>
+        <button class="btn btn-ghost" onclick="this.closest('.counter-form').style.display='none'">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+function accept(btn){var card=btn.closest('.offer-card');card.classList.add('accepted');card.querySelectorAll('button').forEach(function(b){b.disabled=true;b.style.opacity=.4;});var div=document.createElement('div');div.innerHTML='<div class="alert alert-success" style="margin-top:var(--space-4)"><svg class="alert-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg><div class="alert-content"><div class="alert-title">Offer Accepted!</div>The buyer will be notified and can proceed to payment.</div></div>';card.appendChild(div);}
+function decline(btn){var card=btn.closest('.offer-card');card.classList.add('declined');card.querySelectorAll('button').forEach(function(b){b.disabled=true;});}
+function showCounter(btn){var form=btn.closest('.offer-card').querySelector('.counter-form');form.style.display=form.style.display==='none'?'':'none';}
+</script>
+</body></html>
